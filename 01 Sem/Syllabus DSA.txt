@@ -1,0 +1,16 @@
+Unit 1:
+Complexity Analysis: Time and Space complexity of algorithms, asymptotic analysis, big O and other notations, importance of efficient algorithms, program performance measurement, data structures and algorithms.
+Hashing: Implementation of Dictionaries, Hash Function, Collisions in Hashing, Open Addressing, Analysis of Search Operations
+
+Unit 2:
+ADT Array-Searching and sorting on arrays: Linear search, binary searchon a sorted array. Bubble sort, Insertion sort, merge sort and analysis;Emphasis on the comparison based sorting model, Radix sort, and bucket sort.
+
+Unit 3:
+Stacks and Queues: Abstract data types, sequential and linked implementations, representative applications such as parenthesis matching, towers of Hanoi, finding path in a maze, simulation of queuing systems, equivalence problem.
+
+Unit 4:
+Linked Lists: Abstract data type, sequential and linked representations, comparison of insertion, deletion and search operations for sequential and linked lists, exception and iterator classes for lists, doubly linked lists, circular lists, skip lists applications of lists in bin sort, radix sort, sparse tables
+
+Unit 5:
+Trees: Rooted trees, Path length in rooted tree, Binary
+search trees, Spanning trees and cut set, Minimal spanning trees, Kruskal’s and Prim’s algorithms for minimal spanning tree Binary trees and their properties, terminology, sequential and linked implementations, tree traversal methods and algorithms, heaps as priority queues, heap implementation, insertion and deletion operations, heap sort, heaps in Huffman coding, leftist trees. Graph Algorithms: Graphs and their Representations, Graph Traversal Techniques: Breadth First Search (BFS) and Depth First Search (DFS), Applications of BFS and DFS, Minimum Spanning Trees (MST)

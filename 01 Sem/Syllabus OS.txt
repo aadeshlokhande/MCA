@@ -1,0 +1,14 @@
+Unit 1:
+Evolution of operating systems, Types of operating systems. The process concept, system programmer's view of processes, operating system's views of processes, operating system services for process management
+
+Unit 2:
+Process Concept, Process Scheduling, Operations on Processes, Cooperating Processes, Inter process Communication, Communication in Client – Server Systems, Multithreading Models, Threading Issues
+
+Unit 3:
+Scheduling concepts, scheduling algorithms, algorithm evaluation, multiple processor scheduling, real time scheduling
+
+Unit 4:
+Memory Management, Contiguous allocation, static-swapping, overlays, dynamic partitioned memory allocation, demand paging, page replacement, segmentation. Non-contiguous allocation, paging, Hardware support, Virtual Memory.
+
+Unit 5:
+A Simple file system, General model of a file system, Symbolic file system, Access control verification, Logical file system, Physical file system, Allocation strategy module, Device strategy module, I/O initiators, Device handlers, Disk scheduling.

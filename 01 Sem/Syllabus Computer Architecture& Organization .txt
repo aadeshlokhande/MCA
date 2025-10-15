@@ -1,0 +1,14 @@
+Unit 1:
+Basic Structure of Computers: Functional Units, Basic Operational Concepts, Bus Structures, Software, Multiprocessors and MulticomputerMachine Instructions: Instruction Sets: Machine Instruction Characteristics, Types of Operands, Types of Operations, Memory Locations and Addresses, Memory Operations, Machineprogram sequencing, addressing modes and encoding of information,Assembly Language, Stacks, Queues and Subroutine.
+
+Unit 2:
+Some Basic Concepts, Semiconductor RAM Memories, Memory system considerations, Semiconductor ROM Memories, Memory interleaving, Cache Memory, Mapping techniques, Virtual memory, Memory Management requirements. I/O Devices, DMA, Interrupt handling, online storage, File services, Processors: Families of microprocessors Chips, s, Introduction to Pipelining. Parallel Processing: The Use of Multiple Processors, Symmetric Multiprocessors, Multithreading and Chip Multiprocessors, Clusters.
+
+Unit 3:
+Control Unit Operation: Micro-operations, Control of the Processor, Hardwired Implementation, and Micro-programmed control, Basic Concepts, Microinstruction Sequencing & Execution,Microinstructions, grouping of control signals, Micro program sequencing, Micro Instructions with next Address field, Perfecting microinstruction, Emulation, Bit Slices, Introduction to Microprogramming, Macro Processor.
+
+Unit 4:
+Number Representation, Addition of Positive numbers, Logic Design for fast adders, Addition and Subtraction, Arithmetic and Branching conditions, Multiplication of positive numbers, Signed Operand multiplication, fast Multiplication, Booth’s Algorithm, Integer Division, Floating point numbers and operations
+
+Unit 5:
+Addressing, x86 and ARM Addressing modes, Instruction Formats, x86 and ARM Instruction Formats, Assembly language.

@@ -1,0 +1,18 @@
+Unit 1:
+Basics of OOP: Abstraction, Inheritance, Encapsulation, Classes, subclasses and super classes, Polymorphism and Overloading, message communicationProcedure-Oriented vs. Object-Oriented Programming concept. Introduction to Java Programming : Basics of Java, Background/History of Java, Java and the Internet, Advantages of Java , Java Virtual Machine & Byte Code , Java Environment Setup ,Java Program Structure
+
+Unit 2:
+Primitive Data Types : Integers, Floating Point type, Characters, Booleans , User Defined Data Type , Identifiers & Literals , Declarations of constants & variables , Type Conversion and Casting , Scope of variables & default values of variables declared , Wrapper classes , Comment Syntax , Garbage Collection
+Arrays of Primitive Data Types: Types of Arrays,Creation, concatenation and conversion of a string,Decision & Control Statements, Different Operators
+
+Unit 3:
+Class :Defining classes, fields and methods, creating objects,accessing rules, this keyword, static keyword, method overloading, final keyword
+Constructor:Constructors: Default constructors, Parameterized constructors, Copy constructors, Passing object as a parameter, constructor overloading
+
+Unit 4:
+Basics of Inheritance: Inheritance, Types of inheritance: single, multiple, multilevel, hierarchical and hybrid inheritance, concepts of method overriding, extending class, super class, Abstract Class 
+Package : Creating package, importing package, access rules for packages, class hiding rules in a package, Defining interface, inheritance on interfaces, implementing interface, multiple inheritance using interface
+
+Unit 5:
+Exception Handling :Introduction, Built in classes for Exception Handling, Mechanism of Exception Handling in Java, Error Handling Exception Classes
+Multithreading : Creating thread, extending Thread class, implementing Runnable interface, life cycle of a thread, Thread priority & thread synchronization, exception handing in threads

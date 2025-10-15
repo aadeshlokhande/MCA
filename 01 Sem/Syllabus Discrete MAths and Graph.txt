@@ -1,0 +1,16 @@
+Unit 1:
+Fundamental Structures and Basic Logic: Sets, Venn diagram, Cartesian product, Power sets,Cardinality and countability, Propositional logic, Logical connectives, Truth tables, Normal forms, Validity, Predicate logic, Limitations of predicate logic, Universal and existential quantification, First order logic. Principles of Mathematical
+Induction: The Well-Ordering Principle, Recursive definition, The Division algorithm: Prime Numbers, The Greatest Common Divisor: Euclidean Algorithm, The Fundamental Theorem of Arithmetic.
+
+Unit 2:
+Functions and Relations: Subjective, Injective, Bijective and inverse functions, Composition of function, Reflexivity, Symmetry, Transitivity and equivalence relations
+
+Unit 3:
+Graph Theory: Basic terminology, Multi graphs and weighted graphs, Paths and circuits, Shortest path problems, Euler and Hamiltonian paths, Representation of graph, Isomorphic graphs, Planar graphs, Connectivity, Matching Coloring.
+
+Unit 4:
+Algebraic Structures and Morphism: Algebraic Structures with one Binary Operation, Semi Groups, Monoids, Groups, Congruence Relation and Quotient79 Structures, Free and Cyclic Monoids and Groups, Permutation Groups, Substructures, Normal Subgroups
+
+Unit 5:
+Algebraic Structures with two Binary Operation, Rings, Integral Domain and Fields. Boolean Algebra and Boolean Ring, Identities of Boolean Algebra, Duality, Representation of Boolean Function, Disjunctive and Conjunctive Normal Form
+
