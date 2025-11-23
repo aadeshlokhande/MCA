@@ -1,0 +1,10 @@
+1,Which of the following is the correct way to declare a variable in C?,int x;,var x;,let x;,declare x;,a
+2,Which header file is required for the printf() function?,<stdio.h>,<conio.h>,<stdlib.h>,<string.h>,a
+3,What is the output of: printf("%d", 5/2);?,2,2.5,3,Error,a
+4,Which operator is used to get the address of a variable?,*,&,%,#,b
+5,Which keyword is used to define a constant in C?,const,static,define,final,a
+6,What is the size of 'int' in most 32-bit compilers?,2 bytes,4 bytes,8 bytes,Depends on implementation,d
+7,What will be the output of: printf("%c", 'A' + 1);?,A,A1,B,Error,c
+8,Which loop will execute at least once even if the condition is false initially?,for loop,while loop,do-while loop,if statement,c
+9,What does the function malloc() return on memory allocation failure?,0,NULL,-1,Undefined,b
+10,Which of the following is the correct comment syntax in C?,// comment,/* comment */,** comment **,# comment,b
