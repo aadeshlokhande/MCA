@@ -1,10 +1,20 @@
-1,Which of the following is the correct way to declare a variable in C?,int x;,var x;,let x;,declare x;,a, 
-2,Which header file is required for the printf() function?,<stdio.h>,<conio.h>,<stdlib.h>,<string.h>,a
-3,What is the output of: printf("%d", 5/2);?,2,2.5,3,Error,
-4,Which operator is used to get the address of a variable?,*,&,%,#,b
-5,Which keyword is used to define a constant in C?,const,static,define,final,a
-6,What is the size of 'int' in most 32-bit compilers?,2 bytes,4 bytes,8 bytes,Depends on implementation,d
-7,What will be the output of: printf("%c", 'A' + 1);?,A,A1,B,Error,
-8,Which loop will execute at least once even if the condition is false initially?,for loop,while loop,do-while loop,if statement,c
-9,What does the function malloc() return on memory allocation failure?,0,NULL,-1,Undefined,b
-10,Which of the following is the correct comment syntax in C?,// comment,/* comment */,** comment **,# comment,b
+1,What is 5 + 3?,6,7,8,9,C
+2,What is 12 - 7?,3,4,5,6,C
+3,What is 4 x 6?,20,22,24,26,C
+4,What is 15 ÷ 3?,4,5,6,7,B
+5,What is the square of 9?,72,81,69,99,B
+6,What is the square root of 25?,3,4,5,6,C
+7,What is 20% of 10?,1,2,4,5,D
+8,What is 2 + 2 x 3?,6,8,10,12,A
+9,100 ÷ 10 equals?,5,10,15,20,B
+10,What is 7 x 8?,48,56,64,72,B
+11,18 - 9 equals?,5,7,9,11,C
+12,What is the cube of 3?,9,18,27,30,C
+13,How many minutes are there in 1 hour?,30,45,60,90,C
+14,What is half of 50?,10,20,25,30,C
+15,What is 2.5 + 2.5?,4,5,6,7,B
+16,What is 0 factorial (0!)?,0,1,2,5,B
+17,What is the square root of 144?,10,11,12,13,C
+18,What is 20% of 200?,10,20,30,40,D
+19,What is the angle of a straight line?,90,180,360,45,B
+20,How many meters are there in 1 kilometer?,100,500,1000,1500,C
