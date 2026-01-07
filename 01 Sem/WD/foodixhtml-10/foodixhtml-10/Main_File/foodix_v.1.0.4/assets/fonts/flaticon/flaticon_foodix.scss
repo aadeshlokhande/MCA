@@ -1,0 +1,89 @@
+$flaticon_foodix-font: "flaticon_foodix";
+
+@font-face {
+    font-family: $flaticon_foodix-font;
+    src: url("./flaticon_foodix.woff2?b5ca6ade3dd2305f9e48bb133e2dd2f5") format("woff2"),
+url("./flaticon_foodix.woff?b5ca6ade3dd2305f9e48bb133e2dd2f5") format("woff"),
+url("./flaticon_foodix.eot?b5ca6ade3dd2305f9e48bb133e2dd2f5#iefix") format("embedded-opentype"),
+url("./flaticon_foodix.ttf?b5ca6ade3dd2305f9e48bb133e2dd2f5") format("truetype"),
+url("./flaticon_foodix.svg?b5ca6ade3dd2305f9e48bb133e2dd2f5#flaticon_foodix") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_foodix !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_foodix-map: (
+    "food-tray": "\f101",
+    "burger": "\f102",
+    "healthy-food": "\f103",
+    "date": "\f104",
+    "sandwich": "\f105",
+    "sandwich-1": "\f106",
+    "shrimp": "\f107",
+    "pasta": "\f108",
+    "clean-water": "\f109",
+    "party": "\f10a",
+    "chef": "\f10b",
+    "play": "\f10c",
+    "free-shipping": "\f10d",
+    "return-on-investment": "\f10e",
+    "credit-card": "\f10f",
+    "24-hours": "\f110",
+);
+
+.flaticon-food-tray:before {
+    content: map-get($flaticon_foodix-map, "food-tray");
+}
+.flaticon-burger:before {
+    content: map-get($flaticon_foodix-map, "burger");
+}
+.flaticon-healthy-food:before {
+    content: map-get($flaticon_foodix-map, "healthy-food");
+}
+.flaticon-date:before {
+    content: map-get($flaticon_foodix-map, "date");
+}
+.flaticon-sandwich:before {
+    content: map-get($flaticon_foodix-map, "sandwich");
+}
+.flaticon-sandwich-1:before {
+    content: map-get($flaticon_foodix-map, "sandwich-1");
+}
+.flaticon-shrimp:before {
+    content: map-get($flaticon_foodix-map, "shrimp");
+}
+.flaticon-pasta:before {
+    content: map-get($flaticon_foodix-map, "pasta");
+}
+.flaticon-clean-water:before {
+    content: map-get($flaticon_foodix-map, "clean-water");
+}
+.flaticon-party:before {
+    content: map-get($flaticon_foodix-map, "party");
+}
+.flaticon-chef:before {
+    content: map-get($flaticon_foodix-map, "chef");
+}
+.flaticon-play:before {
+    content: map-get($flaticon_foodix-map, "play");
+}
+.flaticon-free-shipping:before {
+    content: map-get($flaticon_foodix-map, "free-shipping");
+}
+.flaticon-return-on-investment:before {
+    content: map-get($flaticon_foodix-map, "return-on-investment");
+}
+.flaticon-credit-card:before {
+    content: map-get($flaticon_foodix-map, "credit-card");
+}
+.flaticon-24-hours:before {
+    content: map-get($flaticon_foodix-map, "24-hours");
+}

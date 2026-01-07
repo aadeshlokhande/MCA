@@ -1,0 +1,31 @@
+Introduction to Python libraries for image processing
+Basic image manipulation and enhancement techniques
+Advanced image manipulation and enhancement techniques
+Geometric transformations
+understanding image color spaces
+Applying color manipulation techniques
+Understanding image histograms
+applying image smoothing and sharpening techniques
+understanding and applying basic and advanced image filtering techniques
+Image restoration techniques
+Edge detection techniques
+Feature extraction techniques
+Image segmentation
+Thresholding techniques
+Watershed segmentation
+Object detection and recognition
+template matching
+deep learning for image classification and recognition
+Image classification model with TensorFlow
+Advanced deep learning models for medical image processing
+Preprocessing
+Segmentation and Registration of medical images
+Understanding 3D image processing
+image visualization and manipulation
+filtering and segmentation
+Image compression technique
+JPEG and Wavelet-based compression technique
+Introduction to image steganography
+hiding data and Extracting hidden data from images using Python
+Review of course materials
+Final project presentation and wrap-up

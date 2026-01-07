@@ -1,0 +1,435 @@
+html{
+    direction: rtl;
+}
+.text-end {
+    text-align: left!important
+}
+@media (min-width: 992px) {
+    .text-lg-end {
+        text-align: left !important;
+    }
+}
+@media (min-width: 992px) {
+    .text-lg-start {
+        text-align: right !important;
+    }
+}
+@media (min-width: 768px) {
+    .float-md-end {
+        float: left !important;
+    }
+}
+@media (min-width: 992px) {
+    .float-lg-end {
+        float: left !important;
+    }
+}
+.theme-btn.style-one i {
+    margin-right: inherit;
+    margin-left: 10px;
+}
+
+.header-navigation .main-menu ul > li .sub-menu li a span.dd-trigger {
+    margin-left: inherit;
+    margin-right: auto;
+}
+
+
+.hero-wrapper-two .hero-image {
+    right: auto;
+    left: 0;
+}
+.foodix-banner-item.style-one .banner-img {
+    right: auto;
+    left: 0;
+}
+.foodix-banner-item.style-one .banner-img img{
+    transform: scaleX(calc(-1* 1));
+}
+.order-image-box-two img {
+    transform: scaleX(calc(-1* 1));
+}
+
+.about-wrapper_one .shape.shape-one {
+    left: auto;
+    right: -15%;
+}
+.about-wrapper_one .shape.shape-two {
+    right: auto;
+    left: -20%;
+}
+.section-image-box.style-one .image-box img {
+    margin-left: 0;
+    margin-right: -115px;
+}
+.blog-post-item.style-one .post-content .post-meta span i {
+    margin-right: 0;
+    margin-left: 10px;
+}
+.hero-wrapper .image-one {
+    right: auto;
+    left: 0;
+}
+.hero-wrapper .image-one img{
+    transform: scaleX(calc(-1* 1));
+}
+.menu-item.style-two .menu-info h4 span.price {
+    float: left;
+}
+.pricing-item.style-one .pricing-body ul li:before{
+    margin-right: 0;
+    margin-left: 20px;
+}
+.blog-post-item.style-one .post-thumbnail .category-btn{
+    left: auto;
+    right: 20px;
+}
+.read-more i{
+    margin-left: 0;
+    margin-right: 10px;
+}
+.read-more:hover i {
+    margin-left: 0;
+    margin-right: 13px;
+}
+.blog-classic-wrapper {
+    padding-right: 0;
+    padding-left: 100px;
+}
+.foodix-banner-item.style-two .banner-inner-wrap .banner-img {
+    right: auto;
+    left: -12%;
+}
+.menu-item.style-eleven .menu-thumbnail .cart-button{
+    right: auto;
+    left: -20px;
+}
+.menu-item.style-eleven .menu-thumbnail .cart-button a{
+    border-radius: 10px 10px 30px 10px;
+}
+.iconic-info-box.style-three .icon{
+    margin-right: 0;
+    margin-left: 20px;
+}
+.menu-item.style-ten .menu-thumbnail{
+    margin-right: 0;
+    margin-left: 30px;
+}
+.blog-post-item.style-four .post-content .post-meta span i {
+    margin-right: 0;
+    margin-left: 10px;
+}
+.blog-post-item.style-four .post-content .post-meta span:not(:last-child) {
+    margin-right: 0;
+    margin-left: 20px;
+}
+.home-four .sub-title i {
+    margin-right: inherit;
+    margin-left: 10px;
+}
+.section-image-box.style-three .discount-item{
+    left: auto;
+    right: 20px;
+}
+.section-image-box.style-three .fill-text{
+    left: auto;
+    right: 10%;
+}
+.header-navigation .nav-inner-menu .nav-right-item {
+    margin-left: inherit;
+    margin-right: 40px;
+}
+.header-navigation .main-menu ul > li .sub-menu{
+    left: auto;
+    right: 0;
+}
+.header-navigation .main-menu ul > li .sub-menu li a:hover:before {
+    margin-right: inherit;
+    margin-left: 5px;
+}
+.header-navigation .main-menu ul > li > a span.dd-trigger {
+    margin-left: inherit;
+    margin-right: 5px;
+}
+.nav-right-item .cart-button {
+    margin-left: inherit;
+    margin-right: 20px;
+}
+@keyframes marquee_left {
+    from {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0); 
+    }
+    to {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(100%, 0, 0); 
+    } 
+    
+}
+.happy-wrapper .section-content-box .happy-button .theme-btn:not(:last-child) {
+    margin-right: inherit;
+    margin-left: 25px;
+}
+.hero-wrapper-three .hero-image {
+    right: auto;
+    left: 0;
+}
+.hero-wrapper-three .hero-image img{
+    transform: scaleX(calc(-1* 1));
+}
+.team-item.style-one .member-image ul.social-link{
+    left: auto;
+    right: 0;
+}
+
+
+.blog-post-item.style-three .post-content .post-meta span:not(:last-child) {
+    margin-right: inherit;
+    margin-left: 25px;
+}
+.blog-post-item.style-three .post-content .post-meta span i{
+    margin-right: inherit;
+    margin-left: 10px;
+}
+.footer-widget.footer-about-widget ul.social-link li:not(:last-child) {
+    margin-right: inherit;
+    margin-left: 10px;
+}
+.foodix-banner-item.style-three .banner-inner-wrap{
+    padding: 45px 50px 55px 170px;
+}
+.description-content-wrapper .content-box ul.check-list li:before{
+    margin-right: inherit;
+    margin-left: 10px;
+}
+.foodix-banner-item.style-three .banner-inner-wrap .banner-img {
+    right: auto;
+    left: 0;
+}
+.foodix-banner-item.style-three .banner-inner-wrap .banner-img img{
+    transform: scaleX(calc(-1* 1));
+}
+.nice-select .option{
+    text-align: right;
+}
+.menu-details-wrapper .menu-info-content .product-cart-variation .nice-select:after {
+    float: left;
+    margin-left: inherit;
+    margin-right: auto;
+}
+.menu-details-wrapper .menu-info-content .product-cart-variation > ul > li:not(:last-child) {
+    margin-right: inherit;
+    margin-left: 30px;
+}
+.nice-select:after{
+    margin-left: inherit;
+    margin-right: 10px;
+}
+@media (min-width: 768px) {
+    .text-md-start {
+        text-align: right !important;
+    }
+}
+.menu-item.style-eight .menu-content-wrap .price-box {
+    margin-left: inherit;
+    margin-right: auto;
+}
+.menu-item.style-eight .menu-thumbnail{
+    margin-right: inherit;
+    margin-left: 15px;
+}
+.booking-form .nice-select:after{
+    float: left;
+}
+.booking-form .form_group .icon{
+    right: auto;
+    left: 20px;
+}
+.offer-bg-wrapper .shape.shape-one {
+    right: auto;
+    left: 0;
+}
+.offer-bg-wrapper .shape.shape-one img{
+    transform: scaleX(calc(-1* 1));
+}
+.home-one .sub-title i{
+    margin-right: inherit;
+    margin-left: 10px;
+}
+.iconic-box.style-four .icon{
+    margin-right: inherit;
+    margin-left: 15px;
+}
+.iconic-box.style-five .icon{
+    margin-right: inherit;
+    margin-left: 20px;
+}
+.accordion-card .accordion-title:after{
+    margin-left: inherit;
+    margin-right: auto;
+}
+.author-thumb-item .author-thumb{
+    margin-right: inherit;
+    margin-left: 20px;
+}
+.menu-item.style-four .menu-info .theme-btn.style-two i,
+.menu-item.style-four .menu-info .menu-meta span.rating i,
+.menu-item.style-four .menu-info ul.check-list.style-one li i {
+    margin-right: inherit;
+    margin-left: 10px;
+}
+.menu-item.style-four .menu-thumbnail .wishlist-btn{
+    right: auto;
+    left: 20px;
+}
+.cart-middle .coupon-box .form_control {
+    padding: 14px 30px 14px 165px;
+}
+.cart-middle .coupon-box .theme-btn{
+    right: auto;
+    left: 5px;
+}
+.cart-table table tr td.thumbnail-title span.title {
+    margin-left: inherit;
+    margin-right: 15px;
+}
+.shopping-cart-total table td.price {
+    text-align: left;
+}
+.payment-method li {
+    padding: 15px 45px 15px 20px;
+}
+.form-check .form-check-input {
+    float: right;
+    margin-left: inherit;
+    margin-right: -1.5em;
+}
+.checkout-faqs .form-footer .theme-btn {
+    margin-right: inherit;
+    margin-left: 30px;
+}
+.blog-details-wrapper .comments-area .comments-list .comment .comment-author-content span.author-name span{
+    float: left;
+}
+.blog-details-wrapper .comments-area .comments-list .comment-reply .comment {
+    margin-left: inherit;
+    margin-right: 50px;
+}
+.blog-details-wrapper .comments-area .comments-list .comment .comment-avatar {
+    margin-right: inherit;
+    margin-left: 30px;
+}
+.blog-details-wrapper .blog-post-item .entry-footer .social-share a:not(:last-child) {
+    margin-right: inherit;
+    margin-left: 10px
+}
+.blog-details-wrapper .blog-post-item .entry-footer .tag-links a:not(:last-child) {
+    margin-right: inherit;
+    margin-left: 10px;
+}
+.blog-details-wrapper .blog-post-item .entry-footer .social-share span, .blog-details-wrapper .blog-post-item .entry-footer .tag-links span{
+    margin-right: inherit;
+    margin-left: 15px;
+}
+.sidebar-widget-area .sidebar-widget.sidebar-post-widget .recent-post-list .post-thumbnail-content img{
+    margin-right: inherit;
+    margin-left: 20px;
+}
+.sidebar-widget-area .sidebar-widget.sidebar-search-widget .widget-content form .search-btn{
+    right: auto;
+    left: 20px;
+}
+.sidebar-widget-area .sidebar-widget.sidebar-tag-widget .tagcloud a{
+    margin-right: inherit;
+    margin-left: 5px;
+}
+.sidebar-widget-area .sidebar-widget.sidebar-category-widget .widget-content ul li a i {
+    margin-right: inherit;
+    margin-left: 10px;
+}
+.sidebar-widget-area .sidebar-widget.sidebar-category-widget .widget-content ul li a span{
+    margin-left: inherit;
+    margin-right: auto;
+}
+.blog-post-item.style-two .post-content .read-more i {
+    margin-left: inherit;
+    margin-right: 10px;
+}
+.blog-post-item.style-two .post-content .read-more:hover i {
+    margin-left: inherit;
+    margin-right: 13px;
+}
+.contact-image-box img{
+    transform: scaleX(calc(-1* 1));
+}
+.header-navigation .navbar-toggler{
+    margin-left: 0;
+    margin-right: 20px;
+}
+.footer-widget.footer-about-widget ul.social-link li:not(:last-child) {
+    margin-right: 0;
+    margin-left: 10px;
+}
+.footer-widget.footer-contact-widget {
+    padding-left: 0;
+    padding-right: 30px;
+}
+.footer-widget.footer-nav-widget {
+    padding-left: 0;
+    padding-right: 50px;
+}
+.back-to-top{
+    right: auto;
+    left: 030px;
+}
+.section-title{
+    margin-right: 0;
+    margin-left: 0;
+}
+.section-title.text-center{
+    margin-left: auto;
+    margin-right: auto;
+}
+.hero-wrapper-two .shape.shape-one {
+    right: 15px;
+    left: auto;
+}
+.hero-wrapper-two .shape.shape-two {
+    left: auto;
+    right: 3%;
+}
+.hero-wrapper-two .shape.shape-three {
+    right: auto;
+    left: 0;
+}
+/* Responsive CSS */
+
+@media (max-width: 1199px) {
+    .header-navigation .foodix-nav-menu .main-menu ul li .dd-trigger{
+        right: auto;
+        left: 0;
+        text-align: left;
+    }
+    .header-navigation .foodix-nav-menu.menu-on {
+        left: 0;
+        text-align: right;
+    }
+    .footer-widget.footer-contact-widget {
+        padding-right: 0;
+    }
+    .footer-widget.footer-nav-widget {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .foodix-banner-item.style-three .banner-inner-wrap .banner-img {
+        text-align: left;
+    }
+}
+
+@media (max-width: 767px) {
+    .foodix-banner-item.style-three .banner-inner-wrap {
+        padding: 50px 30px;
+    }
+}
