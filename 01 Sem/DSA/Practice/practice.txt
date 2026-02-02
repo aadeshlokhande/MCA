@@ -1,0 +1,94 @@
+#include <iostream>          // For input and output operations
+using namespace std;         // To avoid using std:: again and again
+
+#define SIZE 5               // Define fixed size of circular queue
+
+int cqueue[SIZE];            // Array to store queue elements
+int front = -1, rear = -1;   // front and rear initialized to -1 (queue is empty)
+
+// Function to insert element into circular queue
+void enqueue(int value)
+{
+    // Check overflow condition
+    // If next position of rear comes to front, queue is full
+    if ((rear + 1) % SIZE == front)
+    {
+        cout << "Circular Queue Overflow\n";
+    }
+    else
+    {
+        // If queue is empty, set front to 0
+        if (front == -1)
+            front = 0;
+
+        // Move rear circularly
+        rear = (rear + 1) % SIZE;
+
+        // Insert value at rear position
+        cqueue[rear] = value;
+    }
+}
+
+// Function to delete element from circular queue
+void dequeue()
+{
+    // Check underflow condition
+    if (front == -1)
+    {
+        cout << "Circular Queue Underflow\n";
+    }
+    // If only one element is present
+    else if (front == rear)
+    {
+        front = rear = -1;   // Queue becomes empty
+    }
+    else
+    {
+        // Move front circularly
+        front = (front + 1) % SIZE;
+    }
+}
+
+// Function to display circular queue elements
+void display()
+{
+    // If queue is empty
+    if (front == -1)
+    {
+        cout << "Queue is empty\n";
+    }
+    else
+    {
+        int i = front;       // Start from front
+        while (true)
+        {
+            cout << cqueue[i] << " ";   // Print current element
+
+            // Stop when rear is reached
+            if (i == rear)
+                break;
+
+            // Move index circularly
+            i = (i + 1) % SIZE;
+        }
+        cout << endl;
+    }
+}
+
+// Main function
+int main()
+{
+    enqueue(10);   // Insert 10
+    enqueue(20);   // Insert 20
+    enqueue(30);   // Insert 30
+    display();     // Display queue
+
+    dequeue();     // Delete one element
+    display();     // Display queue
+
+    enqueue(40);   // Insert 40
+    enqueue(50);   // Insert 50
+    display();     // Display queue
+
+    return 0;      // End program
+}

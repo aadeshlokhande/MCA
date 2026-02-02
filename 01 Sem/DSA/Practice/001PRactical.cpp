@@ -21,83 +21,85 @@ int main()
     cout<<endl;
 
 // =<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
-// //      insert
-//     cout<<"enter a postion between 0 to "<< n<<" = ";
-//     cin >> pos;
-//     cout << "enter a valuec = ";
-//     cin >> value;
+//      insert
+    // cout<<"enter a postion between 0 to "<< n<<" = ";
+    // cin >> pos;
+    // cout << "enter a value = ";
+    // cin >> value;
 
-//     for(int i = n; i>pos; i--)
-//     {
-//         arr[i] = arr[i-1];
-//     }
-//     arr[pos]=value;
-//     n++;
-//     cout << "inserted Array := ";
-//     for(int i = 0; i<n; i++)
-//     {
-//         cout << arr[i]<< ", ";
-//     }
-//     cout<<endl;
+    // for(int i = n; i>pos; i--)
+    // {
+    //     arr[i] = arr[i-1];
+    // }
+    // arr[pos]=value;
+    // n++;
+    // cout << "inserted Array := ";
+    // for(int i = 0; i<n; i++)
+    // {
+    //     cout << arr[i]<< ", ";
+    // }
+    // cout<<endl;
 
 
 //     // =<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
-//     // updatetion
-//     cout<<"enter a postion between 0 to "<< n<<" = ";
-//     cin >> pos;
-//     cout << "enter a valuec = ";
-//     cin >> value;
+    // updation
+    // cout<<"Enter a postion between 0 to "<< n<<" = ";
+    // cin >> pos;
+    // cout << "Enter a value = ";
+    // cin >> Value;
 
-//     arr[pos] = value;
+    // arr[pos] = value;
 
-//     cout << "updated Array := ";
-//     for(int i = 0; i<n; i++)
-//     {
-//         cout << arr[i]<< ", ";
-//     }
-//     cout<<endl;
+    // cout << "Updated Array := ";
+    // for(int i = 0; i<n; i++)
+    // {
+    //     cout << arr[i]<< ", ";
+    // }
+    // cout<<endl;
 
 //     // =<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
 
 //     // deletion
-//     cout<<"enter a postion between 0 to "<< n<<" = ";
-//     cin >> pos;
+    // cout<<"enter a postion between 0 to "<< n<<" = ";
+    // cin >> pos;
 
-//     for(int i = pos; i<n-1; i++)
-//     {
-//         arr[i] = arr[i+1];
-//     }
-//     n--;
-//     cout << "deleted Array := ";
-//     for(int i = 0; i<n; i++)
-//     {
-//         cout << arr[i]<< ", ";
-//     }
-//     cout<<endl;
+    // for(int i = pos; i<n-1; i++)
+    // {
+    //     arr[i] = arr[i+1];
+    // }
+    // n--;
+    // cout << "deleted Array := ";
+    // for(int i = 0; i<n; i++)
+    // {
+    //     cout << arr[i]<< ", ";
+    // }
+    // cout<<endl;
 
 
     // =<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
-    cout<<"enter a number to search =";
-    cin >> value;
-    int index = -1;
+    // Search
 
-    for(int i = 0; i<n; i++)
-    {
-        if(value==arr[i])
-        {
-            index = i;
-            break;
-        }
-    }
+    // int index = -1;
+    // cout<<"enter a number to search =";
+    // cin >> value;
 
-    if(index== -1)
-    {
-        cout<< "value not found";
-    }
-    else 
-    {
-        cout<<value<< " is found on "<< index<<" index"<<endl;
-    }
+    // for(int i = 0; i<n; i++)
+    // {
+    //     if(value==arr[i])
+    //     {
+    //         index = i;
+    //         break;
+    //     }
+    // }
+
+    // if(index== -1)
+    // {
+    //     cout<< "value not found";
+    // }
+    // else 
+    // {
+    //     cout<<value<< " is found on "<< index<<" index"<<endl;
+    // }
 
 
 
