@@ -1,0 +1,21 @@
+10. Explain the mechanism of method overriding in Java
+11. Identify different types of inheritance supported in Java
+12. List the rules that must be followed while overriding a method in Java.
+13. Mention the concept of single and multilevel inheritance
+14. Recognize the relationship between superclass and subclass
+15. State the purpose of the extends keyword in Java inheritance.
+1. Analyze the control flow of a Java program when an exception occurs inside a try block.
+2. Assess the necessity of exception handling in Java applications
+3. Demonstrate handling of a user-defined exception in Java with a suitable example.
+4. Demonstrate handling of multiple exceptions in Java
+5. Evaluate the effectiveness of Java’s exception handling model in improving program reliability.
+6. Explain the role of the finally block in Java exception handling.
+7. Identify the difference between checked and unchecked exceptions in Java.
+8. Illustrate exception propagation with a suitable Java example
+9. Illustrate the use of the throw keyword to explicitly generate an exception in a Java program.
+10. Justify the use of custom exceptions over standard exceptions in complex Java applications.
+11. List the keywords used in Java for handling exceptions and state their purpose.
+12. Mention the meaning of an exception in Java
+13. Outline the hierarchy of built-in exception classes in Java
+14. State the importance of built-in classes for exception handling
+15. Summarize the mechanism of exception handling in Java

@@ -1,0 +1,287 @@
+JAIDEV EDUCATION SOCIETY’S
+   J D COLLEGE OF ENGINEERING AND MANAGEMENT   
+KATOL ROAD, NAGPUR 
+Website: www.jdcoem.ac.in    E-mail: info@jdcoem.ac.in
+(An Autonomous Institute, with NAAC "A" Grade)
+Affiliated to DBATU,RTMNU & MSBTE Mumbai
+
+
+
+
+
+
+
+B.Tech. / M.Tech. / MBA / MCA/ BBA / BCA Summer / Winter – 2025-26
+(ESE / Make-up / Supplementary) Examination
+
+Branch: Master of Computer Application(MCA)                     Sem:I
+Course: Discrete Mathematics and Graph Theory                   Course Code: MC1T004
+Max. Marks:60             Date of Examination:07/02/2026          Duration: 2Hrs & 30 Min.
+
+Instructions to the Students: 
+Read the question paper carefully (Branch, Semester, Scheme) before attempting the questions.
+Each question carries 12 marks.
+Question No. 1 is compulsory and objective type questions.
+Candidates are required to attempt any four questions from question No.2 to Question No.6.
+Use of Non-programmable Calculator is allowed.
+Assume suitable data wherever necessary and mention it clearly.
+Illustrate your answer wherever necessary with the help of neat sketches.
+Don’t use red pen for writing the answers.
+Cos: Students should be able to:  
+Define and illustrate fundamental set theory concepts, logical connectives, and propostional logic.
+Analyse different types of functions and relations , including injetive, surjective,bijective,reflexive,symmetric and transitive relations.
+Problems related to graph theory, including identifying shortest paths, Euler and Hamiltanion paths, and  graph isomorphism.
+Evaluate algebraic structures with one or two binary operations , such as groups, rings, and fields and perform operations within these structures
+Construct and simplify Boolean functions using identities and represesntations such as Disjunctive and conjunctive normal forms.
+SECTION A
+
+
+
+
+Level/CO 
+Marks
+Q. 1
+Objective type questions (Compulsory Question)
+
+
+12
+1
+Power set of a set with 4 elements has:
+L1/CO1
+1
+
+
+a) 4             b) 8                 c) 16            d) 32
+
+
+2
+n(A ∪ B) = n(A) + n(B) – n(A ∩ B) is:
+L1/CO1
+1
+
+
+a) Inclusion Exclusion Principle            b) De Morgan’s Law
+c) Partition                                               d) Complement Rule
+
+
+3
+Negation of (P ∧ Q) is:
+L1/CO1
+1
+
+
+a) ¬P ∧ ¬ Q                       b) ¬P ∨ ¬ Q         
+ c) ¬P ∧ Q                          d) P ∨ Q
+
+
+4
+Euclid algorithm repeatedly uses:	
+L1/CO4
+1
+
+
+a) Addition                      b) Subtraction  
+c) Division remainder     d) Multiplication
+
+
+5
+If a | b and b | c, then:
+L1/CO4
+1
+
+
+a) a|c                             b) c|a              
+ c) a=c                          d) No relation
+
+
+6
+A bijective function is:
+L1/CO2
+1
+
+
+a) Injective only                                         b) Surjective only
+c) Both injective & surjective                    d) Constant
+
+
+7
+An equivalence relation is:  
+L1/CO2
+1
+
+
+a) Reflexive + symmetric               
+b) Symmetric + transitive
+c) Reflexive + symmetric + transitive       
+d) None
+
+
+8
+R = {(1,1),(2,2),(3,3)} is:
+L2/CO2
+1
+
+
+a).Symmetric                              b). Reflexive on {1,2,3}
+c). Both                                       d) None
+
+
+9
+A graph G=(V,E) requires:
+L1/CO3
+1
+
+
+a) Vertices only                                 b) Edges only
+c) Both vertices and edges              d) Weights
+
+
+10
+Path means:
+L1/CO3
+1
+
+
+a)Repeated vertices allowed         b). All vertices distinct
+c). Only edges distinct                  d) No vertex
+
+
+11
+A graph with multiple edges is:
+L1/CO3
+1
+
+
+a)Simple         b. Multigraph           c. Tree              d Subgraph
+
+
+12
+The Well-Ordering Principle states that every non-empty set of __________ contains a least element.
+L1/CO4
+1
+
+
+a)integers                       b). natural numbers  
+c)  real numbers             d) rational numbers
+
+
+
+SECTION B
+Solve any four questions from Question 2 to Question 6.
+
+
+Q. 2
+Solve the following
+
+
+12
+A
+Define Cartesian product. Find A×B for A={1,2} and B={a,b,c}.
+L2/CO1
+4
+B
+Check whether the realation “a ≤ b” on integer is reflexive. Z={(a,a)}.
+L3/CO2
+4
+C
+What is circuit and path in graph. Draw suitable graph for it
+L2/CO3
+4
+
+Q. 3
+
+Solve the following
+
+
+
+12
+A
+Show that: 
+i)P∧(P v Q) ⬄P
+ii) (P∧Q)→R ⬄p→(Q→R)
+L4/CO1
+4
+B
+Define the terms Group, semi-group and Normal Sub-group with its properties.
+L2/CO1
+4
+C
+If A={2,3,4}, B={3,4,5,6}, C={2,4,6,8}, then verify
+ A ∩(B-C)=(A ∩B)-(A ∩C).
+L3/CO1
+4
+
+Q. 4
+
+Solve any two of the following
+
+
+
+12
+A
+Present the statement and proof of the Inclusion–Exclusion Principle along with an example.
+L4/CO1
+6
+B
+Using the well-ordering principle, show that any non-empty set of positive integers has a smallest member.
+L4/CO4
+6
+C
+(p∨q)→r ≡ (p→r)∧(q→r) state whether it is logically equivalent or not.
+L4/CO1
+6
+
+
+
+Q. 5
+
+
+
+Solve any two of the following
+
+
+
+
+
+12
+
+A
+
+If   ∪={1,2,3,4,5,6,7,8,9,10}, A={2,4,6,8}, B={1,3,5,7,9}, c={1,2,3,4,5,6} and D={5,6,7,8,9,10}, find  A∪B, B∪A, 
+A ∩ B,C ∩D, A-B, D-A.	
+
+L3/CO1
+
+6
+B
+Let A={1,2,3}. A relation R is defined on A as R={(1,1) (2,2) (3,3) (1,2) (2,1)}. Proove that R is equivalence relation.
+L4/CO2
+6
+C
+Prove by mathematical induction that 1+2+22+………+2n = 2n+1 -1 for any n≥1.
+L4/CO4
+6
+Q. 6
+Solve any two of the following
+
+
+12
+
+A
+
+Apply Dijkstra’s algorithm to find shortest path.
+
+
+L4/CO3
+
+6
+B
+Show that the set G={1,-1,i,-i} is a group under Multiplication 
+L5/CO3
+6
+C
+A={1,2,3} B={a,b,c} F={(1,a) (2,b) (3,c)}, Analyze the function and justify its type.
+
+L2/CO2
+6
+***Best of  Luck***

@@ -1,11 +1,11 @@
 // practical 3 : encapsulation
 
-public class Student {
+public class Student03 {
     private String name;
     private int roll;
     private String year;
 
-    public Student(String name, int roll, String year)
+    public Student03(String name, int roll, String year)
     {
         this.name = name;
         this.roll = roll;
@@ -44,7 +44,7 @@ public class Student {
 
     public static void main(String[] args)
     {
-        Student Premraj = new Student("Prem", 101, "1st year");
+        Student03 Premraj = new Student03("Prem", 101, "1st year");
         System.out.println("Given Data");
         System.out.println("name = "+Premraj.getName());
         System.out.println("roll = "+Premraj.getRoll());

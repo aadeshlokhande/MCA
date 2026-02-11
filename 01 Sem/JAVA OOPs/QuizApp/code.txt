@@ -185,49 +185,24 @@ public class QuizApp {
     }
 
     // Scoreboard view karne ka function
-    // Scoreboard view karne ka function (Beautified Table)
-public static void viewScoreboard() {
-    String fileName = "marksheet.csv";
-    System.out.println("\n============================== SCOREBOARD ==============================");
+    public static void viewScoreboard() {
+        String fileName = "marksheet.csv";
+        System.out.println("\n===== SCOREBOARD =====");
 
-    try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-        String line;
-        boolean isHeader = true;
-
-        // Table header
-        System.out.printf(
-            "%-12s | %-20s | %-7s | %-7s | %-10s%n",
-            "Roll No", "Student Name", "Score", "Total", "Percentage"
-        );
-        System.out.println("-------------+----------------------+---------+---------+------------");
-
-        while ((line = br.readLine()) != null) {
-            // Skip CSV header
-            if (isHeader) {
-                isHeader = false;
-                continue;
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            boolean any = false;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+                any = true;
             }
-
-            String[] parts = line.split(",");
-            if (parts.length < 5) continue;
-
-            System.out.printf(
-                "%-12s | %-20s | %-7s | %-7s | %-9s%%%n",
-                parts[0],
-                parts[1],
-                parts[2],
-                parts[3],
-                parts[4]
-            );
+            if (!any) {
+                System.out.println("Scoreboard empty. No results found.");
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Scoreboard empty. " + fileName + " not found.");
+        } catch (IOException e) {
+            System.out.println("Error reading scoreboard: " + e.getMessage());
         }
-
-        System.out.println("=======================================================================");
-
-    } catch (FileNotFoundException e) {
-        System.out.println("Scoreboard empty. marksheet.csv not found.");
-    } catch (IOException e) {
-        System.out.println("Error reading scoreboard: " + e.getMessage());
     }
-}
-
 }

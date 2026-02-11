@@ -32,7 +32,7 @@ class Car extends vehicle
 }
 
 
-public class singleInh {
+public class singleInh05 {
     public static void main(String[] args)
     {
         Car nano = new Car("Tata", 2010, "nano");

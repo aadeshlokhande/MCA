@@ -1,3 +1,5 @@
+// practical 2
+
 class Student
 {
     int age;

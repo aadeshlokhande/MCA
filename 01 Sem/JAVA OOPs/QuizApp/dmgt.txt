@@ -1,0 +1,144 @@
+Q. 1: Objective type questions (Compulsory Question)
+
+Q. 1
+Power set of a set with 4 elements has:
+a) 4             
+b) 8                 
+c) 16            
+d) 32
+
+Answer : c) 16
+
+Q. 2 
+n(A ∪ B) = n(A) + n(B) – n(A ∩ B) is:
+a) Inclusion Exclusion Principle            
+b) De Morgan’s Law
+c) Partition                                               
+d) Complement Rule
+
+Answer : a) Inclusion Exclusion Principle
+
+Q. 3 
+Negation of (P ∧ Q) is:
+a) ¬P ∧ ¬ Q                       
+b) ¬P ∨ ¬ Q         
+c) ¬P ∧ Q                          
+d) P ∨ Q
+
+Answer : b) ¬P ∨ ¬Q
+
+Q. 4
+Euclid algorithm repeatedly uses:	
+a) Addition                      
+b) Subtraction  
+c) Division remainder     
+d) Multiplication
+
+Answer : c) Division remainder
+
+Q. 5
+If a | b and b | c, then:
+a) a|c                             
+b) c|a              
+c) a=c                          
+d) No relation
+
+Answer : a) a | c
+
+Q. 6
+A bijective function is:
+a) Injective only                                         
+b) Surjective only
+c) Both injective & surjective                    
+d) Constant
+
+Answer : c) Both injective & surjective
+
+Q. 7 
+An equivalence relation is:  
+a) Reflexive + symmetric               
+b) Symmetric + transitive
+c) Reflexive + symmetric + transitive       
+d) None
+
+Answer : c) Reflexive + symmetric + transitive
+
+Q. 8
+R = {(1,1),(2,2),(3,3)} is:
+a).Symmetric                              
+b). Reflexive on {1,2,3}
+c). Both                                       
+d) None
+
+Answer : c) Both
+
+Q. 9
+A graph G=(V,E) requires:
+a) Vertices only                                 
+b) Edges only
+c) Both vertices and edges              
+d) Weights
+
+Answer : c) Both vertices and edges
+
+Q. 10
+Path means:
+a) Repeated vertices allowed         
+b) All vertices distinct
+c) Only edges distinct                  
+d) No vertex
+
+Answer : b) All vertices distinct
+
+Q. 11
+A graph with multiple edges is:
+a)Simple         
+b. Multigraph           
+c. Tree              
+d Subgraph
+
+Answer : b) Multigraph
+
+Q. 12
+The Well-Ordering Principle states that every non-empty set of __________ contains a least element.
+a)integers                       
+b). natural numbers  
+c)  real numbers             
+d) rational numbers
+
+Answer : b) Natural numbers
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+SECTION B
+Solve any four questions from Question 2 to Question 6.
+
+Q. 2 : Solve the following
+A) Define Cartesian product. Find A×B for A={1,2} and B={a,b,c}.
+B) Check whether the realation “a ≤ b” on integer is reflexive. Z={(a,a)}.
+C) What is circuit and path in graph. Draw suitable graph for it
+
+Q. 3 : Solve the following
+A) Show that: 
+i) P∧(P v Q) ⬄P
+ii) (P∧Q) →⬄p→(Q→R)
+B) Define the terms Group, semi-group and Normal Sub-group with its properties.
+C) If A={2,3,4}, B={3,4,5,6}, C={2,4,6,8}, then verify A ∩(B-C)=(A ∩B)-(A ∩C).
+
+Q. 4 : Solve any two of the following
+
+A) Present the statement and proof of the Inclusion–Exclusion Principle along with an example.
+B) Using the well-ordering principle, show that any non-empty set of positive integers has a smallest member.
+C) (p∨q)→r ≡ (p→r)∧(q→r) state whether it is logically equivalent or not.
+
+Q. 5 : Solve any two of the following
+A) If   ∪={1,2,3,4,5,6,7,8,9,10}, A={2,4,6,8}, B={1,3,5,7,9}, c={1,2,3,4,5,6} and D={5,6,7,8,9,10}, find  A∪B, B∪A, A ∩ B,C ∩D, A-B, D-A.	
+B) Let A={1,2,3}. A relation R is defined on A as R={(1,1) (2,2) (3,3) (1,2) (2,1)}. Proove that R is equivalence relation.
+C) Prove by mathematical induction that 1+2+22+………+2n = 2n+1 -1 for any n≥1.
+
+Q. 6 : Solve any two of the following
+A) Apply Dijkstra’s algorithm to find shortest path.
+B) Show that the set G={1,-1,i,-i} is a group under Multiplication 
+C) A={1,2,3} B={a,b,c} F={(1,a) (2,b) (3,c)}, Analyze the function and justify its type.
+
+***Best of  Luck***
