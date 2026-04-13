@@ -1,0 +1,5 @@
+Introduction to Data science:Introduction to Data Science, Process of Data Science, types of Data, Big Data Vs Small Data, Basic terminologies of DS, Structured vs. Unstructured, Data Roles and Responsibility of Data scientist.
+Introduction to python:Need of python in data science, Python for data Scientist, Virtual environment for python, variables, rules for python variables, Fundamentals of Python and working with script.
+Data cleaning using python:Overview of data cleaning, Steps Involved in Data Cleaning: Data inspection and exploration, Handling missing data, Handling outliers, Data transformation, Advantages & disadvantages of Data Cleaning.
+Data Processing with Python:Need of Numpy in data Processing, Powerful properties of numpy , Types of arrays, basic Operations using Numpy, Need of Pandas in data processing.
+Data Visualization:Using Matplotlib Library –Introduction to matplotlib plots, different types of matplotlib plots: Line chart , Bar chart, Histogram, scatter plot, Piechart

@@ -1,0 +1,249 @@
+# Unit 1
+## Topic 1: Overview of Cyber Security
+Cyber Security ka matlab hai __computers, networks aur data ko cyber attacks se protect karna__. Iska goal unauthorized access, data theft aur damage ko prevent karna hai. Cyber security me tools aur techniques use hote hain jaise firewall, antivirus aur encryption. Ye confidentiality, integrity aur availability (CIA triad) maintain karta hai. Digital world me security bahut important hai. Organizations data protection ke liye cyber security use karte hain.
+
+__Example:__ Antivirus software virus detect karke system protect karta hai. Banking websites encryption use karke user data secure karti hain.
+## Topic 2: Internet Governance (Challenges and Constraints)
+Internet Governance ka matlab hai __internet ko manage karne ke rules, policies aur organizations__. Isme governments, companies aur international bodies ka role hota hai. Main challenges me cyber crime control, privacy protection aur data regulation aate hain. Different countries ke alag laws hona bhi problem hai. Free internet aur security ke beech balance maintain karna difficult hota hai. Global cooperation isme important hota hai.
+
+__Example:__ Social media platforms ko fake news control karne ke rules follow karne padte hain. Different countries me data privacy laws alag hote hain.
+## Topic 3: Cyber Threats - Cyber Warfare
+Cyber Warfare ka matlab hai __countries ya organizations ke beech cyber attacks ke through conflict__. Isme hackers government systems, power grids ya communication networks target karte hain. Ye national security ke liye serious threat hota hai. Cyber warfare me malware, DDoS attacks aur spying use hote hain. Ye traditional war ka digital form mana jata hai. Governments apni cyber defense teams banati hain.
+
+__Example:__ Ek country dusre country ke power system par cyber attack karke electricity band karne ki koshish kar sakti hai. Government websites ko hack karna bhi example hai.
+## Topic 4: Cyber Threats - Cyber Crime
+Cyber Crime ka matlab hai __internet ya computer ka use karke illegal activities karna__. Isme hacking, phishing, identity theft aur online fraud aate hain. Criminals user data chura kar misuse karte hain. Ye individuals aur organizations dono ko affect karta hai. Strong passwords aur awareness se isko reduce kiya ja sakta hai. Cyber laws cyber crimes ko control karne ke liye banaye gaye hain.
+
+__Example:__ Fake banking email bhejkar OTP ya password lena phishing ka example hai. Credit card details chura kar shopping karna bhi cyber crime hai.
+## Topic 5: Cyber Threats - Cyber Terrorism
+Cyber Terrorism ka matlab hai __terrorist groups ka cyber attacks use karke fear create karna__. Isme critical systems jaise banking, transport ya government networks target hote hain. Ye attacks social panic create kar sakte hain. Terrorists propaganda spread karne ke liye internet use karte hain. Ye national security ke liye dangerous hai. Governments cyber monitoring se isko control karne ki koshish karti hain.
+
+__Example:__ Government website hack karke threat messages dalna cyber terrorism ho sakta hai. Transport system ko hack karna bhi serious risk hai.
+## Topic 6: Cyber Threats - Cyber Espionage
+Cyber Espionage ka matlab hai __secret information ko illegally access karna for spying purpose__. Isme hackers confidential data jaise business secrets ya government data chura lete hain. Ye mostly political ya economic advantage ke liye hota hai. Advanced malware aur phishing attacks use hote hain. Ye long-term hidden attacks hote hain. Organizations isse bachne ke liye strong security lagate hain.
+
+__Example:__ Ek company dusri company ke research data ko hack karke chura le to wo cyber espionage hai. Government secrets steal karna bhi example hai.
+## Topic 7: Need of Cyber Security Policy
+Cyber Security Policy ek __set of rules aur guidelines__ hota hai jo organization me data security maintain karne ke liye banaya jata hai. Ye employees ko batata hai ki systems ko safely kaise use karna hai. Isse data breaches aur cyber attacks ka risk kam hota hai. Policy me password rules, access control aur data handling include hote hain. Ye legal compliance me bhi help karta hai. Har organization ke liye policy zaroori hoti hai.
+
+__Example:__ Company rule bana sakti hai ki strong password use karna compulsory hai. Unauthorized USB use karna ban ho sakta hai.
+## Topic 8: Need of Nodal Authority
+Nodal Authority ek __central organization__ hota hai jo cyber security activities ko monitor aur control karta hai. Ye cyber incidents handle karta hai. Policies implement karne me help karta hai. Ye different agencies ke beech coordination maintain karta hai. Cyber threats ka response fast karne ke liye important hota hai. Awareness aur guidelines bhi provide karta hai.
+
+__Example:__ India me CERT-In cyber attacks report aur handle karta hai. Ye organizations ko security alerts bhi deta hai.
+## Topic 9: Cyber Security Regulations
+Cyber Security Regulations wo __laws aur rules__ hote hain jo cyber space ko secure banane ke liye banaye jate hain. Ye data protection aur cyber crimes ko control karte hain. Organizations ko security standards follow karne padte hain. Ye user privacy protect karte hain. Regulations cyber attacks ke against legal action allow karte hain. Compliance follow karna mandatory hota hai.
+
+__Example:__ IT Act India me cyber crimes control karne ke liye use hota hai. Companies ko user data secure rakhna legal requirement hota hai.
+## Topic 10: Role of International Law
+International Law cyber space me __different countries ke beech rules aur cooperation define karta hai__. Cyber crimes often cross-border hote hain, isliye international laws important hote hain. Ye data sharing aur investigation me help karte hain. Countries milkar cyber terrorism aur hacking ko control karte hain. Legal agreements cyber disputes solve karne me help karte hain. Global cyber security ke liye cooperation zaroori hai.
+
+__Example:__ Agar hacker dusre country me ho to investigation ke liye international cooperation chahiye hota hai. Interpol cyber crimes me support karta hai.
+# Unit 2
+## Topic 1: Introduction to Cryptography
+Cryptography ka matlab hai __data ko secure karne ke liye encryption techniques use karna__. Isme plain text ko cipher text me convert kiya jata hai. Sirf authorized person hi data read kar sakta hai. Isme encryption aur decryption process hota hai. Ye confidentiality aur data protection provide karta hai. Banking aur communication security me iska use hota hai.
+
+__Example:__ WhatsApp messages encryption use karte hain jisse sirf sender aur receiver hi read kar sakte hain. ATM PIN encryption bhi cryptography ka example hai.
+## Topic 2: Security Approaches
+Security Approaches ka matlab hai __systems ko secure karne ke different methods__. Prevention approach me attacks ko hone se pehle roka jata hai. Detection approach me attack hone par identify kiya jata hai. Response approach me attack ke baad action liya jata hai. Layered security (defense in depth) bhi use hoti hai. Risk management bhi important approach hai. Ye system ko overall protection deta hai.
+
+__Example:__ Firewall prevention ke liye use hota hai. Intrusion Detection System (IDS) attack detect karta hai. Backup system attack ke baad recovery me help karta hai.
+## Topic 3: Principles of Security
+Principles of Security system ko secure banane ke __basic rules__ hote hain. Main principles CIA triad hain: __Confidentiality, Integrity, Availability__. Confidentiality ka matlab data sirf authorized users ko mile. Integrity ka matlab data correct aur unchanged rahe. Availability ka matlab data jab needed ho tab available ho. Authentication aur authorization bhi important principles hain. Ye overall system trust maintain karte hain.
+
+__Example:__ Bank account details sirf account holder dekh sake (confidentiality). Transaction data change na ho (integrity). ATM service hamesha available rahe (availability).
+## Topic 4: Types of Security Attacks
+Security Attacks wo attempts hote hain jisme attacker __system ya data ko damage, access ya modify karne ki koshish karta hai__. Ye mainly __Passive aur Active attacks__ me divide hote hain. Passive attack me data observe kiya jata hai without change. Active attack me data modify ya damage hota hai. Examples me phishing, malware aur DoS attacks aate hain. Inko prevent karne ke liye encryption aur authentication use hota hai. Awareness bhi important hai.
+
+__Example:__ Data sniffing passive attack hai jaha attacker sirf data read karta hai. Website hack karke data change karna active attack hai.
+## Topic 5: Security Services
+Security Services wo __functions hote hain jo data aur communication ko secure banate hain__. Main services me __Authentication, Confidentiality, Integrity, Non-repudiation aur Access Control__ aate hain. Authentication verify karta hai user genuine hai. Confidentiality encryption se data hide karta hai. Integrity ensure karta hai data change na ho. Non-repudiation proof deta hai ki sender deny na kar sake. Ye services secure communication ke liye important hain.
+
+__Example:__ OTP login authentication ka example hai. Digital signature non-repudiation provide karta hai.
+## Topic 6: Security Mechanisms
+Security Mechanisms wo __technical methods__ hote hain jo security services implement karte hain. Ye attacks ko prevent, detect aur recover karne me help karte hain. Common mechanisms me __encryption, digital signatures, authentication protocols aur firewalls__ aate hain. Access control bhi ek mechanism hai. Monitoring tools attacks detect karte hain. Ye practical tools hote hain jo system ko secure banate hain.
+
+__Example:__ Encryption data ko unreadable banata hai unauthorized users ke liye. Firewall unauthorized network access block karta hai.
+## Topic 7: Network Security Model
+Network Security Model ek __framework__ hai jo batata hai data ko network par secure kaise rakha jaye. Isme sender, receiver aur attacker consider kiye jate hain. Sender data encrypt karta hai aur receiver decrypt karta hai. Beech me attacker data intercept kar sakta hai. Isliye encryption aur authentication use kiya jata hai. Trusted third party bhi use ho sakti hai. Ye secure communication ka basic model hai.
+
+__Example:__ Online banking me data encrypt karke server ko bheja jata hai taaki hacker usko read na kar sake. SSL certificates bhi isi model ka part hain.
+## Topic 8: Substitution Techniques
+Substitution Technique ek cryptography method hai jisme __original characters ko kisi dusre characters se replace__ kiya jata hai. Isme position same rehti hai but letters change ho jate hain. Caesar cipher iska simple example hai. Ye basic encryption technique hai. Frequency analysis se isko break kiya ja sakta hai. Modern cryptography me advanced substitution use hota hai.
+
+__Example:__ A ko D se replace karna (shift +3) Caesar cipher hai. HELLO ko KHOOR likhna substitution example hai.
+## Topic 9: Transposition Techniques
+Transposition Technique me __characters same rehte hain but unki positions change kar di jati hain__. Isme letters replace nahi hote, sirf order change hota hai. Ye encryption ka basic method hai. Message ko grid me likhkar rearrange kiya jata hai. Ye substitution se different hai kyunki characters change nahi hote. Security improve karne ke liye combination me use hota hai.
+
+__Example:__ HELLO ko grid me likhkar LEHOL bana dena transposition hai. Railway fence cipher bhi iska example hai.
+## Topic 10: Symmetric Key Cryptography
+Symmetric Key Cryptography me __encryption aur decryption ke liye same key use hoti hai__. Sender aur receiver dono ke paas same secret key honi chahiye. Ye fast encryption provide karta hai. Key sharing ek challenge hota hai. Large data encryption me useful hota hai. DES aur AES symmetric algorithms ke examples hain.
+
+__Example:__ Agar message encrypt karne ke liye key 123 use hui hai to decrypt karne ke liye bhi 123 hi use hogi. Wi-Fi password encryption bhi symmetric concept use karta hai.
+## Topic 11: Asymmetric Key Cryptography
+Asymmetric Key Cryptography me __do keys use hoti hain: Public Key aur Private Key__. Public key se data encrypt hota hai aur private key se decrypt hota hai. Ye symmetric se more secure hota hai. Key sharing problem solve ho jati hai. Ye digital signatures aur secure communication me use hota hai. RSA iska common example hai.
+
+__Example:__ Agar koi tumhe secure message bhejna chahta hai to wo tumhari public key use karega. Sirf tum apni private key se usko read kar sakte ho.
+## Topic 12: Steganography
+Steganography ek technique hai jisme __data ko kisi image, audio ya video ke andar hide kiya jata hai__ taaki kisi ko pata bhi na chale. Ye encryption se different hai kyunki encryption me data visible hota hai but unreadable hota hai, jabki steganography me data hidden hota hai. Ye secret communication me use hota hai. Digital watermarking me bhi use hota hai. Security badhane ke liye encryption ke saath combine kiya ja sakta hai.
+
+__Example:__ Ek image file ke pixels me secret message hide karna steganography hai. Hidden watermark bhi iska example hai.
+## Topic 13: Cryptanalytic Attack
+Cryptanalytic Attack me attacker __encryption algorithm ko analyze karke secret key ya original message find karne ki koshish karta hai__. Ye mathematical analysis aur pattern study par based hota hai. Isme known plaintext ya chosen plaintext methods use ho sakte hain. Ye cryptography ki weakness ko exploit karta hai. Strong algorithms is attack se bachne ke liye design hote hain. Ye security testing me bhi use hota hai.
+
+__Example:__ Agar attacker encrypted message aur uska original version compare kare to wo pattern find kar sakta hai. Frequency analysis bhi cryptanalytic attack ka example hai.
+## Topic 14: Brute Force Attack
+Brute Force Attack me attacker __saare possible passwords ya keys try karta hai__ jab tak correct one na mil jaye. Ye trial-and-error method hota hai. Weak passwords easily crack ho jate hain. Strong passwords aur multi-factor authentication se isko prevent kiya ja sakta hai. Ye time consuming hota hai but guaranteed method hai. Automated tools isme use hote hain.
+
+__Example:__ Attacker password guess karne ke liye 1234, 12345, password jaise common combinations try karta hai. Short password easily crack ho jata hai.
+## Topic 15: Block Cipher Principles
+Block Cipher ek encryption method hai jisme __data ko fixed size blocks (jaise 64-bit ya 128-bit)__ me divide karke encrypt kiya jata hai. Har block par same key apply hoti hai. Ye confusion aur diffusion principles use karta hai. Multiple rounds of substitution aur transposition use hote hain. Ye symmetric cryptography ka part hai. Secure data transmission me important role hai.
+
+__Example:__ AES algorithm 128-bit blocks me data encrypt karta hai. Banking transactions me block cipher use hota hai.
+## Topic 16: DES Algorithm
+DES (Data Encryption Standard) ek __symmetric key block cipher algorithm__ hai. Ye 64-bit data block aur 56-bit key use karta hai. DES me multiple rounds (16 rounds) of substitution aur permutation hote hain. Ye Feistel structure follow karta hai. Aajkal DES weak mana jata hai kyunki key size small hai. Modern systems AES use karte hain. DES cryptography ka basic concept samajhne ke liye important hai.
+
+__Example:__ Old banking systems me DES data encryption ke liye use hota tha. Ab security ke liye AES zyada use hota hai.
+# Unit 3
+## Topic 1: Principles of Public Key Cryptosystems
+Public Key Cryptosystem me __do keys use hoti hain - Public Key aur Private Key__. Public key sabke liye available hoti hai, private key secret hoti hai. Public key se data encrypt hota hai aur private key se decrypt hota hai. Ye secure communication provide karta hai. Key distribution problem solve ho jati hai. Ye digital signatures aur authentication me bhi use hota hai.
+
+__Example:__ Agar koi tumhe secure message bhejna chahta hai to wo tumhari public key use karega. Sirf tum apni private key se us message ko read kar sakte ho.
+## Topic 2: RSA Algorithm
+RSA ek __public key cryptography algorithm__ hai jo large prime numbers par based hota hai. Isme public key encryption ke liye aur private key decryption ke liye use hoti hai. Ye mathematical factorization problem par based hai. RSA secure data transfer aur digital signatures me use hota hai. Ye asymmetric encryption ka popular example hai. Secure communication me important role hai.
+
+__Example:__ HTTPS websites RSA use karke browser aur server ke beech secure data exchange karti hain. Digital certificates me bhi RSA use hota hai.
+## Topic 3: Diffie-Hellman Key Exchange
+Diffie-Hellman ek __key exchange method__ hai jisse do parties internet par __secret key safely share__ kar sakti hain. Isme actual key directly send nahi ki jati. Mathematical calculations use karke shared secret generate hota hai. Even agar attacker communication dekh le to bhi key find karna difficult hota hai. Ye secure communication ka base concept hai. Mostly TLS aur VPN me use hota hai.
+
+__Example:__ Do users public values exchange karke apni secret key generate karte hain without directly sharing it. Secure chat applications me bhi use hota hai.
+## Topic 4: Elliptic Curve Cryptography (ECC - Introduction)
+Elliptic Curve Cryptography (ECC) ek __public key cryptography technique__ hai jo elliptic curve mathematics par based hai. Ye RSA jaisi security provide karta hai but __choti key size ke saath__. Isse encryption fast aur efficient hota hai. Mobile devices me ECC useful hai kyunki memory aur power kam lagti hai. Ye secure communication aur digital signatures me use hota hai. Modern security systems me iska use badh raha hai.
+
+__Example:__ Cryptocurrency wallets ECC use karte hain secure transactions ke liye. Mobile secure messaging apps bhi ECC use karte hain.
+## Topic 5: Cryptographic Hash Functions
+Cryptographic Hash Function ek function hai jo __input data ko fixed size hash value me convert karta hai__. Chahe input size kuch bhi ho, output fixed length ka hota hai. Ye one-way function hota hai (reverse karna difficult). Data integrity check karne me use hota hai. Small change in input se completely different hash milta hai. Password storage me bhi use hota hai.
+
+__Example:__ Websites passwords ko plain text me store nahi karti, hash store karti hain. File download ke baad hash match karke integrity check ki jati hai.
+## Topic 6: Message Authentication
+Message Authentication ka matlab hai __verify karna ki message genuine sender se aaya hai aur beech me change nahi hua__. Ye integrity aur authenticity ensure karta hai. Isme authentication codes aur digital signatures use hote hain. Ye secure communication ke liye important hai. Sender aur receiver trust maintain karte hain. Network security me widely use hota hai.
+
+__Example:__ Bank transaction messages me authentication use hota hai taaki message modify na ho. Email me DKIM bhi message authentication ka example hai.
+## Topic 7: SHA-512
+SHA-512 ek __cryptographic hash algorithm__ hai jo SHA-2 family ka part hai. Ye input data ko __512-bit hash value__ me convert karta hai. Ye data integrity aur security ke liye use hota hai. Ye one-way function hai jise reverse karna practically impossible hai. Ye password hashing aur digital signatures me use hota hai. SHA-512 strong security provide karta hai.
+
+__Example:__ Secure systems passwords ko SHA-512 se hash karke store karte hain. File integrity check me bhi SHA-512 hash compare kiya jata hai.
+## Topic 8: Message Authentication Codes (MAC)
+MAC ek __security technique__ hai jo message ki __integrity aur authenticity verify__ karta hai. Isme message ke saath secret key use karke code generate hota hai. Sender aur receiver dono ke paas same key hoti hai. Receiver MAC verify karke check karta hai message change hua ya nahi. Ye symmetric key cryptography use karta hai. Secure communication me important hai.
+
+__Example:__ Banking transactions me MAC use hota hai taaki transaction data modify na ho. Secure network protocols me bhi MAC use hota hai.
+## Topic 9: Authentication Requirements
+Authentication Requirements ka matlab hai __system me user ya device ko verify karne ke basic needs__. Ye ensure karta hai ki sirf authorized users access kare. Isme identity verification important hota hai. Passwords, OTP aur biometrics use hote hain. Authentication replay attacks se protect karta hai. Secure login systems ke liye ye zaroori hai. Trust maintain karne me help karta hai.
+
+__Example:__ Gmail login me password + OTP two-factor authentication ka example hai. Fingerprint unlock bhi authentication hai.
+## Topic 10: Digital Signature
+Digital Signature ek __electronic signature__ hai jo message ki authenticity aur integrity verify karta hai. Ye public key cryptography par based hota hai. Sender private key se signature create karta hai. Receiver public key se verify karta hai. Ye non-repudiation provide karta hai (sender deny nahi kar sakta). Online transactions aur documents me use hota hai. Secure communication me important hai.
+
+__Example:__ PDF documents me digital signature use hota hai authenticity verify karne ke liye. Online contracts signing bhi iska example hai.
+# Unit 4
+## Topic 1: Distribution of Public Keys
+Public Key Distribution ka matlab hai __public keys ko securely share karna__ taaki users secure communication kar sake. Agar wrong key mil jaye to security risk hota hai. Isliye trusted authorities use hoti hain. Public keys certificates ke through distribute hoti hain. Key management systems is process ko control karte hain. Ye public key cryptography ka important part hai.
+
+__Example:__ SSL certificates website ki public key provide karte hain. Certificate Authority (CA) trusted public keys verify karti hai.
+## Topic 2: Kerberos
+Kerberos ek __network authentication protocol__ hai jo users ko secure login provide karta hai. Ye __ticket based authentication__ use karta hai. User ko password bar-bar send nahi karna padta. Trusted third party (Key Distribution Center - KDC) use hoti hai. Ye replay attacks se protect karta hai. Organizations ke internal networks me use hota hai.
+
+__Example:__ Company network me employee ek baar login karta hai aur phir different services access kar sakta hai (Single Sign-On). Windows domain authentication me Kerberos use hota hai.
+## Topic 3: X.509 Authentication
+X.509 ek __digital certificate standard__ hai jo public key aur user identity ko verify karta hai. Ye certificate trusted __Certificate Authority (CA)__ issue karti hai. Isme public key, owner details aur validity period hota hai. Ye secure communication aur authentication me use hota hai. SSL/TLS me X.509 certificates important role play karte hain. Ye trust establish karta hai.
+
+__Example:__ HTTPS websites browser ko X.509 certificate dikhati hain taaki secure connection establish ho. Browser padlock icon iska indication hota hai.
+## Topic 4: PGP (Pretty Good Privacy)
+PGP ek __encryption program__ hai jo emails aur files ko secure karne ke liye use hota hai. Ye symmetric aur asymmetric cryptography dono ka combination use karta hai. Data encryption ke liye symmetric key use hoti hai aur key exchange ke liye public key. Ye digital signatures bhi support karta hai. Privacy aur data protection ke liye popular tool hai. Secure email communication me use hota hai.
+
+__Example:__ Sensitive emails ko PGP se encrypt karke send kiya jata hai. Researchers secure file sharing ke liye PGP use karte hain.
+## Topic 5: SSL (Secure Sockets Layer)
+SSL ek __security protocol__ hai jo internet par data ko encrypt karke secure communication provide karta hai. Ye browser aur server ke beech secure connection banata hai. SSL confidentiality aur integrity maintain karta hai. Ye certificates use karke server identity verify karta hai. Aajkal SSL ka updated version TLS zyada use hota hai. Online transactions me important hai.
+
+__Example:__ HTTPS websites SSL/TLS use karti hain jisse browser me padlock icon dikhata hai. Online payments me SSL security use hoti hai.
+## Topic 6: IPSEC
+IPSEC (Internet Protocol Security) ek __network security protocol__ hai jo IP layer par data ko secure karta hai. Ye encryption aur authentication provide karta hai. IPSEC VPN connections me use hota hai. Ye data packets ko secure tunnel me send karta hai. Confidentiality, integrity aur authentication provide karta hai. Secure network communication ke liye important hai.
+
+__Example:__ Company VPN me remote employees secure connection ke liye IPSEC use karte hain. Secure site-to-site network connections me bhi use hota hai.
+## Topic 7: Software Vulnerabilities
+Software Vulnerabilities ka matlab hai __software me weaknesses ya bugs__ jinko attackers exploit kar sakte hain. Ye coding errors ya outdated software ki wajah se hote hain. Inse unauthorized access mil sakta hai. Regular updates aur patches se vulnerabilities fix hoti hain. Secure coding practices important hote hain. Testing se risks kam kiye ja sakte hain.
+
+__Example:__ Old software version use karne se hacker known bug ka use karke system access kar sakta hai. Security patches install karna isko prevent karta hai.
+## Topic 8: System Administration Issues
+System Administration Issues tab hote hain jab __system properly manage nahi kiya jata__. Weak configuration, outdated software aur poor monitoring se security risk badhta hai. Default passwords use karna bhi problem hai. Backup na lena bhi risk create karta hai. Proper updates aur access control zaroori hai. Good administration se cyber attacks prevent ho sakte hain.
+
+__Example:__ Agar admin default password change nahi karta to hacker easily system access kar sakta hai. Regular backup se data loss avoid hota hai.
+## Topic 9: Complex Network Architectures
+Complex Network Architectures ka matlab hai __large aur complicated networks jisme multiple devices aur connections hote hain__. Aise networks ko manage karna difficult hota hai. Zyada components hone se security risks badh jate hain. Misconfiguration se vulnerabilities create ho sakti hain. Proper network design aur monitoring important hai. Segmentation aur firewalls security improve karte hain.
+
+__Example:__ Large company networks me multiple servers aur departments hote hain, jisse management difficult hota hai. VLAN use karke network segments secure kiye jate hain.
+## Topic 10: Weak Authentication
+Weak Authentication ka matlab hai __poor login security__ jisse attackers easily access le sakte hain. Simple passwords, password reuse aur no OTP risky hote hain. Single factor authentication less secure hota hai. Strong passwords aur __multi-factor authentication (MFA)__ security improve karte hain. Biometrics bhi strong authentication hai. Proper authentication cyber attacks ko reduce karta hai.
+
+__Example:__ Password "123456" easily hack ho sakta hai. Password + OTP use karna stronger authentication hai.
+## Topic 11: Poor Cyber Security Awareness
+Poor Cyber Security Awareness ka matlab hai __users ko cyber risks ke baare me knowledge na hona__. Isse phishing aur fraud ka risk badh jata hai. Log unknown links par click kar dete hain. Weak passwords use karte hain. Training aur awareness programs important hote hain. Security practices follow karne se risks kam hote hain. User awareness cyber security ka important part hai.
+
+__Example:__ Fake email me link par click karne se account hack ho sakta hai. Unknown attachments download karna bhi risky hai.
+## Topic 12: Access Control
+Access Control ka matlab hai __kaun user kis resource ko access kar sakta hai ye control karna__. Ye unauthorized access ko prevent karta hai. Isme authentication aur authorization use hote hain. Role Based Access Control (RBAC) common method hai. Ye data security improve karta hai. Organizations me sensitive data protect karne ke liye important hai.
+
+__Example:__ Company me HR data sirf HR department access kar sakta hai. Student portal me admin aur student ke alag permissions hote hain.
+## Topic 13: Audit
+Audit ka matlab hai __system activities ko review aur record karna__ taaki security check ho sake. Isme logs analyze kiye jate hain. Ye suspicious activities detect karne me help karta hai. Regular audits security gaps identify karte hain. Compliance verify karne ke liye bhi use hota hai. Audit trail investigation me useful hota hai.
+
+__Example:__ Login logs check karke pata chal sakta hai kis user ne kab system access kiya. Bank transactions audit se fraud detect ho sakta hai.
+## Topic 14: Authentication
+Authentication ka matlab hai __user ki identity verify karna__ before system access dena. Ye ensure karta hai ki user genuine hai. Isme passwords, OTP, smart cards aur biometrics use hote hain. Ye first step hota hai security ka. Strong authentication unauthorized access rokta hai. Multi-factor authentication security aur strong banata hai.
+
+__Example:__ ATM me card + PIN authentication hai. Mobile fingerprint unlock bhi authentication ka example hai.
+## Topic 15: Ethical Hacking
+Ethical Hacking ka matlab hai __system ki security test karne ke liye legal hacking karna__. Ethical hackers vulnerabilities find karte hain before real attackers. Ye permission ke saath kiya jata hai. Security improve karne ke liye penetration testing use hoti hai. Ye organizations ko security weaknesses batata hai. Certified ethical hackers companies me hire kiye jate hain.
+
+__Example:__ Company ethical hacker ko hire karti hai taaki wo system hack karke security flaws find kare. Bug bounty programs bhi ethical hacking ka example hain.
+# Unit 5
+## Topic 1: Security of HTTP Applications
+HTTP applications ko secure karna important hai kyunki __HTTP by default secure nahi hota__. Attackers data intercept kar sakte hain. Isliye HTTPS use kiya jata hai jo SSL/TLS encryption provide karta hai. Input validation se SQL injection jaise attacks roke jate hain. Secure session management bhi important hai. Web security practices applications ko protect karti hain.
+
+__Example:__ Login forms me HTTPS use karna password protect karta hai. CAPTCHA use karke bots ko block kiya jata hai.
+## Topic 2: Security of SOAP Services
+SOAP (Simple Object Access Protocol) web services ko secure karne ke liye __security standards__ use karta hai. WS-Security SOAP messages ko encrypt aur sign karta hai. Authentication tokens verify karte hain user identity. XML encryption aur digital signatures use hote hain. Message integrity aur confidentiality maintain hoti hai. Secure communication ke liye policies apply hoti hain.
+
+__Example:__ Bank web services SOAP security use karke transaction data protect karte hain. XML digital signature SOAP message verify karta hai.
+## Topic 3: Identity Management
+Identity Management ka matlab hai __users ki identity ko manage karna aur verify karna__. Isme user registration, login aur access permissions include hote hain. Ye authentication aur authorization handle karta hai. Single Sign-On (SSO) bhi identity management ka part hai. Ye secure access control provide karta hai. Organizations me user accounts manage karne ke liye important hai.
+
+__Example:__ Google account se multiple services (Gmail, YouTube) access karna SSO ka example hai. Company me employee ID se system access bhi identity management hai.
+## Topic 4: Web Service Security Challenges
+Web Service Security Challenges ka matlab hai __web services ko secure rakhne me aane wali problems__. Common challenges me data interception, unauthorized access aur message tampering aate hain. Open internet par services hone se risk badhta hai. Proper authentication aur encryption zaroori hai. API security bhi important hai. Regular security testing se risks kam hote hain.
+
+__Example:__ Agar API me authentication na ho to koi bhi data access kar sakta hai. Weak encryption se attacker data read kar sakta hai.
+## Topic 5: Intrusion Detection System (IDS)
+Intrusion Detection System (IDS) ek __security tool__ hai jo network ya system me __suspicious activities detect__ karta hai. Ye traffic monitor karta hai. Agar unusual behaviour mile to alert deta hai. Ye attacks ko detect karta hai but directly block nahi karta. Signature-based aur anomaly-based IDS types hote hain. Security monitoring me important role hai.
+
+__Example:__ Agar system me unusual login attempts ho rahe ho to IDS alert generate karta hai. Network traffic me malware pattern detect karna bhi example hai.
+## Topic 6: Intrusion Prevention System (IPS)
+Intrusion Prevention System (IPS) ek __security system__ hai jo attacks ko __detect bhi karta hai aur automatically block bhi karta hai__. Ye IDS ka advanced version mana jata hai. IPS network traffic ko real-time monitor karta hai. Suspicious activity milte hi connection block kar deta hai. Ye firewall ke saath bhi integrate hota hai. Network protection ke liye important tool hai.
+
+__Example:__ Agar multiple wrong login attempts ho to IPS IP address block kar deta hai. Malware traffic detect karke network access deny karna bhi example hai.
+## Topic 7: System Integrity Validation
+System Integrity Validation ka matlab hai __check karna ki system files aur data unauthorized changes se safe hain__. Ye ensure karta hai ki system trusted state me hai. Hash values aur checksums use karke file integrity verify ki jati hai. Agar file change ho jaye to alert milta hai. Ye malware detection me useful hai. Secure systems me regular integrity checks important hote hain.
+
+__Example:__ Antivirus software system files ka hash check karta hai. Agar file change ho jaye to warning milti hai.
+## Topic 8: Honeypots
+Honeypots ek __fake system ya server__ hote hain jo attackers ko attract karne ke liye banaye jate hain. Ye real system ki tarah behave karte hain. Attackers jab isko target karte hain to security team unki techniques study karti hai. Ye real systems ko protect karne me help karta hai. Threat analysis ke liye useful hai. Cyber defense strategy ka part hai.
+
+__Example:__ Company ek fake server banati hai jisme dummy data hota hai. Hacker attack karta hai to company uska behaviour analyze karti hai.
+## Topic 9: Password Management
+Password Management ka matlab hai __passwords ko securely create, store aur use karna__. Strong passwords me letters, numbers aur symbols hone chahiye. Password reuse avoid karna chahiye. Password managers secure storage provide karte hain. Regular password change karna good practice hai. Multi-factor authentication security improve karta hai. Ye unauthorized access rokne me help karta hai.
+
+__Example:__ "P@ssw0rd123" simple password se better hai. Bitwarden ya Google Password Manager tools password store karne ke examples hain.
+## Topic 10: Introduction to Cyber Forensics
+Cyber Forensics ka matlab hai __cyber crimes ke digital evidence ko collect, analyze aur present karna__. Ye investigation process ka part hota hai. Deleted files aur logs recover kiye jate hain. Ye legal cases me proof provide karta hai. Proper procedures follow karna important hota hai. Law enforcement agencies cyber forensics use karti hain.
+
+__Example:__ Police hacked computer se deleted emails recover karti hai investigation ke liye. Hard disk logs se attacker ka trace mil sakta hai.

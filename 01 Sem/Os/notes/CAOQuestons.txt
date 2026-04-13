@@ -1,0 +1,60 @@
+1.Define Computer Architecture and Computer Organization.
+2.What is the Von Neumann Architecture?
+3.List the functional units of a computer system.
+4.What do the terms MIPS and FLOPS stand for?
+5.Explain the difference between machine language and assembly language.
+6.Describe the working principle of the Von Neumann Architecture with a neat block diagram.
+7.Explain the concept of system bus in a computer system.
+8.Differentiate between throughput and latency as performance metrics.
+9.Convert the decimal number (–25) into binary using 2’s complement representation.
+10.Convert the hexadecimal number 3A into its binary equivalent.
+11.Given a floating-point number, explain how it is represented using the IEEE 754 standard.
+12.Compare SISD, SIMD, MISD, and MIMD architectures with suitable examples.
+13.Analyze the role of bus interconnection in improving system performance.
+14.Evaluate the impact of floating-point representation errors on computational accuracy.
+15.Design a simple block diagram of a computer system showing all functional units and explain their interaction.
+1.Define Central Processing Unit (CPU) and state its main components.
+2.What is the function of the Arithmetic Logic Unit (ALU)?
+3.List the types of instructions used in a CPU.
+4.What is meant by an interrupt in a computer system?
+5.Explain the structure and functions of the CPU with a neat diagram.
+6.Describe the instruction cycle and execution process.
+7.Explain the difference between hardwired control unit and microprogrammed control unit.
+8.Explain the role of program counter (PC) and stack pointer (SP) in program execution.
+9.Show how an instruction is executed using different addressing modes with examples.
+10.Illustrate the use of general-purpose and special-purpose registers in instruction execution.
+11.Demonstrate how the CPU handles an interrupt during program execution.
+12.Analyze the instruction formats and their impact on CPU performance.
+13.Compare instruction pipelining and arithmetic pipelining.
+14.Evaluate the effectiveness of pipelining in improving CPU performance, mentioning its limitations.
+15.Design a simple CPU block diagram showing ALU, CU, registers, and data paths, and explain their interaction.
+1.Define memory hierarchy and list its levels.
+2.What is the function of cache memory?
+3.List different cache mapping techniques.
+4.What is meant by virtual memory?
+5.Differentiate between RAM and ROM with respect to characteristics and types.
+6.Explain paging as a virtual memory management technique.
+7.Describe the role of MMU in memory management.
+8.Explain the concept of cache coherence in multiprocessor systems.
+9.Illustrate direct mapping technique with a suitable example.
+10.Explain modern memory technologies: DRAM, SRAM, and Flash memory, highlighting their characteristics, advantages, and applications.
+11.Demonstrate the use of TLB in address translation.
+12.Compare direct, associative, and set-associative cache mapping techniques.
+13.Analyze the causes and effects of memory fragmentation.
+14.Evaluate different RAID levels in terms of performance, reliability, and cost.
+15.Design a memory hierarchy diagram and explain how it optimizes system performance.
+1.Define an I/O system.
+2.What is Direct Memory Access (DMA)?
+3.List the types of I/O devices.
+4.What is meant by memory-mapped I/O?
+5.Explain the difference between memory-mapped I/O and isolated I/O.
+6.Describe interrupt-driven I/O communication technique.
+7.Explain the working of DMA with a neat diagram.
+8.Describe the role of I/O interfaces such as USB and PCI.
+9.Illustrate the programmed I/O data transfer technique with an example.
+10.Demonstrate how interrupt processing occurs during I/O operations.
+11.Show how buffering improves I/O performance.
+12.Compare polling, interrupt-driven I/O, and DMA in terms of CPU involvement and performance.
+13.Analyze the need for synchronization techniques like semaphores and spinlocks in I/O systems.
+14.Evaluate different I/O performance improvement techniques such as spooling, buffering, and caching.
+15.Design a block diagram of an I/O subsystem showing CPU, memory, I/O controller, and devices, and explain the data flow.

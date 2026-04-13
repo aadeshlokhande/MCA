@@ -1,0 +1,44 @@
+
+Unit 1: Introduction to Data Science
+* Introduction to Data Science
+* Data Science Process
+* Types of Data
+* Big Data vs Small Data
+* Basic Terminologies of Data Science
+* Structured vs Unstructured Data
+* Roles and Responsibilities of Data Scientist
+
+Unit 2: Introduction to Python for Data Science
+* Need of Python in Data Science
+* Python for Data Scientists
+* Virtual Environment
+* Variables in Python
+* Rules for Python Variables
+* Fundamentals of Python
+* Working with Python Scripts
+
+Unit 3: Data Cleaning using Python
+* Overview of Data Cleaning
+* Steps in Data Cleaning
+  * Data Inspection and Exploration
+  * Handling Missing Data
+  * Handling Outliers
+  * Data Transformation
+* Advantages of Data Cleaning
+* Disadvantages of Data Cleaning
+
+Unit 4: Data Processing with Python
+* Need of NumPy
+* Properties of NumPy
+* Types of Arrays
+* Basic Operations using NumPy
+* Need of Pandas
+* Data Processing using Pandas
+
+Unit 5: Data Visualization
+* Introduction to Matplotlib
+* Line Chart
+* Bar Chart
+* Histogram
+* Scatter Plot
+* Pie Chart

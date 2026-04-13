@@ -1,0 +1,115 @@
+# __Unit 1__
+## __Topic 1: Introduction to Artificial Intelligence__
+Artificial Intelligence (AI) computer science ka field hai jo machines ko __human jaisi intelligence__ dene par focus karta hai. AI systems data ko analyze karke decisions le sakte hain. AI ka main goal hai machines ko __learning, reasoning aur problem solving__ capable banana. Normal programs fixed rules follow karte hain, but AI systems experience se improve hote hain. AI automation aur smart decision making me use hota hai. AI ka use healthcare, education, banking aur robotics me hota hai.
+
+__Example:__ Google Maps shortest route batata hai aur YouTube recommended videos suggest karta hai. Ye AI ke practical examples hain.
+## __Topic 2: Features of AI__
+AI ki main feature hai __learning ability__, yani system data se learn karke improve hota hai. AI me __reasoning ability__ hoti hai jo logic se decision lene me help karti hai. AI systems __problem solving__ me use hote hain jaha complex problems ko step-by-step solve kiya jata hai. AI me __perception__ bhi hota hai jisse wo images, voice aur text samajh sakta hai. AI __automation__ provide karta hai jisse repetitive work automatically ho jata hai. AI ka main feature hai intelligent decision making.
+
+__Example:__ Face unlock mobile me AI image detect karta hai. Chatbots automatically customer queries solve karte hain.
+## __Topic 3: Agents and Environment__
+AI me __Agent__ ek aisa entity hota hai jo environment ko observe karta hai aur uske according action leta hai. Agent sensors se input leta hai aur actuators se output deta hai. Agent ka main goal hota hai best possible action choose karna. __Environment__ wo surrounding hota hai jaha agent kaam karta hai. Agent aur environment ke interaction se AI system work karta hai. Ye concept intelligent behaviour ko design karne me important hai.
+
+__Example:__ Self-driving car me camera sensor hota hai aur steering actuator hota hai. Road aur traffic uska environment hota hai.
+## __Topic 4: Structure of Agents__
+AI agent ki structure do main parts se milkar banti hai: __Architecture__ aur __Agent Program__. Architecture hardware ya platform hota hai jaha agent run karta hai. Agent program wo logic hota hai jo input ke basis par decision leta hai. Agent sensors se data leta hai aur actuators se action perform karta hai. Agent ka behaviour program design par depend karta hai. Simple flow hota hai: __Input → Processing → Output__.
+
+__Example:__ Robot me camera aur motors architecture hote hain, aur movement decide karne wala software agent program hota hai.
+## __Topic 5: Problem Solving Agents__
+Problem Solving Agent ek AI agent hota hai jo __goal achieve karne ke liye best solution search karta hai__. Ye agent problem ko states aur actions me divide karta hai. Ye possible solutions explore karta hai aur best path select karta hai. Is process me search algorithms use hote hain. Agent initial state se goal state tak pahunchne ki planning karta hai. Iska focus efficient aur correct solution find karna hota hai.
+
+__Example:__ Google Maps current location se destination tak fastest route find karta hai. Chess AI best move choose karta hai goal win karne ke liye.
+## __Topic 6: Problem Formulation__
+Problem Formulation ka matlab hai problem ko __clear structure me define karna__ taaki AI easily solve kar sake. Isme initial state (start point) define ki jati hai. Goal state (final target) decide kiya jata hai. Possible actions aur states identify kiye jate hain. Path cost bhi consider kiya jata hai jaise time ya distance. Proper formulation se search algorithm easily apply ho sakta hai. Ye AI problem solving ka important step hai.
+
+__Example:__ Route finding me start city initial state hota hai aur destination goal state. Routes possible actions hote hain.
+## __Topic 7: AI Techniques (Search, Knowledge)__
+AI me problems solve karne ke liye __Search__ aur __Knowledge__ techniques use hoti hain. Search technique me AI different possible solutions explore karta hai. Ye initial state se goal state tak path find karta hai. Knowledge technique me facts aur rules store kiye jate hain jise __knowledge base__ bolte hain. AI decision lene ke liye knowledge aur search dono ka use karta hai. Ye techniques intelligent behaviour design karne me help karti hain.
+
+__Example:__ Spam filter email ke words (knowledge) check karta hai aur decide karta hai spam hai ya nahi (search). Medical AI symptoms ke data se disease suggest karta hai.
+# __Unit 2__
+## __Topic 1: Searching for Solutions__
+Searching for solutions ka matlab hai AI ka __initial state se goal state tak solution find karna__. AI problem ko states aur actions me represent karta hai. Search process me AI different paths explore karta hai. Ye search tree ya graph ka use karta hai. Nodes states ko represent karte hain aur edges actions ko. Goal milne par search stop ho jata hai. Searching AI problem solving ka basic concept hai.
+
+__Example:__ Maze problem me entry initial state hoti hai aur exit goal state. AI different paths try karke correct exit find karta hai.
+## __Topic 2: Breadth First Search (BFS)__
+Breadth First Search (BFS) ek search algorithm hai jo __level by level nodes explore karta hai__. Ye start node se shuru karke pehle uske nearest nodes visit karta hai. BFS me __Queue (FIFO)__ data structure use hota hai. Ye algorithm shortest path find karne me useful hota hai (unweighted graph me). BFS complete search karta hai isliye solution milne ki guarantee hoti hai. But ye memory jyada use karta hai.
+
+__Example:__ Social network me minimum connections find karne ke liye BFS use hota hai. Tree traversal me bhi BFS level order me nodes visit karta hai.
+## __Topic 3: Depth First Search (DFS)__
+Depth First Search (DFS) ek search algorithm hai jo __pehle depth me jata hai phir backtrack karta hai__. Ye ek path ko end tak explore karta hai before dusra path try kare. DFS me __Stack (LIFO)__ ya recursion use hota hai. Ye memory BFS se kam use karta hai. DFS shortest path guarantee nahi karta. Agar graph deep ho to ye infinite path me ja sakta hai. DFS tab useful hai jab solution depth me ho.
+
+__Example:__ Maze solve karte time ek path ko end tak follow karna DFS approach hai. File system traversal me bhi DFS use hota hai.
+## __Topic 4: Heuristic Search__
+Heuristic Search ek AI search method hai jo __estimate (heuristic function)__ use karke solution fast find karta hai. Ye blind search se smarter hota hai kyunki ye promising paths ko pehle check karta hai. Heuristic function ko __h(n)__ se denote karte hain jo goal tak ka estimated cost batata hai. Ye unnecessary paths avoid karta hai. Performance heuristic accuracy par depend karti hai. Galat heuristic se wrong solution mil sakta hai.
+
+__Example:__ Google Maps distance estimate karke best route suggest karta hai. 8-puzzle problem me wrong tiles count heuristic hota hai.
+## __Topic 5: Hill Climbing__
+Hill Climbing ek __heuristic search algorithm__ hai jo current state se better state ki taraf move karta hai. Ye greedy approach follow karta hai yani jo option best lagta hai usko choose karta hai. Ye local optimum par stuck ho sakta hai. Isme backtracking generally nahi hota. Ye simple aur fast algorithm hai. Optimization problems me iska use hota hai.
+
+__Example:__ Agar tum hill par chadh rahe ho to tum hamesha upar ki taraf jaoge. But kabhi small hill par ruk sakte ho even if bigger hill aage ho (local optimum).
+## __Topic 6: A* Algorithm__
+A* (A star) ek __best-first search algorithm__ hai jo search aur heuristic dono use karta hai. Ye __actual cost g(n)__ aur __estimated cost h(n)__ ko add karke best path find karta hai. Formula hota hai: __f(n) = g(n) + h(n)__. Ye optimal solution de sakta hai agar heuristic correct ho. Ye BFS se faster aur smarter hota hai. Path finding problems me commonly use hota hai.
+
+__Example:__ Google Maps shortest path find karne ke liye A* jaise algorithms use karta hai. Games me characters ko destination tak pahunchane me bhi use hota hai.
+## __Topic 7: AO* Algorithm__
+AO* Algorithm ek search algorithm hai jo __AND-OR graphs__ par work karta hai. Isme problem ko sub-problems me divide kiya jata hai. AND node ka matlab hota hai sab sub-problems solve karne padenge. OR node ka matlab hota hai kisi ek path ko choose karna. Ye heuristic values use karke best solution graph banata hai. AO* problem reduction approach follow karta hai. Ye complex problem solving me useful hai.
+
+__Example:__ Medical diagnosis me disease find karne ke liye multiple tests (AND) aur alternative treatments (OR) ho sakte hain. AO* best combination choose karta hai.
+## __Topic 8: Problem Reduction__
+Problem Reduction technique me __complex problem ko chote sub-problems me divide__ kiya jata hai taaki solution easy ho jaye. Ye divide and conquer approach jaisa concept hai. Har sub-problem ko solve karke final solution banaya jata hai. Isme AND-OR graph ka use hota hai. Ye technique planning aur reasoning problems me useful hoti hai. Complex AI problems ko manageable banane me help karti hai.
+
+__Example:__ Agar project banana hai to usko parts me divide karte hain: design, coding, testing. Sab complete hone par project complete hota hai.
+## __Topic 9: Adversarial Search__
+Adversarial Search AI me __competitive environments__ me use hota hai jaha ek opponent hota hai. Isme AI ko dusre player ke possible moves ka bhi analysis karna padta hai. Ye mostly game playing AI me use hota hai. AI apna best move choose karta hai aur opponent ke best response ko bhi consider karta hai. Ye win ya loss situations predict karta hai. Isme Mini-Max jaise algorithms use hote hain.
+
+__Example:__ Chess game me AI apna move decide karte waqt opponent ke next moves ka bhi calculation karta hai. Tic-Tac-Toe AI bhi same concept use karta hai.
+## __Topic 10: Mini-Max Algorithm__
+Mini-Max Algorithm adversarial search me use hota hai jaha __do players (Max and Min)__ hote hain. Max player apna score maximize karta hai aur Min player opponent ka score minimize karta hai. AI possible moves ka game tree banata hai. Har move ka outcome evaluate kiya jata hai. AI best move choose karta hai assuming opponent bhi best move khelega. Ye turn-based games me important hai.
+
+__Example:__ Chess me AI aisa move choose karta hai jisse uska fayda ho aur opponent ka loss ho. Tic-Tac-Toe AI bhi Mini-Max use karta hai.
+## __Topic 11: Multiplayer Games__
+Multiplayer games me __do se jyada players__ hote hain, isliye decision making complex ho jati hai. AI ko multiple opponents ke moves consider karne padte hain. Isme game tree bada ho jata hai. Strategy banana difficult ho jata hai kyunki har player ka alag goal ho sakta hai. AI ko cooperation aur competition dono handle karna padta hai. Is type ke games me advanced search techniques use hoti hain.
+
+__Example:__ Poker me multiple players hote hain jaha AI ko sabke possible moves predict karne padte hain. Online strategy games me bhi multiplayer AI use hota hai.
+## __Topic 12: Problems in Game Playing__
+Game Playing AI me kuch challenges hote hain. __Large search space__ ek problem hai kyunki possible moves bahut jyada hote hain. __Time limitation__ bhi issue hai kyunki AI ko fast decision lena padta hai. __Uncertainty__ hoti hai jab opponent unpredictable ho. __Complex rules__ bhi problem create karte hain. Kabhi perfect evaluation function banana difficult hota hai. In problems ko solve karne ke liye pruning aur heuristics use kiye jate hain.
+
+__Example:__ Chess me possible moves bahut jyada hote hain isliye sab check karna difficult hai. Poker me opponent ka next move predict karna hard hota hai.
+## __Topic 13: Alpha-Beta Pruning__
+Alpha-Beta Pruning Mini-Max algorithm ka __optimization technique__ hai jo unnecessary nodes ko check karne se bachata hai. Isse search fast ho jata hai. __Alpha__ best value hoti hai jo Max player guarantee kar sakta hai. __Beta__ best value hoti hai jo Min player guarantee kar sakta hai. Agar kisi branch se better result possible nahi hai to us branch ko __prune (skip)__ kar dete hain. Ye same result deta hai jo Mini-Max deta hai but faster.
+
+__Example:__ Chess AI kuch moves ko ignore kar deta hai jab pata chal jata hai ki wo moves useful nahi hain. Isse decision fast milta hai.
+## __Topic 14: Evaluation Functions__
+Evaluation Function ek function hota hai jo __game state ki quality measure karta hai__. Ye batata hai current position good hai ya bad. Jab complete search possible nahi hota tab AI evaluation function use karta hai. Ye heuristic value return karta hai. Is value ke basis par AI best move decide karta hai. Game playing AI me ye important role play karta hai. Ye approximate decision making me help karta hai.
+
+__Example:__ Chess me evaluation function pieces ki value (queen = high, pawn = low) ke basis par score calculate karta hai. Jiska score high uski position better.
+# __Unit 3__
+## __Topic 1: Knowledge Representation__
+Knowledge Representation ka matlab hai __information ko aise store karna ki AI usko use karke decision le sake__. AI facts, rules aur relationships ko store karta hai. Ye knowledge base ke form me hota hai. Knowledge ko logical form me represent kiya jata hai. Isse reasoning aur problem solving easy hoti hai. Common methods me semantic networks aur rules aate hain.
+
+__Example:__ Medical AI me symptoms aur diseases ka data store hota hai. Us knowledge ke base par AI disease suggest karta hai.
+## __Topic 2: Bayesian Network__
+Bayesian Network ek __probabilistic graphical model__ hai jo variables ke beech relationships show karta hai. Ye probability use karke uncertainty handle karta hai. Isme nodes variables represent karte hain aur edges dependency show karte hain. Ye Bayes theorem par based hota hai. Ye prediction aur diagnosis problems me use hota hai. Conditional probability ka concept use hota hai.
+
+__Example:__ Agar fever aur cough hai to flu ki probability badh jati hai. Medical diagnosis systems Bayesian Network use karte hain.
+## __Topic 3: Temporal Models__
+Temporal Models AI me __time-based data ko represent aur analyze__ karne ke liye use hote hain. Ye past, present aur future states ke relation ko show karte hain. Time ke saath data kaise change hota hai ye study karte hain. Ye sequence data me useful hote hain. Prediction aur pattern analysis me use hote hain. Speech aur weather prediction me bhi important hain.
+
+__Example:__ Weather forecasting me past temperature data use karke future prediction ki jati hai. Stock market trend analysis me bhi temporal models use hote hain.
+## __Topic 4: Hidden Markov Model (HMM)__
+Hidden Markov Model ek __probability based model__ hai jisme system ki actual state directly visible nahi hoti (hidden hoti hai). Sirf outputs visible hote hain. Ye sequence data analyze karne me use hota hai. Isme states, observations aur transition probabilities hote hain. Ye time dependent processes ko model karta hai. Speech recognition aur pattern recognition me use hota hai.
+
+__Example:__ Speech recognition me actual word (hidden state) directly nahi pata hota, but sound signal (observation) se predict kiya jata hai. Weather prediction me bhi use hota hai.
+## __Topic 5: Kalman Filters__
+Kalman Filter ek __mathematical algorithm__ hai jo noisy data me se accurate estimate find karta hai. Ye prediction aur correction steps use karta hai. Pehle system future state predict karta hai, phir new measurement se correct karta hai. Ye continuous data tracking me useful hai. Robotics aur navigation systems me use hota hai. Ye real-time estimation ke liye important technique hai.
+
+__Example:__ GPS system moving vehicle ki exact position estimate karne ke liye Kalman Filter use karta hai. Self-driving cars me sensor errors correct karne me bhi use hota hai.
+## __Topic 6: Dynamic Bayesian Network__
+Dynamic Bayesian Network (DBN) Bayesian Network ka extended form hai jo __time-based probabilistic relationships__ show karta hai. Ye variables ke changes ko different time steps par represent karta hai. Ye temporal models aur Bayesian Network ka combination hai. Sequence data analysis me useful hota hai. Prediction aur monitoring systems me use hota hai. Ye uncertainty ke saath time dependent reasoning me help karta hai.
+
+__Example:__ Speech recognition me words ka sequence predict karne ke liye DBN use hota hai. Weather prediction me time ke saath changes analyze karne me bhi use hota hai.
+## __Topic 7: Speech Recognition__
+Speech Recognition AI ki technique hai jisme __human voice ko text ya commands me convert__ kiya jata hai. Ye audio signals ko process karke words identify karta hai. Isme pattern recognition aur machine learning use hota hai. Background noise handle karna ek challenge hota hai. Ye virtual assistants aur voice control systems me use hota hai. Accuracy improve karne ke liye large datasets use hote hain.
+
+__Example:__ Google Assistant aur Alexa voice commands samajhkar action perform karte hain. Voice typing feature bhi speech recognition ka example hai.

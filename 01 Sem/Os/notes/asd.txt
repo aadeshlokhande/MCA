@@ -1,0 +1,97 @@
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+10 Solve the FCFS CPU Scheduling Algorithm
+Process CPU (Burst Time in Millisecond)
+P1 5
+P2 24
+P3 16
+P4 10
+P5 3
+Calculate 
+1) Gantt chart 
+2)Average waiting time
+3)Average Response time 
+4)Average turnaround time.
+
+13 Demonstrate the above terms in Details
+1. Demand Paging
+2. Swapping
+3. Paging
+4. Disk I/O
+5. Disk Cache
+6. I/O Buffering
+
+
+14 The job are scheduled for execution as follows. solve the problem by using
+i) SJF
+Process Arrival Burst Time
+P1 0 8
+P2 1 4
+P3 2 9
+P4 3 5
+
+23 Apply the FCFS CPU Scheduling Algorithm
+Process CPU (Burst Time in
+Millisecond)
+P1 5
+P2 24
+P3 16
+P4 10
+P5 3
+Calculate 1) Gantt chart 2)Average waiting time
+3)Average Response time 4)Average turnaround time.
+
+37 Demonstrate the above terms in Details
+1. Swapping
+2. Disk I/O
+3. Disk Cache
+4. I/O Buffering
+
+38 The job are scheduled for execution as follows. solve the problem by using
+i) SJF
+Process Arrival Burst Time
+P1 0 8
+P2 1 4
+P3 2 9
+P4 3 5
+
+43 Explain the FCFS CPU Scheduling Algorithm
+Process CPU (Burst Time in
+Millisecond)
+P1 5
+P2 24
+P3 16
+P4 10
+P5 3
+Calculate 1) Gantt chart 2)Average waiting time
+3)Average Response time 4)Average turnaround time.
+
+
+
+52 The job are scheduled for execution as follows. solve the problem by using
+ii) SJF
+Process Arrival Burst Time
+P1 0 8
+P2 1 4
+P3 2 9
+P4 3 5
+
+56 Demonstrate the above terms in Details
+5. Swapping
+6. Paging
+7. Disk I/O
+8. Disk Cache
+9. I/O Buffering
+57 Solve the FCFS CPU Scheduling Algorithm
+Process CPU (Burst Time in
+Millisecond)
+P1 5
+P2 24
+P3 16
+P4 10
+P5 3
+Calculate 1) Gantt chart 2)Average waiting time
+3)Average Response time 4)Average turnaround time.
+
+
+

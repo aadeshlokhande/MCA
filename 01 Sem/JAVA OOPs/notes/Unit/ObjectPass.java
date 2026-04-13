@@ -20,6 +20,7 @@ class Result {
 
 public class ObjectPass {
     public static void main(String[] args) {
+
         Student s1 = new Student("Amit", 85); 
         Result r = new Result();
         r.display(s1); 

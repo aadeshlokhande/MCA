@@ -1,0 +1,57 @@
+Unit 1: Introduction to AI and Agents
+* Introduction to Artificial Intelligence
+* Features of AI
+* Agents and Environment
+* Structure of Agents
+* Problem Solving Agents
+* Problem Formulation
+* AI Techniques (Search, Knowledge)
+
+Unit 2: Searching Techniques and Game Playing
+Searching
+* Searching for Solutions
+* Breadth First Search (BFS)
+* Depth First Search (DFS)
+* Heuristic Search
+* Hill Climbing
+* A* Algorithm
+* AO* Algorithm
+* Problem Reduction
+Game Playing
+* Adversarial Search
+* Mini-Max Algorithm
+* Multiplayer Games
+* Problems in Game Playing
+* Alpha-Beta Pruning
+* Evaluation Functions
+
+Unit 3: Knowledge Representation and Probabilistic Reasoning
+* Knowledge Representation
+* Bayesian Network
+* Temporal Models
+* Hidden Markov Model
+* Kalman Filters
+* Dynamic Bayesian Network
+* Speech Recognition
+
+Unit 4: Learning and Uncertainty
+Learning
+* Concept of Learning
+* Learning Automation
+* Genetic Algorithm
+* Learning by Induction
+* Neural Networks
+Handling Uncertainty
+* Non-Monotonic Reasoning
+* Probabilistic Reasoning
+* Certainty Factors
+* Fuzzy Logic
+
+Unit 5: AI in Robotics
+* Robotic Perception
+* Localization
+* Mapping Configuration Space
+* Planning Uncertain Movements
+* Dynamics and Control
+* Ethics and Risks of AI
+* Case Study of AI in Robotics

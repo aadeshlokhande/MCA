@@ -1,0 +1,62 @@
+Unit 1: Fundamentals of Research
+* Meaning of Research
+* Objectives of Research
+* Research Process
+* Research Methods vs Methodology
+* Criteria of Good Research
+* Literature Review
+  * Primary Sources
+  * Secondary Sources
+* Identifying Gap from Literature
+* Searching E-Resources
+* Using Search Engines
+* Database Searching
+
+Unit 2: Types of Research
+* Pure Research
+* Applied Research
+* Exploratory Research
+* Descriptive Research
+* Diagnostic Research
+* Quantitative Research
+* Qualitative Research
+
+Unit 3: Sampling and Research Design
+Sampling
+* Concept of Sampling
+* Probability Sampling Techniques
+* Non-Probability Sampling Techniques
+* Sampling Error
+Research Design
+* Meaning of Research Design
+* Need of Research Design
+* Types of Research Design
+* Exploratory Research Design
+* Components of Research Design
+* Features of Good Research Design
+
+Unit 4: Data Collection and Analysis
+* Types of Data
+* Methods of Data Collection
+  * Interview Method
+  * Mailing Method
+  * Observation Method
+  * Survey Method
+* Primary Data
+* Secondary Data
+* Sampling Methods
+* Classification
+* Tabulation
+* Graphical Presentation
+* Computer Applications in Data Analysis
+
+Unit 5: Presentation of Research
+* Citation Styles (APA, MLA)
+* Research Ethics
+* Plagiarism
+* Journal Indexing
+* Research Output
+* Steps in Report Writing
+* Layout of Report
+* References
+* Bibliography

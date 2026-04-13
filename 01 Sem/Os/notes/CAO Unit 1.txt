@@ -1,0 +1,237 @@
+Chapter: Computer Architecture Fundamentals
+
+Computer Architecture aur Organization computer system ke basic pillars hote hain. Ye dono concepts samajhna bahut important hai kyunki ye batate hain ki computer kya karta hai aur kaise karta hai. Ye foundation clear ho jaaye toh baaki topics jaise performance, memory, buses, parallel architecture samajhna easy ho jata hai.
+
+Sabse pehle baat karte hain Computer Architecture ki. Computer Architecture ka matlab hota hai computer ka logical design jo programmer ko dikhta hai. Ye batata hai ki computer kya kar sakta hai. Isme aata hai instruction set, data types, registers, addressing modes, aur memory handling. Simple words me bole toh architecture define karta hai system ki capabilities. Jaise agar processor 64-bit architecture ka hai toh wo zyada memory access kar sakta hai compare to 32-bit system. Isi tarah agar CPU floating-point instructions support karta hai toh wo scientific calculations fast karega. Architecture zyada change nahi hoti kyunki software compatibility depend karti hai ispar.
+
+Ab baat karte hain Computer Organization ki. Ye batata hai ki architecture ko hardware level par kaise implement kiya gaya hai. Matlab computer ka internal arrangement. Isme aata hai ALU design, control unit structure, cache memory, pipelines, buses, etc. Simple words me — architecture bolta hai kya karna hai, organization bolta hai kaise karna hai. Example: do processors same architecture use kar sakte hain (like x86), lekin ek fast ho sakta hai dusre se kyunki uska cache bada hai ya pipeline better hai. Ye difference organization ka hota hai.
+
+Ek simple example lo: ghar ka architecture matlab floor plan (rooms kaha hain), aur organization matlab wiring, plumbing, aur material ka implementation. Dono milke complete system banate hain.
+
+Ab aate hain Von Neumann Architecture par, jo modern computers ka base hai. Isko John von Neumann ne propose kiya tha. Is architecture ka main idea hai stored-program concept. Isme data aur instructions dono same memory me store hote hain. Pehle ke computers me alag storage hota tha instructions aur data ka, jo complex tha. Von Neumann model ne programming ko simple bana diya.
+
+Is architecture me main components hote hain: CPU, Memory, Input devices, aur Output devices. CPU ke andar do main parts hote hain — Control Unit aur ALU. Control Unit instructions ko fetch, decode aur control karta hai. ALU saare arithmetic aur logical operations karta hai jaise addition, subtraction, comparison, bit operations. Memory instructions aur data store karti hai. Input devices jaise keyboard ya sensor data dete hain aur output devices jaise monitor result dikhate hain.
+
+Stored-program concept bahut powerful tha kyunki program ko data ki tarah treat kiya ja sakta hai. Isse high-level languages aur operating systems possible hue. Lekin ek drawback bhi hai jise Von Neumann Bottleneck bolte hain. Kyunki data aur instructions same bus se travel karte hain, toh CPU aur memory ke beech traffic jam ho sakta hai, jo performance slow karta hai.
+
+Ab baat karte hain Functional Units ki. Ek computer system me generally 5 main functional units hote hain: Input Unit, Output Unit, Memory Unit, ALU, aur Control Unit. Input unit external data ko binary form me convert karta hai. Example: keyboard, scanner, mic. Output unit binary result ko human-readable banata hai jaise monitor ya printer.
+
+Memory unit instructions, data, aur intermediate results store karti hai. Ye computer ka working area hota hai. Memory do types ki hoti hai — Primary memory (RAM, ROM) aur Secondary memory (HDD, SSD). Primary memory fast hoti hai aur CPU directly access karta hai. Secondary storage long-term storage ke liye hota hai.
+
+ALU yaani Arithmetic Logic Unit saare calculations karta hai. Chahe simple addition ho ya complex simulation, sab ALU se hi hota hai. Logical operations jaise AND, OR, NOT bhi yahi perform hoti hain.
+
+Control Unit system ka coordinator hota hai. Ye khud calculation nahi karta, lekin sabko control karta hai. Ye ek cycle follow karta hai jise Fetch–Decode–Execute cycle bolte hain. Pehle instruction memory se fetch hoti hai, phir decode hoti hai, phir execute hoti hai. Ye cycle continuously repeat hoti rehti hai jab tak computer chalu hai.
+
+Performance measure karne ke liye kuch metrics use hote hain jaise MIPS aur FLOPS. MIPS ka full form hai Million Instructions Per Second. Ye batata hai CPU ek second me kitni instructions execute karta hai. Lekin ye perfect metric nahi hai kyunki har instruction ka execution time alag hota hai.
+
+FLOPS ka full form hai Floating Point Operations Per Second. Ye measure karta hai system kitni floating-point calculations kar sakta hai. Ye scientific computing, AI, graphics processing me important hota hai. Supercomputers ko teraFLOPS ya petaFLOPS me measure kiya jata hai.
+
+Example ke liye gaming GPU me FLOPS bahut high hota hai kyunki wo parallel floating-point calculations karta hai graphics ke liye. Lekin ek microcontroller me FLOPS low ho sakta hai, fir bhi wo apne use case ke liye perfect hota hai. Isliye performance metrics context ke saath samajhna chahiye.
+
+In sab concepts — architecture vs organization, Von Neumann model, functional units, aur performance metrics — ko samajhna bahut zaroori hai. Ye computer system ka base banate hain aur aage ke topics jaise system bus, memory representation, aur parallel processing samajhne me help karte hain. Ye foundation strong ho toh pura computer architecture subject easy lagne lagta hai.
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>==<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>==<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>==<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+Ab hum chapter ke next important topics cover karte hain jo architecture ko deeper level par samjhate hain — machine language vs assembly language, Von Neumann working, system bus, aur performance metrics jaise throughput aur latency.
+
+Sabse pehle samajhte hain Machine Language aur Assembly Language ka difference. Machine language computer ki native language hoti hai jo pure binary (0s aur 1s) me hoti hai. CPU directly isi language ko samajhta hai. Har instruction ek binary pattern hota hai jo kisi operation ko represent karta hai, jaise addition ya data transfer. Example: `10110000 01100001` jaise binary instructions. Machine language fast hoti hai kyunki direct hardware execute karta hai, lekin humans ke liye likhna aur samajhna bahut difficult hota hai. Debugging bhi almost impossible hoti hai.
+
+Assembly language machine language ka human-readable version hota hai. Isme binary ke jagah mnemonics use hote hain jaise MOV, ADD, SUB, JMP. Ye low-level language hai jo hardware ke close hoti hai. Example:
+`MOV AX, 5`
+`ADD AX, 3`
+Yaha AX ek register hai. Assembly language ko assembler naam ka tool machine language me convert karta hai. Ye machine language se easy hoti hai, lekin fir bhi high-level languages (like C, Java, Python) se zyada complex hoti hai. Assembly performance-critical systems me use hoti hai jaise embedded systems, OS kernels, aur drivers.
+
+Ab detail me samajhte hain Von Neumann Architecture ka working principle. Is architecture ka core hai Fetch–Decode–Execute cycle. Ye ek continuous loop hota hai jisme CPU instructions execute karta rehta hai. 
+Step 1: Fetch phase me Control Unit memory se next instruction laata hai aur Instruction Register me store karta hai. 
+Step 2: Decode phase me instruction ko interpret kiya jata hai - matlab CPU samajhta hai ki operation kya hai (add, load, jump, etc.). 
+Step 3: Execute phase me required hardware components activate hote hain jaise ALU calculation karta hai ya memory access hoti hai. Result fir register ya memory me store ho jata hai. Ye cycle har instruction ke liye repeat hoti hai.
+
+Von Neumann architecture ka block structure verbally samjhe toh: Input unit data deta hai → Memory instructions/data store karti hai → CPU process karta hai → Output result dikhata hai. CPU aur memory ke beech ek common communication path hota hai jise bus bolte hain. Ye simplicity architecture ko popular banati hai, lekin isi wajah se bottleneck bhi aata hai jab data traffic zyada ho jata hai.
+
+Ab aate hain System Bus par. System bus ek communication highway hota hai jo computer ke different components ko connect karta hai. Ye CPU, memory, aur I/O devices ke beech data transfer allow karta hai. System bus teen main parts me divided hota hai: Data Bus, Address Bus, aur Control Bus.
+
+Data Bus actual data carry karta hai. Ye bidirectional hota hai, matlab data CPU se memory ya memory se CPU dono direction me ja sakta hai. Data bus width (like 8-bit, 16-bit, 32-bit, 64-bit) determine karti hai ek baar me kitna data transfer hoga. Wider bus matlab higher data transfer rate.
+
+Address Bus memory location specify karta hai jahan data read ya write karna hai. Ye usually unidirectional hota hai (CPU se memory). Agar address bus 32-bit hai toh 2³² memory locations address ki ja sakti hain. Isliye address bus width memory capacity define karti hai.
+
+Control Bus control signals carry karta hai jaise read, write, interrupt, clock signals. Ye ensure karta hai ki data transfer properly synchronized ho. Without control bus, components coordinate nahi kar paayenge.
+
+System bus performance me important role play karta hai. Agar bus slow hai toh fast CPU bhi full performance nahi de paata. Isi limitation ko overcome karne ke liye modern systems me cache memory aur multiple bus architectures use hote hain.
+
+Ab performance metrics me aate hain Throughput aur Latency par. Ye dono system performance measure karte hain lekin alag perspective se. Throughput ka matlab hai ek system ek given time me kitna kaam kar sakta hai. 
+Example: ek server 1000 requests per second handle karta hai - ye high throughput hai. Throughput parallel systems me important hota hai jaise cloud servers, GPUs, databases.
+
+Latency ka matlab hai ek single task complete hone me kitna time lagta hai. Example: agar ek request ko response milne me 10 milliseconds lagte hain, toh wo latency hai. Low latency systems real-time applications me important hote hain jaise gaming, robotics, stock trading.
+
+Simple example: ek restaurant imagine karo. Throughput matlab restaurant ek ghante me kitne customers serve karta hai. Latency matlab ek customer ko order milne me kitna time lagta hai. Ek system high throughput de sakta hai lekin latency high ho sakti hai, aur vice versa.
+
+Computer architecture me dono metrics important hote hain. Supercomputers high throughput target karte hain kyunki wo parallel computations karte hain. Real-time systems low latency target karte hain kyunki fast response critical hota hai. System designers ko use-case ke according balance banana padta hai.
+
+In topics — machine vs assembly language, Von Neumann execution cycle, system bus architecture, aur throughput vs latency — se computer ka operational understanding strong hota hai. Ye concepts hardware-software interaction ko clearly explain karte hain aur performance optimization ka base banate hain. Aage hum number systems, floating-point representation, aur parallel architectures explore karenge jo modern computing ka advanced part hai.
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>==<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>==<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>==<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+Ab hum chapter ke mathematical aur representation wale part par aate hain — number conversions, 2’s complement, hexadecimal to binary, aur floating-point representation (IEEE 754). Ye topics important hain kyunki computer internally sab kuch binary me represent karta hai.
+
+Sabse pehle dekhte hain negative numbers ka representation using 2’s complement. Computers negative numbers ko store karne ke liye 2’s complement method use karte hain kyunki ye arithmetic operations ko simple bana deta hai. Let’s convert decimal −25 into binary using 8-bit 2’s complement.
+
+Step 1: +25 ka binary nikaalo.
+25 = 00011001 (8-bit binary)
+
+Step 2: Iska 1’s complement lo (bits invert karo).
+00011001 → 11100110
+
+Step 3: 1 add karo (ye banega 2’s complement).
+11100110 + 1 = 11100111
+
+Toh −25 ka 8-bit representation hai: **11100111**.
+Is method ka advantage ye hai ki addition aur subtraction same hardware se ho sakte hain. Isliye almost sab processors 2’s complement use karte hain.
+
+Ab hexadecimal to binary conversion dekhte hain. Hexadecimal base-16 system hai jisme digits 0–9 aur A–F hote hain. Har hex digit exactly 4 binary bits represent karta hai. Example: Convert hexadecimal 3A into binary.
+
+3 → 0011
+A → 1010
+
+So 3A = **00111010** in binary.
+Hexadecimal use hota hai kyunki binary long hota hai aur decimal conversion complex hota hai. Memory addresses aur machine code representation me hex common hai.
+
+Ab aate hain floating-point numbers par. Real-world me hume decimal numbers bhi represent karne hote hain jaise 3.14, 0.001, ya 1.5 × 10⁸. Binary me inko represent karna complex hota hai, isliye IEEE 754 standard use kiya jata hai. Ye globally accepted floating-point format hai.
+
+IEEE 754 number 3 parts me divided hota hai:
+
+1. Sign bit
+2. Exponent
+3. Mantissa (fraction)
+
+Single precision (32-bit) format me:
+
+* 1 bit sign
+* 8 bits exponent
+* 23 bits mantissa
+
+Double precision (64-bit) me:
+
+* 1 bit sign
+* 11 bits exponent
+* 52 bits mantissa
+
+Example conceptually samjhte hain. Number ko scientific notation me convert kiya jata hai:
+Example: 5.75 = 101.11 (binary) = 1.0111 × 2²
+
+Yaha:
+
+* Sign bit = 0 (positive)
+* Exponent = 2 (biased form me store hota hai)
+* Mantissa = fractional part (0111…)
+
+Exponent bias use hota hai negative exponents avoid karne ke liye. Single precision me bias = 127 hota hai. Toh actual exponent + bias store hota hai. Ye design comparison aur sorting ko easy banata hai.
+
+Floating-point representation powerful hai lekin perfectly accurate nahi hota. Kuch decimal numbers binary me exact represent nahi ho paate. Example: 0.1 ka exact binary representation infinite hota hai. Isliye rounding errors aate hain. Ye errors scientific computing me important ho jate hain.
+
+Ab baat karte hain Flynn’s Classification par jo parallel architectures ko categorize karta hai. Ye system ko instruction streams aur data streams ke basis par divide karta hai. 4 types hote hain: SISD, SIMD, MISD, MIMD.
+
+SISD (Single Instruction Single Data) traditional sequential architecture hai. Ek instruction ek data par execute hota hai. Example: normal single-core CPU. Ye simple hota hai lekin parallelism limited hoti hai.
+
+SIMD (Single Instruction Multiple Data) me ek hi instruction multiple data elements par simultaneously apply hota hai. Example: GPUs, vector processors. Image processing aur AI me use hota hai kyunki same operation multiple pixels par apply hota hai.
+
+MISD (Multiple Instruction Single Data) rare architecture hai jahan multiple instructions same data stream par apply hote hain. Real-world me uncommon hai, lekin fault-tolerant systems me theoretical use hai.
+
+MIMD (Multiple Instruction Multiple Data) sabse powerful aur modern architecture hai. Multiple processors alag instructions alag data par execute karte hain. Example: multi-core CPUs, distributed systems, cloud computing. Ye high performance computing ka base hai.
+
+Parallel architectures ka main goal performance improve karna hai by doing multiple computations simultaneously. Lekin isme synchronization, communication overhead, aur programming complexity challenges hote hain.
+
+In topics se clear hota hai ki computer sirf logical machine nahi balki mathematical system bhi hai. Binary representation, 2’s complement arithmetic, floating-point standards, aur parallel architecture classification modern computing ke core concepts hain. Ye knowledge hardware design, compiler development, AI systems, aur high-performance computing me directly apply hoti hai.
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>==<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>==<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>==<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+## Chapter: Computer Architecture Fundamentals (Part 4 — Performance Analysis & System Design)
+
+Ab hum chapter ke advanced aur analytical topics cover karte hain — bus interconnection ka role, floating-point errors ka impact, aur complete computer system ka block diagram with interaction. Ye topics exam me long answers aur analytical questions me aate hain.
+
+Sabse pehle samajhte hain bus interconnection ka role system performance improve karne me. Bus interconnection ek communication framework hota hai jo CPU, memory, aur I/O devices ko connect karta hai. Agar bus efficient nahi hai, toh fast CPU bhi slow lag sakta hai. Traditional systems me single shared bus hoti thi jahan sab components ek hi path share karte the. Ye simple design tha lekin bottleneck create karta tha jab multiple devices simultaneously data transfer karte the.
+
+Performance improve karne ke liye modern computers me multiple bus architectures use hote hain. Example: front-side bus (CPU ↔ memory), back-side bus (CPU ↔ cache), aur I/O buses (PCIe). Isse parallel data transfer possible hota hai. Ek aur technique hai bus width increase karna. Wider data bus ek clock cycle me zyada bits transfer kar sakta hai, jo bandwidth improve karta hai.
+
+Clock speed bhi bus performance affect karti hai. High-frequency buses faster data movement allow karte hain. Lekin sirf speed badhana enough nahi hota, kyunki signal interference aur power consumption issues aate hain. Isliye modern systems serial high-speed links use karte hain jaise PCI Express, jo fewer wires me higher bandwidth dete hain.
+
+Bus arbitration bhi important concept hai. Jab multiple devices bus use karna chahte hain, toh arbitration decide karta hai kaun pehle access karega. Efficient arbitration latency reduce karta hai aur fairness maintain karta hai. Agar bus interconnection optimized ho, toh system throughput significantly improve hota hai.
+
+Ab aate hain floating-point representation errors par. IEEE 754 powerful standard hai, lekin ye perfectly accurate nahi hai. Problem ka root hai binary representation limitations. Kuch decimal numbers binary me exactly represent nahi ho sakte. Example: 0.1 ko binary me convert karo toh infinite repeating fraction milta hai. Computer ise approximate form me store karta hai, jisse rounding errors aate hain.
+
+Ye errors chhote lagte hain, lekin large computations me accumulate ho sakte hain. Example: agar scientific simulation me millions of calculations ho rahe hain, toh small rounding error gradually large deviation bana sakta hai. Financial systems me bhi floating-point errors problematic ho sakte hain, isliye waha decimal-based arithmetic use hoti hai.
+
+Ek famous example hai:
+0.1 + 0.2 ≠ 0.3 (exactly) in many programming languages.
+Result usually 0.30000000000000004 aata hai. Ye floating-point precision limitation hai, bug nahi.
+
+Floating-point errors ke types:
+
+* Rounding error
+* Overflow (number too large)
+* Underflow (number too small)
+* Loss of precision during subtraction of nearly equal numbers (catastrophic cancellation)
+
+In errors ko reduce karne ke liye techniques use hoti hain jaise higher precision (double precision), numerical stability algorithms, aur error analysis methods. Scientific computing me ye bahut important hota hai.
+
+Ab final topic — complete computer system ka block diagram aur interaction. Ek simple computer system me following major functional units hote hain: Input Unit, Output Unit, Memory Unit, ALU, aur Control Unit. Inka interaction hi computing process banata hai.
+
+Working flow samjhte hain step-by-step. Sabse pehle input unit data receive karta hai external world se. Ye data binary signals me convert hota hai aur memory me store hota hai. Memory instructions aur data dono hold karti hai. Jab program execute hota hai, Control Unit memory se instruction fetch karta hai. Ye instruction decode hoti hai taaki CPU samajh sake kya operation perform karna hai.
+
+Agar instruction arithmetic ya logical hai, toh Control Unit ALU ko signal deta hai. ALU required operation perform karta hai aur result register ya memory me store ho jata hai. Agar instruction input/output related hai, toh Control Unit I/O modules ko activate karta hai.
+
+Control Unit continuously Fetch–Decode–Execute cycle follow karta hai. Ye ensure karta hai ki instructions correct sequence me execute ho. Memory aur CPU ke beech data transfer system bus ke through hota hai. Data bus actual data carry karta hai, address bus location specify karta hai, aur control bus coordination signals deta hai.
+
+Ek real-life analogy lo — computer ek factory ki tarah hai. Input unit raw materials laata hai, memory warehouse hai, ALU machine hai jo processing karti hai, Control Unit manager hai jo sabko instructions deta hai, aur output unit final product deliver karta hai.
+
+Is block-level understanding se clear hota hai ki computer ek coordinated system hai jahan har component specific role play karta hai. Efficient interaction hi high performance ka secret hai. Agar kisi ek unit me bottleneck ho (jaise slow memory), toh pura system slow ho sakta hai.
+
+Is chapter me humne computer architecture ke foundational se advanced topics cover kiye — architecture vs organization, Von Neumann model, functional units, performance metrics, number representation, floating-point standards, parallel architectures, bus interconnections, aur system design. Ye concepts modern computing ka backbone hain aur hardware design, system programming, AI, aur high-performance computing me widely apply hote hain. Ye chapter ek strong conceptual base deta hai jo aage ke advanced subjects ke liye essential hai.
+
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>==<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>==<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>==<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+## Chapter: Computer Architecture Fundamentals (Final Part — Revision + Concept Reinforcement)
+
+Ab last part me hum pura chapter ko revise aur reinforce karte hain taaki exam preparation strong ho jaye. Ye section quick revision + conceptual clarity ke liye hai.
+
+Sabse pehle Computer Architecture vs Organization. Architecture batata hai computer kya kar sakta hai — instruction set, registers, data types, addressing modes. Ye programmer-visible part hota hai. Organization batata hai ye sab internally kaise implement hota hai — ALU design, cache structure, pipelines, buses. Ek hi architecture alag organizations me exist kar sakta hai, jisse performance differ hoti hai.
+
+Von Neumann Architecture modern computing ka base hai. Iska main idea stored-program concept hai jahan instructions aur data same memory me store hote hain. CPU fetch–decode–execute cycle follow karta hai. Ye design simple aur flexible hai, lekin Von Neumann bottleneck create karta hai kyunki CPU aur memory same bus share karte hain.
+
+Functional units computer ke building blocks hote hain. Input unit data leta hai, output unit results dikhata hai, memory instructions/data store karti hai, ALU processing karta hai, aur Control Unit coordination karta hai. In sabka synchronized interaction hi computation banata hai.
+
+Performance metrics jaise MIPS aur FLOPS system capability measure karte hain. MIPS instruction execution rate batata hai, jabki FLOPS floating-point computation speed measure karta hai. Scientific computing aur AI me FLOPS zyada meaningful hota hai.
+
+Machine language aur assembly language low-level programming ke forms hain. Machine language binary hoti hai aur direct hardware execute karta hai. Assembly language mnemonic-based hoti hai jo humans ke liye readable hoti hai. Assembler ise machine code me convert karta hai. Ye hardware-near programming ke liye useful hai.
+
+System bus computer ka communication backbone hota hai. Data bus actual data carry karta hai, address bus memory location specify karta hai, aur control bus coordination signals deta hai. Bus width aur speed directly system performance affect karte hain. Modern systems me multiple bus architectures aur high-speed serial interconnects use hote hain.
+
+Throughput aur latency performance ke do alag measures hain. Throughput total work per unit time batata hai, jabki latency ek task complete hone ka delay batata hai. Parallel systems throughput optimize karte hain, jabki real-time systems low latency target karte hain.
+
+Number representation computer architecture ka core mathematical aspect hai. 2’s complement negative numbers represent karne ka standard method hai kyunki ye arithmetic simplify karta hai. Hexadecimal compact binary representation provide karta hai aur memory addressing me widely use hota hai.
+
+Floating-point representation real numbers store karne ke liye IEEE 754 standard follow karti hai. Isme sign, exponent, aur mantissa fields hote hain. Ye scientific computing enable karta hai, lekin rounding errors introduce karta hai kyunki kuch decimal numbers binary me exactly represent nahi ho paate.
+
+Floating-point errors ka impact real-world applications me significant ho sakta hai. Scientific simulations, financial systems, aur graphics processing me precision critical hoti hai. Error propagation, overflow, underflow, aur rounding issues ko handle karne ke liye higher precision aur numerical stability techniques use hoti hain.
+
+Flynn’s Classification parallel architectures ko categorize karta hai — SISD (sequential systems), SIMD (vector processing, GPUs), MISD (rare), aur MIMD (multi-core and distributed systems). Modern computing heavily MIMD aur SIMD models par depend karta hai for performance scaling.
+
+Bus interconnection system performance optimization ka key factor hai. Efficient bus design data transfer bottlenecks reduce karta hai. Techniques jaise multi-bus architecture, bus arbitration, aur high-bandwidth interconnects overall throughput improve karte hain.
+
+Finally, complete computer system ek coordinated ecosystem hai jahan hardware components synchronized way me kaam karte hain. Input se data aata hai, memory store karti hai, Control Unit instructions manage karta hai, ALU process karta hai, aur output final result deta hai. Fetch–decode–execute cycle is process ka heart hai.
+
+Agar conceptual view se dekhen toh computer architecture teen layers me samajh aata hai:
+
+1. Logical design (architecture)
+2. Hardware implementation (organization)
+3. Performance optimization (buses, parallelism, memory hierarchy)
+
+Ye chapter ek strong foundation deta hai jo aage ke topics jaise pipelining, cache coherence, multicore processing, aur distributed systems samajhne ke liye essential hai. Computer architecture sirf hardware subject nahi hai — ye software performance, AI systems, cloud computing, aur embedded systems sabko influence karta hai. Strong basics hone par advanced computing concepts naturally clear hone lagte hain.

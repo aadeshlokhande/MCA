@@ -1,0 +1,74 @@
+Unit 1: Introduction to Cyber Security
+* Overview of Cyber Security
+* Internet Governance (Challenges and Constraints)
+* Cyber Threats
+  * Cyber Warfare
+  * Cyber Crime
+  * Cyber Terrorism
+  * Cyber Espionage
+* Need of Cyber Security Policy
+* Need of Nodal Authority
+* Cyber Security Regulations
+* Role of International Law
+
+Unit 2: Cryptography and Block Ciphers
+* Introduction to Cryptography
+* Security Approaches
+* Principles of Security
+* Types of Security Attacks
+* Security Services
+* Security Mechanisms
+* Network Security Model
+* Substitution Techniques
+* Transposition Techniques
+* Symmetric Key Cryptography
+* Asymmetric Key Cryptography
+* Steganography
+* Cryptanalytic Attack
+* Brute Force Attack
+* Block Cipher Principles
+* DES Algorithm
+
+Unit 3: Public Key Cryptosystems and Authentication
+* Principles of Public Key Cryptosystems
+* RSA Algorithm
+* Diffie-Hellman Key Exchange
+* Elliptic Curve Cryptography (Introduction)
+* Cryptographic Hash Functions
+* Message Authentication
+* SHA-512
+* Message Authentication Codes (MAC)
+* Authentication Requirements
+* Digital Signature
+
+Unit 4: Key Management and Cyber Security Vulnerabilities
+Key Management
+* Distribution of Public Keys
+* Kerberos
+* X.509 Authentication
+* PGP
+* SSL
+* IPSEC
+Vulnerabilities
+* Software Vulnerabilities
+* System Administration Issues
+* Complex Network Architectures
+* Weak Authentication
+* Poor Cyber Security Awareness
+Safeguards
+* Access Control
+* Audit
+* Authentication
+* Ethical Hacking
+
+Unit 5: Web Security and Cyber Forensics
+* Security of HTTP Applications
+* Security of SOAP Services
+* Identity Management
+* Web Service Security Challenges
+* Intrusion Detection System (IDS)
+* Intrusion Prevention System (IPS)
+* System Integrity Validation
+* Honeypots
+* Password Management
+* Introduction to Cyber Forensics

@@ -1,0 +1,28 @@
+Define an Operating System. Mention its main functions.
+Distinguish between system software and application software.
+State Inter-Process Communication (IPC).
+Define fragmentation. Differentiate between internal and external fragmentation.
+Differentiate between process and thread.
+Explain OS structure with the microkernel approach.
+Differentiate between One-to-One and Many-to-Many multithreading models with diagram.
+Describe page replacement algorithms (FIFO, LRU, OPTIMAL) with examples.
+Elaborate the Process Life Cycle with diagram.
+Discuss contiguous memory allocation in detail.
+Explain segmentation with paging.
+Describe the evolution of the Operating System in detail.
+Explain the structure of an Operating System with a neat diagram.
+Describe various Operating System services.
+Compare Batch OS, Multiprogrammed OS, and Time-sharing OS.
+Define a process and explain the process life cycle with diagram.
+Demonstrate Inter-Process Communication (IPC) mechanisms.
+Explain CPU scheduling algorithms with advantages and disadvantages.
+Identify the Critical Section Problem and its requirements.
+Demonstrate deadlock prevention and deadlock recovery techniques.
+Identify virtual memory and demand paging.
+Prepare file allocation methods and free-space management.
+Explain disk scheduling algorithms and disk management.
+Explain OS security, Virtual Machines, and Cloud OS concepts.
+Explain threads and multithreading models with diagrams.
+Differentiate between demand paging and page replacement algorithms (FIFO, LRU, OPTIMAL) with examples.
+Examine directory implementation methods and file allocation methods (linked, indexed, contiguous).
+What is segmentation?

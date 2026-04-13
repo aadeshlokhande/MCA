@@ -1,0 +1,50 @@
+1 Define an Operating System. Mention its main functions.
+2 Distinguish between system software and application software
+3 State inter- Process communication (IPC)
+4 State fragmentation. Difference between internal and external fragmentation.
+5 Differentiate between process and thread.
+6 Explain OS structure with microkernel approach.
+7 Differentiate between One-to-One multithreading models and many-to-many multithreading models with diagram
+8 Describe page replacement algorithms(FIFO,LRU,OPTIMAL)with examples
+9 Elaborate Process Life Cycle with diagram
+11 Discuss about contiguous Memory Allocation in detail
+12 Explain Segmentation With Paging
+15 Describe the Evolution of Operating System in detail
+16 Discuss the structure of an Operating System with a neat diagram.
+17 Describe various Operating System services.
+18 Compare Batch OS, Multiprogrammed OS, and Time-sharing OS.
+19 Define a process and explain the process life cycle with diagram.
+20 Demonstrate the Inter-Process Communication (IPC) mechanisms.
+21 Explain the CPU Scheduling Algorithum write Advantages & Disadvantage.
+22 Identify the Critical Section Problem and its requirements.
+24 Demonstrate Deadlock prevention and deadlock recovery techniques.
+25 Justify Segmentation with diagrams.
+26 Identify Virtual Memory and Demand Paging.
+27 Explain Page Replacement Algorithms: FIFO and LRU.
+28 Prepare File allocation methods and free-space management.
+29 Manage Disk scheduling algorithms and disk management.
+30 Explain OS security, Virtual Machines, and Cloud OS concepts.
+31 Compare Batch OS, Multiprogrammed OS, and Time-sharing OS.
+32 Explain the structure of an Operating System with a neat diagram
+33 State fragmentation. Differentiation between internal & external Fragmentation
+34 Define evolution of operating system in detail
+35 Elaborate Process Life Cycle with diagram
+36 Distinguish between system software and application software
+39 Explain different scheduling algorithms with advantage & disadvantage.
+40 Justify File allocation methods and free-space management.
+41 Describe threads and multithreading models and its types with diagram
+42 Differentiate between demand paging and page replacement algorithms (FIFO,LRU,OPTIMAL)with examples
+44 Discuss Disk scheduling algorithms and disk management.
+45 Explain OS security, Virtual Machines, and Cloud OS concepts.
+46 State inter- Process communication (IPC)
+47 Describe the structure of an Operating System with a neat diagram.
+48 Define fragmentation. Differentiation between internal & external Fragmentation
+49 Expresses various Operating System services
+50 What is Segmentation?
+51 Differentiate between process & thread.
+53 Elaborate the CPU Scheduling Algorithum write Advantages & Disadvantage.
+54 Prepare File allocation methods and free-space management
+55 Describe demand paging and page replacement algorithms (FIFO,LRU,OPTIMAL)with examples
+58 Examine directory implementation method and file allocation method (linked, Indexed, contiguous)
+59 Explain OS security, Virtual Machines, and Cloud OS concepts
+60 Demonstrate Deadlock prevention and deadlock recovery techniques.

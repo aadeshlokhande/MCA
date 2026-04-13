@@ -1,0 +1,74 @@
+Unit 1: DBMS Concepts and Architecture
+
+* Database System Applications
+* Purpose of Database Systems
+* View of Data
+* Data Abstraction (Instance and Schema)
+* Data Models
+* ER Model
+* Relational Model
+* Database Languages
+  * DDL
+  * DML
+  * DCL
+  * TCL
+* Database Design
+* ER Diagram
+* Entities and Attributes
+* Entity Sets
+* Relationships and Relationship Sets
+* ER Design Issues
+
+Unit 2: Relational Query Language (SQL)
+
+* Introduction to Relational Model
+* Structure of Relational Database
+* Database Schema
+* Keys
+* Schema Diagram
+* Basic Structure of SQL Queries
+* Set Operations
+* Aggregate Functions
+* GROUP BY and HAVING
+* Nested Subqueries
+* Joins
+* Triggers
+
+Unit 3: Normalization
+
+* Introduction to Normalization
+* Functional Dependency
+* Lossless Decomposition
+* First Normal Form (1NF)
+* Second Normal Form (2NF)
+* Third Normal Form (3NF)
+* Dependency Preservation
+* BCNF (Boyce Codd Normal Form)
+* Higher Normal Forms
+* Multivalued Dependency
+* Fourth Normal Form (4NF)
+
+Unit 4: Transaction Management and Concurrency
+
+* Transaction Concept
+* Transaction Properties (ACID)
+* Transaction Management using SQL
+* Transaction Log
+* Concurrency Control
+* Locking Methods
+* Types of Locks
+* Two Phase Locking (2PL)
+* Serializability
+* Deadlocks
+* Concurrency Control Methods
+
+Unit 5: File Organization and Query Processing
+
+* File Organization
+* Types of Indexes
+* Query Processing
+* Query Cost Measures
+* Selection Operations
+* Join Operations
+* Set Operations
+* Aggregate Operations
