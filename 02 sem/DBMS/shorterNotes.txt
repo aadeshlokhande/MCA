@@ -1,0 +1,157 @@
+# Unit 1
+## 1. **Database System Applications**
+Database systems real-life me data store aur manage karne ke liye use hote hai.
+Examples: banking systems, railway reservation, e-commerce websites, hospital records.
+Ye fast access, data security aur accuracy provide karte hai.
+Jaha bhi large data handle karna hota hai, waha DBMS use hota hai.
+
+## **2. Purpose of Database Systems**
+Database systems ka purpose hai data ko efficiently store, organize aur access karna.
+Ye data redundancy ko kam karta hai aur consistency maintain karta hai.
+Multiple users ek saath data use kar sakte hai.
+Example: ek hi student record sab jagah same rahe, duplicate na ho.
+
+## **3. View of Data**
+DBMS me user ko pura database nahi dikhaya jata, sirf required data hi dikhaya jata hai.
+Isse data security aur simplicity maintain hoti hai.
+3 levels hote hai: Physical (storage), Logical (structure), View (user-specific data).
+Example: student sirf apne marks dekhta hai, pura database nahi.
+
+## **4. Data Abstraction (Instance and Schema)**
+Data abstraction ka matlab hai unnecessary details hide karna aur simple view dena.
+Schema = database ka structure (tables, fields design).
+Instance = kisi particular time par database ka actual data.
+Example: table design fixed rehta hai (schema), par data change hota rehta hai (instance).
+
+## **5. Data Models**
+Data model batata hai ki data kaise store, organize aur relate hota hai.
+Ye database design ka blueprint hota hai.
+Common types: Hierarchical, Network, Relational, ER model.
+Aajkal sabse jyada Relational model use hota hai (tables form me data).
+
+## **6. ER Model (Entity Relationship Model)**
+ER Model database design ka graphical way hai jisme entities aur unke relationships show kiye jate hai.
+Entities = real-world objects (Student, Course)
+Relationships = unke beech connection (enrolls)
+Ye model database banane se pehle planning aur understanding me help karta hai.
+
+## **7. Relational Model**
+Relational model me data tables (relations) ke form me store hota hai.
+Har table me rows (records) aur columns (attributes) hote hai.
+Tables ek dusre se keys ke through connected hote hai.
+Ye simple, flexible aur most widely used data model hai.
+
+## **8. Database Languages (DDL, DML, DCL, TCL)**
+DBMS me data manage karne ke liye different languages use hoti hai:
+DDL --> structure create/modify (CREATE, ALTER)
+DML --> data insert/update/delete (INSERT, UPDATE, DELETE)
+DCL --> permissions (GRANT, REVOKE)
+TCL --> transactions control (COMMIT, ROLLBACK)
+Ye sab SQL ka part hote hai.
+
+## **9. Database Design**
+Database design ka matlab hai data ko proper structure me organize karna.
+Isme tables, relationships aur constraints plan kiye jate hai.
+Goal: redundancy kam ho, data consistent rahe aur performance achha ho.
+Achha design future me data handling easy aur efficient bana deta hai.
+
+## **10. ER Diagram**
+ER Diagram ek visual diagram hota hai jo entities, attributes aur relationships ko show karta hai.
+Isme rectangles (entities), ovals (attributes) aur diamonds (relationships) use hote hai.
+Ye database design ko easily samajhne aur plan karne me help karta hai.
+
+## **11. Entities and Attributes**
+Entity koi real-world object hota hai (Student, Teacher).
+Attributes us entity ke properties hote hai (name, age, id).
+Example: Student entity ke attributes --> roll_no, name, marks.
+Entities ko uniquely identify karne ke liye key attribute use hota hai.
+
+## **12. Entity Sets**
+Entity set same type ki entities ka collection hota hai.
+Example: sabhi students ka group = Student entity set.
+Har entity set me similar attributes hote hai.
+Ye table jaisa hota hai jisme multiple records (entities) store hote hai.
+
+## **13. Relationships and Relationship Sets**
+Relationship entities ke beech connection batata hai.
+Example: Student "enrolls in" Course.
+Relationship set same type ke relationships ka collection hota hai.
+Ye batata hai kaise different entity sets ek dusre se related hai.
+
+## **14. ER Design Issues**
+ER design me kuch challenges aate hai jaise entity ya attribute decide karna, redundancy avoid karna aur proper relationships define karna.
+Special cases: weak entities, multivalued attributes, specialization/generalization.
+Goal: clear, simple aur accurate database structure design karna.
+
+# Unit 2
+## **1. Introduction to Relational Model**
+Relational model me data tables (relations) ke form me represent hota hai.
+Har table me rows (tuples) aur columns (attributes) hote hai.
+Tables ek dusre se keys (primary/foreign) ke through connected hote hai.
+Ye model simple, logical aur most widely used hai DBMS me.
+
+## **2. Structure of Relational Database**
+Relational database tables (relations) se bana hota hai.
+Har table me rows (tuples) aur columns (attributes) hote hai.
+Har table ka ek unique name hota hai aur primary key se records identify hote hai.
+Foreign key tables ke beech relationship banati hai.
+
+## **3. Database Schema**
+Database schema database ka blueprint hota hai.
+Ye batata hai kaunse tables honge, unke columns kya honge aur relationships kaise honge.
+Schema fixed rehta hai, easily change nahi hota.
+Example: Student table ka structure (id, name, marks) = schema.
+
+## **4. Keys**
+Keys database me records ko uniquely identify karne ke liye use hoti hai.
+Primary key --> unique identification (roll_no)
+Foreign key --> tables ko connect karta hai
+Candidate key --> possible primary keys
+Keys data consistency aur relationships maintain karne me important role play karti hai.
+
+## **5. Schema Diagram**
+Schema diagram database ka visual representation hota hai jisme tables aur unke relationships dikhaye jate hai.
+Isme table names, attributes aur keys show hote hai.
+Ye developers ko structure samajhne aur database design plan karne me help karta hai.
+
+## **6. Basic Structure of SQL Queries**
+SQL queries ka basic structure hota hai:
+SELECT columns
+FROM table
+WHERE condition
+SELECT data choose karta hai, FROM table batata hai aur WHERE condition filter karta hai.
+Example: student table se marks > 50 wale records nikalna.
+
+## **7. Set Operations**
+Set operations multiple query results ko combine karne ke liye use hote hai.
+Main types: UNION (combine + remove duplicates), UNION ALL (combine + allow duplicates), INTERSECT (common data), EXCEPT (difference).
+Example: 2 tables ke common students nikalna.
+
+## **8. Aggregate Functions**
+Aggregate functions multiple rows par calculation karke ek single result deti hai.
+Common functions: COUNT(), SUM(), AVG(), MAX(), MIN()
+Example: class ke total students ya average marks calculate karna.
+Ye mostly GROUP BY ke saath use hoti hai data analysis ke liye.
+
+## **9. GROUP BY and HAVING**
+GROUP BY similar data ko groups me divide karta hai.
+HAVING group par condition apply karta hai (WHERE row par lagta hai).
+Example: har subject ka average marks nikalna (GROUP BY subject) aur sirf >60 wale groups show karna (HAVING).
+
+## **10. Nested Subqueries**
+Nested subquery ek query ke andar dusri query hoti hai.
+Inner query pehle execute hoti hai, uska result outer query use karti hai.
+Example: highest marks wale student ko find karna using subquery.
+Ye complex conditions handle karne me useful hoti hai.
+
+## **11. Joins**
+Joins multiple tables ko combine karne ke liye use hote hai based on related columns.
+Types: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN
+Example: Student table aur Course table ko join karke student ke enrolled courses dikhana.
+Ye relational database ka core concept hai.
+
+## **12. Triggers**
+Trigger ek automatic action hota hai jo database me kisi event par execute hota hai (INSERT, UPDATE, DELETE).
+Ye predefined rules follow karta hai.
+Example: jab new student add ho, tab automatic log entry create ho jaye.
+Triggers data integrity aur automation ke liye use hote hai.

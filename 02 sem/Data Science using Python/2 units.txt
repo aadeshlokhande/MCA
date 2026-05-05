@@ -1,0 +1,206 @@
+# Unit 1
+## Introduction to Data Science
+Data Science ek aisa field hai jisme hum raw data ko analyze karke useful information (insights) nikalte hain, jo decision making me help karti hai. Aaj ke time me har jagah data generate ho raha hai—social media, banking, e-commerce, healthcare, etc. Data Scientist ka kaam hota hai iss data ko samajhna, clean karna aur usme se patterns ya trends find karna.
+Isme mainly 3 cheeze use hoti hain: programming (Python), statistics aur machine learning. Example ke liye, Amazon ya Flipkart aapki previous purchases aur search history analyze karke aapko recommended products dikhate hain. Ye sab Data Science ki wajah se possible hota hai.
+Data Science ka main goal hai data ko meaningful banana, future predictions karna aur business ya system ko improve karna.
+
+## Data Science Process
+Data Science Process ek step-by-step method hai jisme data ko use karke problem solve ki jaati hai. Ye process structured hota hai taaki accurate results mil sake.
+1. **Problem Understanding** – sabse pehle problem ko clearly samjha jata hai. Example: sales kyu kam ho rahi hai?
+2. **Data Collection** – relevant data gather kiya jata hai (database, API, files, etc.)
+3. **Data Cleaning** – missing, duplicate ya incorrect data ko fix kiya jata hai
+4. **Data Exploration (EDA)** – data ko analyze karke patterns samjhe jaate hain
+5. **Model Building** – machine learning models banaye jaate hain prediction ke liye
+6. **Evaluation** – model kitna accurate hai ye check kiya jata hai
+7. **Deployment** – final model ko real-world me use kiya jata hai
+Example: ek company customer data analyze karke future sales predict karti hai using this process.
+
+## Types of Data
+Data ko alag-alag types me divide kiya jata hai based on nature aur format. Main 2 categories hoti hain:
+1. **Qualitative Data (Categorical)** – Ye descriptive data hota hai, numbers me nahi hota.
+   Example: gender, color, city name
+   * Nominal: koi order nahi (jaise colors)
+   * Ordinal: order hota hai (jaise rating: low, medium, high)
+2. **Quantitative Data (Numerical)** – Ye numbers me hota hai aur calculations possible hoti hain
+   Example: age, salary, marks
+   * Discrete: countable (students count)
+   * Continuous: measurable (height, weight)
+Data ko samajhna important hai kyunki analysis aur model selection isi pe depend karta hai.
+
+## Big Data vs Small Data
+Data ko size aur complexity ke basis par **Big Data** aur **Small Data** me divide kiya jata hai.
+**Small Data** wo hota hai jo easily handle ho jaye.
+Size kam hota hai
+Excel ya simple database me store ho jata hai
+Analysis bhi simple tools se ho jata hai
+  Example: school ke student records
+
+**Big Data** bahut large aur complex hota hai
+Size bohot bada (TB, PB)
+Fast speed se generate hota hai
+Traditional tools se handle nahi hota
+  Example: social media data, online transactions
+
+Big Data ke 3 main features (3V):
+1. **Volume** – data ka size
+2. **Velocity** – data ki speed
+3. **Variety** – data ke different types
+Big Data ko handle karne ke liye tools jaise Hadoop, Spark use hote hain.
+
+## Basic Terminologies of Data Science
+Data Science me kuch common terms hote hain jo frequently use hote hain:
+1. **Data** – raw facts (numbers, text, images)
+2. **Dataset** – related data ka collection (table format me)
+3. **Feature** – dataset ka column (jaise age, salary)
+4. **Observation** – ek row ya record
+5. **Algorithm** – problem solve karne ka step-by-step method
+6. **Model** – trained system jo prediction karta hai
+7. **Training Data** – model ko sikhane ke liye use hota hai
+8. **Testing Data** – model ki accuracy check karne ke liye
+9. **Accuracy** – model kitna sahi predict kar raha hai
+10. **Overfitting** – model sirf training data yaad kar leta hai, generalize nahi karta
+Ye terms samajhna zaruri hai kyunki poora Data Science inhi concepts par based hota hai.
+
+## Structured vs Unstructured Data
+Data ko format ke basis par do types me divide kiya jata hai: 
+**Structured** aur **Unstructured Data**
+
+**Structured Data** well-organized hota hai, table format me hota hai (rows & columns).
+Easy to store aur analyze
+SQL database me store hota hai
+Example: student records (name, age, marks)
+
+**Unstructured Data** ka koi fixed format nahi hota
+Random aur complex hota hai
+Direct analysis mushkil hota hai
+Example: images, videos, emails, social media posts
+
+Ek aur type hota hai **Semi-structured Data**
+Fully structured nahi, but thoda format hota hai
+Example: JSON, XML files
+Data Science me dono types important hote hain, but unstructured data ko handle karna zyada challenging hota hai.
+
+## Roles and Responsibilities of Data Scientist
+
+Data Scientist ka main kaam hota hai data ko use karke insights aur predictions banana. Unki responsibilities kaafi important hoti hain:
+1. **Problem Understanding** – business ya real-world problem ko clearly samajhna
+2. **Data Collection** – different sources se data gather karna
+3. **Data Cleaning** – missing ya incorrect data ko fix karna
+4. **Data Analysis** – patterns aur trends find karna
+5. **Model Building** – machine learning models banana
+6. **Evaluation** – model ki accuracy check karna
+7. **Visualization** – charts/graphs se results explain karna
+8. **Communication** – insights ko simple language me stakeholders ko samjhana
+Data Scientist ko programming (Python), statistics aur logical thinking aana zaruri hota hai.
+
+# Unit 2
+## Need of Python in Data Science
+Python Data Science me sabse popular language hai kyunki ye simple, powerful aur easy to learn hai. Iska syntax beginner-friendly hota hai, isliye quickly samajh aata hai.
+Python me kaafi useful libraries available hain:
+**NumPy** – numerical calculations
+**Pandas** – data handling (tables)
+**Matplotlib / Seaborn** – graphs aur visualization
+**Scikit-learn** – machine learning
+
+Python ka use data cleaning, analysis, visualization aur prediction sab me hota hai. Example: agar aapke paas sales data hai, to Python se aap easily trends find kar sakte ho aur future sales predict kar sakte ho.
+Python flexible hai aur Big Data, AI, ML sab me use hota hai, isliye Data Science ke liye best choice mana jata hai.
+
+## Python for Data Scientists
+Python Data Scientists ke liye ek complete toolkit jaisa hai. Isme aise features aur libraries hain jo data ko easily handle aur analyze karne me help karte hain.
+Python me **Pandas** ka use karke data ko table (DataFrame) me manage kiya jata hai, jaise Excel. **NumPy** fast calculations ke liye use hota hai. Visualization ke liye **Matplotlib** aur **Seaborn** use hote hain, jisse graphs aur charts banaye jaate hain. Machine Learning ke liye **Scikit-learn** popular hai.
+Example: agar ek Data Scientist ko sales data analyze karna hai, to wo Python me data load karega, clean karega, graph banayega aur future sales predict karega.
+Python ka syntax simple hai aur large community support available hai, isliye errors solve karna bhi easy hota hai. Is wajah se Python Data Scientists ki first choice hoti hai.
+
+## Virtual Environment
+Virtual Environment Python me ek isolated environment hota hai jisme aap apne project ke liye alag dependencies (libraries) manage kar sakte ho. Isse ek project ki libraries dusre project ko affect nahi karti.
+Example:
+Project A me Pandas version 1.0 chahiye aur Project B me Pandas 2.0. Virtual environment se dono alag-alag manage ho sakte hain without conflict.
+Iska use karke aap clean aur organized project structure maintain kar sakte ho. Har project ka apna environment hota hai jisme required packages install kiye jaate hain.
+Create aur activate karne ke basic steps:
+1. `python -m venv myenv`
+2. `myenv\Scripts\activate` (Windows)
+Virtual environment best practice hai, especially Data Science projects me jahan multiple libraries use hoti hain.
+
+## Variables in Python
+Variables Python me data store karne ke liye use hote hain. Ye ek container ki tarah kaam karte hain jisme hum values store kar sakte hain aur baad me use kar sakte hain.
+Python me variable declare karna easy hai, type define karne ki zarurat nahi hoti:
+`age = 25`
+`name = "Rahul"`
+`price = 99.5`
+Yaha `age`, `name`, `price` variables hain aur unme alag-alag type ka data store hai.
+Python dynamically typed language hai, matlab variable ka type automatically decide hota hai value ke basis par. Ek hi variable me different type ki value bhi assign ki ja sakti hai:
+`x = 10`
+`x = "Hello"`
+Variables ka use data store karne, calculations karne aur programs ko flexible banane ke liye hota hai.
+
+## Rules for Python Variables
+Python me variables define karte time kuch rules follow karne padte hain:
+1. **Name letter ya underscore se start hona chahiye**
+   Allowed :  `name`, `_age`
+   Not Allowed : `1name`
+
+2. **Numbers use kar sakte hain, but start me nahi**
+   Allowed :  `age1`
+   Not Allowed : `1age`
+
+3. **Special characters allowed nahi hote**
+   Allowed :  `total_price`
+   Not Allowed : `total-price`, `price@`
+
+4. **Keywords use nahi kar sakte**
+   Not Allowed : `if`, `for`, `class` (ye reserved words hain)
+
+5. **Case-sensitive hota hai**
+   `name` aur `Name` alag variables hain
+
+**Best Practices**
+Meaningful names use karo --> `marks` instead of `m`
+Snake case use karo --> `total_marks`
+Short aur clear rakho
+Ye rules follow karne se code readable aur error-free rehta hai.
+
+## Fundamentals of Python
+Python ke fundamentals basic concepts hote hain jo programming start karne ke liye zaruri hain.
+1. **Data Types** – different types of data
+   * `int` (10), `float` (10.5), `str` ("Hello"), `bool` (True/False)
+
+2. **Operators** – calculations aur comparison ke liye
+   * Arithmetic: `+`, `-`, `*`, `/`
+   * Comparison: `==`, `!=`, `>`
+
+3. **Input/Output** – user se input lena aur output dikhana
+`name = input("Enter name: ")`
+`print(name)`
+
+4. **Conditional Statements** – decision lene ke liye
+`age = 18`
+`if age >= 18:`
+`    print("Adult")`
+
+5. **Loops** – repeat kaam ke liye
+`for i in range(3):`
+`    print(i)`
+
+Ye basics strong hone se aap easily Data Science aur advanced topics samajh paoge.
+
+## Working with Python Scripts
+Python script ek file hoti hai jisme Python code likha hota hai aur uska extension **.py** hota hai. Is file ko run karke program execute kiya jata hai.
+Example:
+`hello.py`
+`python id="k7r9pl"`
+`print("Hello World")`
+
+Is script ko run karne ke liye CMD me command use hoti hai:
+`python hello.py`
+
+**Kaise kaam karta hai**
+1. Code `.py` file me likhte hain
+2. Python interpreter us file ko read karta hai
+3. Line by line execute karta hai
+4. Output console me show hota hai
+
+**Important Points**
+Script reusable hoti hai
+Large programs organize karne me help karti hai
+Automation tasks ke liye useful hai
+Example: ek script daily report automatically generate kar sakti hai.

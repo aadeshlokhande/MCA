@@ -7,11 +7,7 @@ Unit 1: DBMS Concepts and Architecture
 * Data Models
 * ER Model
 * Relational Model
-* Database Languages
-  * DDL
-  * DML
-  * DCL
-  * TCL
+* Database Languages : DDL, DML, DCL, TCL
 * Database Design
 * ER Diagram
 * Entities and Attributes

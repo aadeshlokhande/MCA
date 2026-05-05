@@ -3,7 +3,7 @@ from time import sleep
 
 sleep(4)
 
-file = open('Cyber Security/shortNotes.txt','r')
+file = open('Data Science using Python\\2 units.txt','r')
 data = file.read()
 file.close()
 
