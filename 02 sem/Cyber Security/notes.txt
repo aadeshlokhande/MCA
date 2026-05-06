@@ -1,0 +1,453 @@
+# UNIT 1
+
+## **Overview of Cyber Security**
+Cyber Security ka matlab hai computers, networks, aur digital data ko unauthorized access aur attacks se protect karna. Aaj sab kuch online ho gaya hai—banking, UPI payments, emails, social media—isi liye security ka role bahut important hai.
+Simple example:
+Agar koi hacker aapka Instagram ya bank account access kar le, toh wo aapka data ya paise misuse kar sakta hai. Cyber security in sab cheezon ko secure banati hai.
+Cyber Security ka main focus hota hai CIA Triad par:
+1. Confidentiality – data secret rahe
+2. Integrity – data change na ho bina permission
+3. Availability – system hamesha accessible rahe
+Isme tools use hote hai jaise firewall (network protection), antivirus (malware se bachav), aur encryption (data ko code me convert karna).
+Cyber Security ka main goal hai digital systems ko safe, reliable aur trustworthy banana.
+
+## **Internet Governance (Challenges and Constraints)**
+Internet Governance ka matlab hai internet ko manage karne ke rules, policies aur standards banana. Ye kaam alag-alag organizations, governments aur private companies milke karti hai, jaise domain names, data flow aur security manage karna.
+Simple example:
+Jab aap koi website open karte ho (.com, .in), toh uska proper system hota hai jise global level par control kiya jata hai.
+### Challenges:
+1. **Global Nature** – Internet pure world me hai, par har country ke alag rules hote hai
+2. **Cyber Crimes** – hacking, fraud ko control karna difficult hota hai
+3. **Data Privacy** – user data ko safe rakhna ek bada challenge hai
+4. **Censorship** – kuch countries content block karti hai, jo freedom ko affect karta hai
+### Constraints:
+1. Legal differences between countries
+2. Technology ka fast change hona
+3. Lack of proper global authority
+Internet Governance ka goal hai safe, open aur fair internet maintain karna.
+
+## **Cyber Threats: Cyber Warfare, Cyber Crime, Cyber Terrorism, Cyber Espionage**
+Cyber Threats ka matlab hai digital systems par hone wale dangerous attacks jo data, network ya country ko harm karte hai.
+### Types of Cyber Threats:
+1. **Cyber Crime**
+Ye illegal activities hoti hai jaise hacking, online fraud, phishing, identity theft.
+Example: kisi ka bank account hack karke paise nikalna.
+2. **Cyber Warfare**
+Jab ek country dusri country ke systems par attack karti hai.
+Example: military systems ya power grid ko hack karna.
+3. **Cyber Terrorism**
+Terrorist groups internet ka use karke fear create karte hai ya systems damage karte hai.
+Example: government websites ko crash karna.
+4. **Cyber Espionage**
+Secret information chori karna, mostly governments ya companies ke beech.
+Example: kisi company ka confidential data steal karna.
+In sab threats ka main goal hota hai data chori karna, damage karna ya system ko disrupt karna.
+
+## **Need of Cyber Security Policy**
+Cyber Security Policy ek set of rules aur guidelines hoti hai jo batati hai ki organization ya system apne data aur network ko kaise secure rakhega. Ye policy define karti hai ki kya allowed hai aur kya nahi.
+Simple example:
+Company me employees ko strong password use karna, unknown links avoid karna, aur data share karne ke rules follow karna padta hai—ye sab policy ka part hota hai.
+### Cyber Security Policy ki zarurat:
+1. **Data Protection** – sensitive data ko safe rakhna
+2. **Risk Management** – cyber attacks ke risk ko reduce karna
+3. **User Awareness** – employees ko security rules samjhana
+4. **Incident Handling** – attack hone par kya action lena hai
+5. **Legal Compliance** – laws aur regulations follow karna
+Without policy, system insecure ho jata hai aur misuse ka risk badh jata hai.
+Cyber Security Policy organization ko structured aur secure banati hai.
+
+## **Need of Nodal Authority**
+Nodal Authority ek central organization hoti hai jo cyber security se related activities ko monitor, manage aur control karti hai. Ye ek main point of contact hota hai jahan se cyber issues handle kiye jate hai.
+Simple example:
+Agar kisi country me cyber attack hota hai, toh ek central agency usko detect karti hai, response deti hai aur solution provide karti hai.
+### Nodal Authority ki zarurat:
+1. **Central Control** – sabhi cyber activities ko ek jagah se manage karna
+2. **Quick Response** – attacks hone par fast action lena
+3. **Coordination** – different departments aur agencies ke beech coordination
+4. **Monitoring** – threats ko continuously track karna
+5. **Guidelines** – security rules aur standards define karna
+India me example hai CERT-In jo cyber incidents handle karta hai.
+Nodal Authority ka main role hai cyber space ko secure aur controlled rakhna.
+
+## **Cyber Security Regulations**
+Cyber Security Regulations wo laws aur rules hote hai jo ensure karte hai ki organizations aur users apne data aur systems ko secure rakhe. Ye regulations batate hai ki kya legal hai aur kya illegal cyber activities me.
+Simple example:
+Agar koi company user ka personal data misuse karti hai, toh us par legal action liya ja sakta hai.
+### Regulations ki zarurat:
+1. **Data Protection** – user ki personal information safe rahe
+2. **Cyber Crime Control** – hacking, fraud jaise crimes ko rokna
+3. **Accountability** – companies ko responsible banana
+4. **Standardization** – security ke proper rules follow karna
+India me cyber laws ka main part hai Information Technology Act, 2000 jo hacking, data theft jaise crimes ko cover karta hai.
+Cyber Security Regulations ka goal hai safe aur legal digital environment maintain karna.
+
+## **Role of International Law**
+International Law cyber security me important role play karta hai kyunki internet global hai aur attacks kisi bhi country se aa sakte hai. Ye laws countries ke beech cooperation aur rules define karte hai.
+Simple example:
+Agar ek country ka hacker dusri country ke system ko attack kare, toh us case ko handle karne ke liye international rules aur agreements zaroori hote hai.
+### International Law ke roles:
+1. **Cooperation** – countries milkar cyber crimes ko handle karti hai
+2. **Cyber Crime Control** – cross-border crimes ko track aur punish karna
+3. **Data Protection** – global level par privacy rules banana
+4. **Conflict Management** – cyber warfare situations ko control karna
+Example: Budapest Convention on Cybercrime jo countries ko cyber crimes se ladne me help karta hai.
+International Law ka main goal hai global cyber space ko safe aur fair banana.
+
+# UNIT 2 
+## **Introduction to Cryptography**
+Cryptography ka matlab hai data ko secure karne ke liye usse secret code me convert karna, taaki unauthorized log usse samajh na sake. Ye mainly communication aur data protection ke liye use hoti hai.
+Simple example:
+Agar aap WhatsApp par message bhejte ho, toh wo encrypted hota hai. Matlab sirf sender aur receiver hi us message ko read kar sakte hai.
+### Basic Concepts:
+1. **Plain Text** – original readable data
+2. **Cipher Text** – encrypted (coded) data
+3. **Encryption** – plain text ko cipher text me convert karna
+4. **Decryption** – cipher text ko wapas original form me lana
+### Importance:
+1. Data ko hackers se protect karta hai
+2. Secure communication ensure karta hai
+3. Online transactions safe banata hai
+Cryptography ka main goal hai data ko confidential aur secure banana.
+
+## **Introduction to Cryptography**
+Cryptography ka matlab hai data ko secure karne ke liye usse secret code me convert karna, taaki unauthorized log usse samajh na sake. Ye mainly communication aur data protection ke liye use hoti hai.
+Simple example:
+Agar aap WhatsApp par message bhejte ho, toh wo encrypted hota hai. Matlab sirf sender aur receiver hi us message ko read kar sakte hai.
+### Basic Concepts:
+1. **Plain Text** – original readable data
+2. **Cipher Text** – encrypted (coded) data
+3. **Encryption** – plain text ko cipher text me convert karna
+4. **Decryption** – cipher text ko wapas original form me lana
+### Importance:
+1. Data ko hackers se protect karta hai
+2. Secure communication ensure karta hai
+3. Online transactions safe banata hai
+Cryptography ka main goal hai data ko confidential aur secure banana.
+
+## **Security Approaches**
+Security Approaches ka matlab hai wo different methods jinse hum system aur data ko secure karte hai. Ye decide karta hai ki protection kaise implement karna hai.
+### Main Security Approaches:
+1. **Prevention (Rokna)**
+Attack hone se pehle hi security laga dena.
+Example: strong password, firewall use karna.
+2. **Detection (Pehchanna)**
+Agar attack ho jaye, toh usse identify karna.
+Example: antivirus malware detect karta hai.
+3. **Response (Action lena)**
+Attack detect hone ke baad turant action lena.
+Example: hacked system ko isolate karna.
+4. **Recovery (Wapas lana)**
+Damage ke baad system ko normal state me lana.
+Example: backup se data restore karna.
+### Real-life Example:
+Jaise ghar me lock lagana (prevention), CCTV (detection), police ko call (response), aur damage repair (recovery).
+Security Approaches ka goal hai complete protection dena—from prevention to recovery.
+
+## **Principles of Security**
+Principles of Security wo basic rules hote hai jo system ko secure banane ke liye follow kiye jate hai. Ye ensure karte hai ki data safe, reliable aur trusted rahe.
+### Main Principles:
+1. **Confidentiality**
+Data sirf authorized users hi access kare.
+Example: password-protected files.
+2. **Integrity**
+Data bina permission change na ho.
+Example: banking data accurate rehna chahiye.
+3. **Availability**
+System jab chahiye tab accessible ho.
+Example: website hamesha available ho.
+4. **Authentication**
+User ki identity verify karna.
+Example: OTP login.
+5. **Authorization**
+Kaun kya access kar sakta hai ye decide karna.
+Example: admin vs normal user permissions.
+### Real-life Example:
+Bank system me sirf aap apna account access kar sakte ho, aur data safe rehta hai.
+In principles ka main goal hai secure aur trustworthy system maintain karna.
+
+## **Types of Security Attacks**
+Security Attacks wo attempts hote hai jisme attacker system ya data ko access, change ya destroy karne ki koshish karta hai.
+### Main Types:
+1. **Passive Attack**
+Isme attacker sirf data ko observe karta hai, change nahi karta.
+Example: network sniffing (data secretly dekhna).
+2. **Active Attack**
+Isme attacker data ko modify ya damage karta hai.
+Example: hacking, data alteration.
+### Detailed Types:
+3. **Interruption**
+System ya service ko unavailable banana.
+Example: server crash (DoS attack).
+4. **Interception**
+Unauthorized access lena.
+Example: password steal karna.
+5. **Modification**
+Data ko change karna.
+Example: transaction amount change kar dena.
+6. **Fabrication**
+Fake data create karna.
+Example: fake messages ya emails bhejna.
+### Real-life Example:
+Jaise koi aapki baat chupke sun raha ho (passive), ya aapki baat ko change kar de (active).
+In attacks ka aim hota hai system ki security ko todna.
+
+## **Security Services**
+Security Services wo functions hote hai jo data aur communication ko secure banate hai. Ye ensure karte hai ki information safe, reliable aur trusted rahe.
+### Main Security Services:
+1. **Authentication**
+User ya system ki identity verify karna.
+Example: login with password ya OTP.
+2. **Access Control**
+Kaun kya access kar sakta hai ye control karna.
+Example: admin vs normal user permissions.
+3. **Data Confidentiality**
+Data ko secret rakhna.
+Example: encryption use karke data hide karna.
+4. **Data Integrity**
+Data ko change hone se protect karna.
+Example: file checksum verify karna.
+5. **Non-Repudiation**
+Sender deny na kar sake ki usne message bheja tha.
+Example: digital signature.
+### Real-life Example:
+Jaise bank me login (authentication), locker access control, aur safe transaction (integrity + confidentiality).
+Security Services ka goal hai secure communication aur trusted data exchange ensure karna.
+
+## **Security Mechanisms**
+Security Mechanisms wo tools aur techniques hote hai jo Security Services ko implement karte hai. Matlab, ye actual methods hote hai jo system ko secure banate hai.
+### Main Security Mechanisms:
+1. **Encryption**
+Data ko code me convert karna taaki unauthorized log samajh na sake.
+Example: HTTPS websites.
+2. **Digital Signature**
+Message ki authenticity verify karna.
+Example: online documents signing.
+3. **Access Control Mechanism**
+User permissions manage karna.
+Example: login roles (admin/user).
+4. **Authentication Mechanism**
+User verify karna.
+Example: password, OTP.
+5. **Firewalls**
+Network traffic ko filter karna aur unwanted access block karna.
+6. **Intrusion Detection System (IDS)**
+Suspicious activity detect karna.
+### Real-life Example:
+Jaise ghar ka lock (access control), CCTV (detection), aur safe locker (encryption).
+Security Mechanisms ka main goal hai attacks ko prevent, detect aur control karna.
+
+## **Network Security Model**
+Network Security Model ek framework hai jo batata hai ki data ko sender se receiver tak securely kaise bheja jaye. Isme mainly communication ko safe banana focus hota hai.
+### Model ke components:
+1. **Sender (Source)**
+Jo message bhejta hai.
+2. **Message (Data)**
+Original information jo send karni hai.
+3. **Encryption Algorithm**
+Message ko cipher text me convert karta hai.
+4. **Key**
+Secret value jo encryption/decryption ke liye use hoti hai.
+5. **Cipher Text**
+Encrypted (coded) message.
+6. **Decryption Algorithm**
+Cipher text ko wapas original message me convert karta hai.
+7. **Receiver (Destination)**
+Jo message receive karta hai.
+### Working:
+Sender message ko encrypt karta hai --> network se send hota hai --> receiver decrypt karke original data paata hai.
+### Real-life Example:
+Jaise aap ek secret letter ko code me likhkar bhejte ho aur saamne wala usse decode karta hai.
+Is model ka goal hai secure communication ensure karna.
+
+## **Substitution Techniques**
+Substitution Technique ek cryptography method hai jisme original data (plain text) ke har character ko kisi aur character se replace kiya jata hai. Structure same rehta hai, bas letters change ho jate hai.
+### Simple Example:
+A --> D, B --> E, C --> F (3 shift)
+"HELLO" --> "KHOOR"
+Isse Caesar Cipher kehte hai.
+### Types of Substitution:
+1. **Monoalphabetic Cipher**
+Har letter ka fixed replacement hota hai.
+Example: A --> X, B --> M, etc.
+2. **Polyalphabetic Cipher**
+Ek letter ke multiple replacements ho sakte hai.
+Example: Vigenère Cipher (different keys use hote hai).
+### Advantages:
+- Easy to implement
+- Basic security provide karta hai
+### Disadvantages:
+- Easily break ho sakta hai (frequency analysis se)
+### Real-life Example:
+Jaise aap apne friends ke saath secret language bana lete ho jisme words replace ho jate hai.
+Iska main idea hai data ko readable se unreadable banana using replacement.
+
+## **Transposition Techniques**
+Transposition Technique me characters ko replace nahi kiya jata, balki unka order change kiya jata hai. Matlab letters same rehte hai, bas unki position shuffle ho jati hai.
+### Simple Example:
+Plain Text: HELLO
+Rearranged: OLLEH (reverse)
+Ya ek grid use karke:
+HELLO --> likho rows/columns me --> phir alag order me read karo
+### Types:
+1. **Rail Fence Cipher**
+Message ko zig-zag pattern me likhte hai aur phir read karte hai.
+2. **Columnar Transposition**
+Message ko table me likhkar columns ke order change karte hai.
+### Advantages:
+- Structure hide ho jata hai
+- Substitution ke saath combine karne par strong security milti hai
+### Disadvantages:
+- Alone use kare toh easily break ho sakta hai
+### Real-life Example:
+Jaise aap kisi word ke letters mix kar dete ho, par letters same hi rehte hai.
+Iska main goal hai data ko unreadable banana by changing positions, not characters.
+
+## **Symmetric Key Cryptography**
+Symmetric Key Cryptography me encryption aur decryption dono ke liye **same key** use hoti hai. Matlab sender aur receiver ke paas ek hi secret key hoti hai.
+### Working:
+1. Sender plain text ko secret key se encrypt karta hai
+2. Cipher text network se send hota hai
+3. Receiver same key use karke decrypt karta hai
+### Example:
+Agar key = 3 ho (Caesar cipher)
+Hello --> Khoor (encrypt)
+Khoor --> Hello (decrypt)
+### Advantages:
+- Fast hota hai
+- Large data ke liye efficient
+### Disadvantages:
+- Key share karna risky hota hai
+- Agar key leak ho gayi toh data unsafe
+### Real-life Example:
+Jaise ek locker jisme dono ke paas same key ho.
+### Popular Algorithms:
+- AES (Advanced Encryption Standard)
+- DES (Data Encryption Standard)
+Iska main goal hai fast aur secure data encryption using single shared key.
+
+## **Asymmetric Key Cryptography**
+Asymmetric Key Cryptography me **do keys** use hoti hai:
+1. **Public Key** (sabko pata hoti hai)
+2. **Private Key** (secret hoti hai)
+### Working:
+1. Sender receiver ki **public key** se data encrypt karta hai
+2. Sirf receiver apni **private key** se usse decrypt kar sakta hai
+### Example:
+Agar aap kisi ko message bhejna chahte ho, toh aap uski public key use karoge, par read sirf wo hi karega apni private key se.
+### Advantages:
+- Secure key sharing (secret key send nahi karni padti)
+- Digital signatures possible
+### Disadvantages:
+- Symmetric se slow hota hai
+- Complex hota hai
+### Real-life Example:
+Jaise ek lock box jisme koi bhi lock kar sakta hai (public key), par open sirf owner hi karega (private key).
+### Popular Algorithms:
+- RSA
+- ECC
+Iska main goal hai secure communication without sharing secret key directly.
+
+## **Steganography**
+Steganography ek technique hai jisme data ko **hide** kiya jata hai kisi dusre medium ke andar, jaise image, audio ya video. Yaha data ko encrypt nahi kiya jata, balki chupaya jata hai taaki kisi ko pata hi na chale.
+### Simple Example:
+Ek image file me secret message embed kar diya jata hai. Normal user ko wo sirf image dikhegi, par actual me usme hidden data hota hai.
+### Working:
+1. Secret message liya jata hai
+2. Usse kisi media file (image/audio) me embed kiya jata hai
+3. Receiver us hidden data ko extract karta hai
+### Types:
+1. Image Steganography
+2. Audio Steganography
+3. Video Steganography
+### Advantages:
+- Invisible communication
+- Suspicion kam hota hai
+### Disadvantages:
+- Agar detect ho gaya toh easily extract ho sakta hai
+### Real-life Example:
+Jaise kisi photo ke andar secret note chhupa dena.
+Iska main goal hai data ko hide karna, na ki sirf encrypt karna.
+
+## **Cryptanalytic Attack**
+Cryptanalytic Attack me attacker encryption ko todne ki koshish karta hai bina key directly jane. Matlab wo algorithms, patterns aur logic use karke original message (plain text) ya key find karta hai.
+### Simple Example:
+Agar kisi message me baar-baar “E” letter aa raha hai, toh attacker guess kar sakta hai ki ye most common letter hai (frequency analysis).
+### Types of Cryptanalytic Attacks:
+1. **Ciphertext-Only Attack**
+Attacker ke paas sirf encrypted data hota hai.
+2. **Known-Plaintext Attack**
+Attacker ko kuch original aur encrypted pairs pata hote hai.
+3. **Chosen-Plaintext Attack**
+Attacker khud se plaintext choose karke uska encrypted output dekhta hai.
+4. **Chosen-Ciphertext Attack**
+Attacker cipher text dekar uska decrypted result analyze karta hai.
+### Real-life Example:
+Jaise puzzle solve karke secret code crack karna.
+Iska main goal hota hai encryption ko break karna aur hidden information ko access karna.
+
+## **Brute Force Attack**
+Brute Force Attack ek simple par powerful attack hai jisme attacker **saare possible keys ya passwords try karta hai** jab tak correct one mil na jaye. Isme koi smart logic nahi hota, bas trial-and-error use hota hai.
+### Simple Example:
+Agar password 4 digit ka hai (0000–9999), attacker sab combinations try karega jab tak sahi password mil jaye.
+### Working:
+1. Possible combinations generate karna
+2. Ek-ek karke try karna
+3. Correct match milte hi access mil jata hai
+### Advantages (attacker ke liye):
+- Guaranteed success (agar time mile toh)
+### Disadvantages:
+- Time consuming hota hai
+- Strong passwords par slow ho jata hai
+### Real-life Example:
+Jaise kisi lock ko har possible key se try karna.
+### Prevention:
+- Strong passwords use karo
+- Account lock after multiple attempts
+- Two-Factor Authentication (2FA)
+Iska main idea hai force use karke password crack karna.
+
+## **Block Cipher Principles**
+Block Cipher ek encryption technique hai jisme data ko fixed-size blocks (jaise 64-bit, 128-bit) me divide karke encrypt kiya jata hai. Har block par same algorithm aur key apply hoti hai.
+### Basic Idea:
+Plain text --> blocks me divide --> encryption --> cipher text blocks
+### Important Principles:
+1. **Confusion**
+Data aur key ka relation complex banana taaki attacker samajh na sake.
+2. **Diffusion**
+Plain text ka effect poore cipher text me spread karna.
+Matlab ek small change se poora output change ho jaye.
+3. **Rounds**
+Encryption multiple steps (rounds) me hoti hai, har round me substitution + permutation hota hai.
+4. **Key Use**
+Secret key har round me use hoti hai.
+### Example:
+AES me 128-bit blocks aur multiple rounds use hote hai.
+### Real-life Example:
+Jaise kisi message ko tukdo me todkar har tukde ko alag secure karna.
+Iska main goal hai strong aur secure encryption provide karna.
+
+## **DES Algorithm (Data Encryption Standard)**
+DES ek **symmetric key block cipher** hai jo 64-bit data block ko encrypt karta hai aur 56-bit key use karta hai. Ye purana hai, par concepts samajhne ke liye important hai.
+### Working Steps:
+1. **Initial Permutation (IP)**
+Input data ko rearrange kiya jata hai.
+2. **16 Rounds Process**
+Har round me operations hote hai:
+- Expansion (32 --> 48 bits)
+- Key mixing (XOR with key)
+- Substitution (S-box)
+- Permutation
+3. **Feistel Structure**
+Data ko 2 parts me divide karke process kiya jata hai (Left & Right).
+4. **Final Permutation (FP)**
+Last me bits ko fir se rearrange kiya jata hai.
+### Example:
+64-bit plain text --> DES --> 64-bit cipher text
+### Advantages:
+- Structured aur systematic algorithm
+### Disadvantages:
+- Key choti hai (56-bit), easily brute force ho sakta hai
+- Aaj ke time me secure nahi maana jata
+### Real-life Example:
+Jaise ek message ko multiple steps me mix karke secure banana.
+DES ka main goal tha secure encryption provide karna, par ab AES use hota hai.

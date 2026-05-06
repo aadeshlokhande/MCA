@@ -1,11 +1,7 @@
 Unit 1: Introduction to Cyber Security
 * Overview of Cyber Security
 * Internet Governance (Challenges and Constraints)
-* Cyber Threats
-  * Cyber Warfare
-  * Cyber Crime
-  * Cyber Terrorism
-  * Cyber Espionage
+* Cyber Threats: Cyber Warfare, Cyber Crime, Cyber Terrorism, Cyber Espionage
 * Need of Cyber Security Policy
 * Need of Nodal Authority
 * Cyber Security Regulations
