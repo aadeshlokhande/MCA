@@ -1,5 +1,4 @@
 Unit 1: Introduction to PHP and Setup
-
 * Overview of PHP
 * Features of PHP
 * Benefits and Applications
@@ -9,18 +8,15 @@ Unit 1: Introduction to PHP and Setup
 * Data Types
 * Constants
 * Control Structures
-
   * If-Else
   * Switch
   * Loops
 * PHP with HTML (Embedding PHP)
 
 Unit 2: PHP Functions and Data Handling
-
 * Functions (Creation and Usage)
 * Built-in Functions
 * Arrays
-
   * Types of Arrays
   * Array Functions
   * Sorting
@@ -30,25 +26,21 @@ Unit 2: PHP Functions and Data Handling
 * Working with Date and Time
 
 Unit 3: Forms, File Handling and State Management
-
 * Form Handling
 * GET and POST Methods
 * Form Validation
 * Form Security
 * File Handling
-
   * Read Files
   * Write Files
   * File Upload
 * Session Handling
 * Cookies
 * Security Measures
-
   * Input Filtering
   * Output Escaping
 
 Unit 4: Database Connectivity
-
 * Introduction to Database
 * SQL Basics
 * MySQL Introduction
@@ -62,7 +54,6 @@ Unit 4: Database Connectivity
 * Best Practices
 
 Unit 5: Advanced PHP and Project
-
 * Object Oriented PHP
 * Classes and Objects
 * OOP Principles

@@ -28,3 +28,4 @@ except FileNotFoundError:
 
 except UnicodeDecodeError:
     print("Encoding issue! Try another encoding like utf-8-sig.")
+

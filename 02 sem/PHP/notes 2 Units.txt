@@ -1,0 +1,707 @@
+# Overview of PHP
+
+PHP ek **server-side scripting language** hai jo dynamic websites aur web applications banane ke liye use hoti hai. PHP ka full form **Hypertext Preprocessor** hai. Ye server par run hoti hai aur browser ko final HTML output bhejti hai. PHP ko HTML ke saath easily embed kiya ja sakta hai. Iska use login system, forms, e-commerce websites, dashboards, blogs, APIs etc. banane me hota hai. PHP open-source hai, free hai aur beginner-friendly language mani jati hai. Ye MySQL database ke saath commonly use hoti hai. WordPress jaise popular platforms bhi PHP par based hain.
+
+## Example 1: Simple PHP Program
+
+```php
+<?php
+echo "Hello World";
+?>
+```
+
+### Output
+
+```text
+Hello World
+```
+
+## Example 2: PHP with HTML
+
+```php
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First PHP Page</h1>
+
+<?php
+echo "Welcome to PHP";
+?>
+
+</body>
+</html>
+```
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Features of PHP
+
+PHP me bahut useful features hote hain jo web development ko easy banate hain. Ye open-source language hai, isliye free me use ki ja sakti hai. PHP platform independent hai, matlab Windows, Linux aur Mac sab par chalti hai. Ye HTML ke saath directly embed ho sakti hai. PHP databases jaise MySQL ko support karti hai jisse data store aur retrieve karna easy hota hai. PHP fast execution provide karti hai aur large community support bhi available hai. Isme built-in functions ka huge collection hota hai jo development speed badhata hai. PHP cookies, sessions aur file handling bhi support karti hai.
+
+## Example 1: PHP Embedded in HTML
+
+```php id="2gpyz8"
+<h2>User Information</h2>
+
+<?php
+echo "Name: Adesh";
+?>
+```
+
+## Example 2: Database Connection Syntax
+
+```php id="9qvtok"
+<?php
+$conn = mysqli_connect("localhost", "root", "", "testdb");
+
+if($conn){
+    echo "Connected Successfully";
+}
+?>
+```
+
+## Example 3: Using Built-in Function
+
+```php id="op3iw6"
+<?php
+echo strlen("PHP Language");
+?>
+```
+
+### Output
+
+```text id="criyhh"
+12
+```
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Benefits and Applications of PHP
+
+PHP web development ke liye ek powerful aur easy language hai. Iska sabse bada benefit ye hai ki ye free aur open-source hai. PHP beginner-friendly hai aur easily HTML ke saath work karti hai. Ye fast execution aur database connectivity provide karti hai. PHP ka use dynamic websites aur web applications banane me hota hai. Isse login systems, online shopping websites, CMS, APIs, dashboards aur form handling applications banaye jate hain. PHP hosting support almost har server par available hota hai, isliye deployment bhi easy hota hai.
+
+## Applications of PHP
+
+* E-commerce websites
+* Blog websites
+* Student management systems
+* Login and registration systems
+* Content Management Systems (CMS)
+
+## Example 1: Login Message
+
+```php id="n5lv6l"
+<?php
+$username = "Admin";
+
+echo "Welcome " . $username;
+?>
+```
+
+### Output
+
+```text id="kixu4o"
+Welcome Admin
+```
+
+## Example 2: Simple Calculator
+
+```php id="3u1r9l"
+<?php
+$a = 10;
+$b = 5;
+
+echo $a + $b;
+?>
+```
+
+### Output
+
+```text id="9h5d8r"
+15
+```
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# PHP Installation (XAMPP, WAMP)
+
+PHP run karne ke liye local server environment ki zarurat hoti hai. Iske liye mostly **XAMPP** aur **WAMP** use kiye jate hain. XAMPP me Apache Server, MySQL Database aur PHP already included hote hain. WAMP bhi same kaam karta hai lekin mainly Windows ke liye hota hai. Installation ke baad PHP files `htdocs` folder me rakhi jati hain aur browser me `localhost` ke through run ki jati hain. XAMPP beginner-friendly aur easy setup provide karta hai.
+
+## XAMPP Installation Steps
+
+1. XAMPP download karo
+2. Install karo
+3. XAMPP Control Panel open karo
+4. Apache start karo
+5. `htdocs` folder me PHP file save karo
+6. Browser me run karo
+
+## Example Folder Path
+
+```text id="y33fdx"
+C:\xampp\htdocs\test.php
+```
+
+## Example PHP File
+
+```php id="s56t9u"
+<?php
+echo "PHP Installed Successfully";
+?>
+```
+
+## Run in Browser
+
+```text id="h6z9yx"
+http://localhost/test.php
+```
+
+### Output
+
+```text id="51a3j5"
+PHP Installed Successfully
+```
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Basic Syntax of PHP
+
+PHP code hamesha `<?php ?>` tags ke andar likha jata hai. Har statement ke end me semicolon `;` lagana important hota hai. Output display karne ke liye `echo` ya `print` use kiya jata hai. PHP case-sensitive language hai, matlab variable names uppercase aur lowercase me different hote hain. Comments likhne ke liye `//` single-line aur `/* */` multi-line comments use hote hain. PHP code HTML ke andar bhi likha ja sakta hai.
+
+## Syntax Structure
+
+```php id="n0qj9t"
+<?php
+// PHP code here
+?>
+```
+
+## Example 1: Print Output
+
+```php id="j6l4wr"
+<?php
+echo "Welcome to PHP";
+?>
+```
+
+### Output
+
+```text id="s7c8f3"
+Welcome to PHP
+```
+
+## Example 2: Using Variables
+
+```php id="9w9m1u"
+<?php
+$name = "Adesh";
+
+echo $name;
+?>
+```
+
+### Output
+
+```text id="iqtmbd"
+Adesh
+```
+
+## Example 3: Comments
+
+```php id="u4ecmn"
+<?php
+// Single-line comment
+
+/*
+Multi-line
+comment
+*/
+?>
+```
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Variables in PHP
+
+Variables data store karne ke liye use hote hain. PHP me variable hamesha `$` symbol se start hota hai. Variable ka naam letter ya underscore `_` se start hona chahiye. PHP dynamically typed language hai, isliye data type automatically detect ho jata hai. Variables me numbers, text, arrays ya other values store ki ja sakti hain. Variable names case-sensitive hote hain, matlab `$name` aur `$Name` different variables hain.
+
+## Variable Syntax
+
+```php id="4rqy57"
+$variable_name = value;
+```
+
+## Example 1: String Variable
+
+```php id="4a9ujt"
+<?php
+$name = "Adesh";
+
+echo $name;
+?>
+```
+
+### Output
+
+```text id="2xxjjm"
+Adesh
+```
+
+## Example 2: Number Variables
+
+```php id="y6n6db"
+<?php
+$a = 10;
+$b = 20;
+
+echo $a + $b;
+?>
+```
+
+### Output
+
+```text id="72bp4d"
+30
+```
+
+## Example 3: Multiple Variables
+
+```php id="0zt2e7"
+<?php
+$city = "Nagpur";
+$age = 22;
+
+echo $city;
+echo $age;
+?>
+```
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Data Types in PHP
+
+Data type variable me store hone wale data ka type batata hai. PHP automatically variable ka data type identify kar leti hai. Common data types me String, Integer, Float, Boolean, Array aur NULL include hote hain. String text values store karta hai, Integer whole numbers, Float decimal numbers aur Boolean true/false values store karta hai. Arrays multiple values ko ek variable me store karte hain. Correct data type use karne se program efficient aur easy to manage banta hai.
+
+## Example 1: String
+
+```php id="1sh4df"
+<?php
+$name = "Adesh";
+
+echo $name;
+?>
+```
+
+## Example 2: Integer and Float
+
+```php id="m2k3zx"
+<?php
+$age = 22;
+$price = 99.99;
+
+echo $age;
+echo $price;
+?>
+```
+
+## Example 3: Boolean
+
+```php id="k8s6pw"
+<?php
+$isLogin = true;
+
+var_dump($isLogin);
+?>
+```
+
+### Output
+
+```text id="ccf5m2"
+bool(true)
+```
+
+## Example 4: Array
+
+```php id="fxe1y9"
+<?php
+$colors = array("Red", "Blue", "Green");
+
+print_r($colors);
+?>
+```
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Constants in PHP
+
+Constants aise values hoti hain jinhe program me ek baar define karne ke baad change nahi kiya ja sakta. Variables ki tarah constants ke aage `$` symbol nahi lagta. PHP me constants create karne ke liye `define()` function use hota hai. Constants mostly fixed values store karne ke liye use kiye jate hain jaise website name, PI value ya database configuration. Constants globally accessible hote hain, yani program ke kisi bhi part me use kiye ja sakte hain.
+
+## Syntax
+
+```php id="e5n73j"
+define("CONSTANT_NAME", value);
+```
+
+## Example 1: Simple Constant
+
+```php id="s9n0g2"
+<?php
+define("SITE_NAME", "ICE Computers");
+
+echo SITE_NAME;
+?>
+```
+
+### Output
+
+```text id="8n1j7r"
+ICE Computers
+```
+
+## Example 2: Numeric Constant
+
+```php id="8xyl3h"
+<?php
+define("PI", 3.14);
+
+echo PI;
+?>
+```
+
+### Output
+
+```text id="1d3vlw"
+3.14
+```
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Control Structures in PHP
+
+Control structures program ke flow ko control karte hain. Inki help se conditions check ki ja sakti hain aur repeated tasks perform kiye ja sakte hain. PHP me mainly `if-else`, `switch` aur loops use hote hain. `if-else` conditions check karta hai, `switch` multiple choices handle karta hai aur loops repeated execution ke liye use hote hain. Ye structures decision making aur automation ke liye bahut important hote hain.
+
+## Example 1: If-Else
+
+```php id="ohjq0n"
+<?php
+$age = 18;
+
+if($age >= 18){
+    echo "Eligible";
+}
+else{
+    echo "Not Eligible";
+}
+?>
+```
+
+## Example 2: Switch
+
+```php id="42m2p9"
+<?php
+$day = 2;
+
+switch($day){
+    case 1:
+        echo "Monday";
+        break;
+
+    case 2:
+        echo "Tuesday";
+        break;
+}
+?>
+```
+
+## Example 3: Loop
+
+```php id="i7v3u4"
+<?php
+for($i=1; $i<=5; $i++){
+    echo $i;
+}
+?>
+```
+
+### Output
+
+```text id="5i2x0q"
+12345
+```
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# If-Else in PHP
+
+`if-else` statement conditions check karne ke liye use hota hai. Agar condition true hoti hai toh `if` block execute hota hai, warna `else` block execute hota hai. Ye decision making ke liye bahut useful hota hai jaise login validation, marks checking aur eligibility systems me. Multiple conditions check karne ke liye `elseif` bhi use kiya ja sakta hai.
+
+## Syntax
+
+```php id="k4v8s1"
+if(condition){
+    // code
+}
+else{
+    // code
+}
+```
+
+## Example 1: Simple If-Else
+
+```php id="l1q8dc"
+<?php
+$marks = 40;
+
+if($marks >= 35){
+    echo "Pass";
+}
+else{
+    echo "Fail";
+}
+?>
+```
+
+### Output
+
+```text id="3g0rkt"
+Pass
+```
+
+## Example 2: Using Elseif
+
+```php id="d7n5fw"
+<?php
+$marks = 85;
+
+if($marks >= 75){
+    echo "Distinction";
+}
+elseif($marks >= 35){
+    echo "Pass";
+}
+else{
+    echo "Fail";
+}
+?>
+```
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Switch in PHP
+
+`switch` statement multiple conditions check karne ke liye use hota hai. Jab ek variable ki value ko different cases se compare karna ho tab switch use karna better hota hai. Har case ke baad `break` likha jata hai taaki execution wahi stop ho jaye. Agar koi case match nahi hota toh `default` block execute hota hai. Ye menu systems, day selection aur option handling me useful hota hai.
+
+## Syntax
+
+```php id="e8m2qy"
+switch(variable){
+    case value1:
+        // code
+        break;
+
+    case value2:
+        // code
+        break;
+
+    default:
+        // code
+}
+```
+
+## Example 1: Day Example
+
+```php id="9l6z1h"
+<?php
+$day = 3;
+
+switch($day){
+    case 1:
+        echo "Monday";
+        break;
+
+    case 2:
+        echo "Tuesday";
+        break;
+
+    case 3:
+        echo "Wednesday";
+        break;
+
+    default:
+        echo "Invalid Day";
+}
+?>
+```
+
+### Output
+
+```text id="h0z4nm"
+Wednesday
+```
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Loops in PHP
+
+Loops repeated execution ke liye use hote hain. Jab same code ko multiple times run karna ho tab loops helpful hote hain. PHP me mainly `for`, `while`, `do-while` aur `foreach` loops use hote hain. `for` loop fixed repetitions ke liye, `while` condition-based execution ke liye aur `foreach` arrays ke elements access karne ke liye use hota hai. Loops programming me automation aur data processing ko easy banate hain.
+
+## Example 1: For Loop
+
+```php id="0m8s6x"
+<?php
+for($i = 1; $i <= 5; $i++){
+    echo $i . "<br>";
+}
+?>
+```
+
+### Output
+
+```text id="u4w2jk"
+1
+2
+3
+4
+5
+```
+
+## Example 2: While Loop
+
+```php id="v7q3na"
+<?php
+$num = 1;
+
+while($num <= 3){
+    echo $num;
+    $num++;
+}
+?>
+```
+
+### Output
+
+```text id="e2p9fd"
+123
+```
+
+## Example 3: Foreach Loop
+
+```php id="x5c1br"
+<?php
+$colors = array("Red", "Blue", "Green");
+
+foreach($colors as $color){
+    echo $color . "<br>";
+}
+?>
+```
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# PHP with HTML (Embedding PHP)
+
+PHP ko HTML ke andar directly embed kiya ja sakta hai. Isse dynamic webpages banana easy ho jata hai. PHP code `<?php ?>` tags ke andar likha jata hai aur HTML ke saath mix karke use kiya jata hai. Browser ko final output HTML format me milta hai. PHP embedding ka use dynamic content show karne, user data display karne aur forms handle karne ke liye hota hai.
+
+## Syntax
+
+```php id="4h3x7q"
+<?php
+// PHP code
+?>
+```
+
+## Example 1: PHP Inside HTML
+
+```php id="q8l5nm"
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Welcome Page</h1>
+
+<?php
+echo "Hello Adesh";
+?>
+
+</body>
+</html>
+```
+
+### Output
+
+```text id="1r6w0c"
+Welcome Page
+Hello Adesh
+```
+
+## Example 2: Display Variable in HTML
+
+```php id="9f2vjd"
+<?php
+$name = "Adesh";
+?>
+
+<html>
+<body>
+
+<h2><?php echo $name; ?></h2>
+
+</body>
+</html>
+```
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Built-in Functions in PHP
+
+PHP me bahut saare built-in functions already available hote hain jo common tasks ko easy banate hain. In functions ka use string handling, arrays, math operations, date-time aur file handling ke liye hota hai. Built-in functions use karne se coding fast aur simple ho jati hai. Har function ka specific purpose hota hai aur predefined syntax hota hai.
+
+## Example 1: String Length Function
+
+```php id="a7v2mc"
+<?php
+$text = "Hello PHP";
+
+echo strlen($text);
+?>
+```
+
+### Output
+
+```text id="w4n8qp"
+9
+```
+
+## Example 2: Maximum Number Function
+
+```php id="j5k9td"
+<?php
+echo max(10, 50, 30);
+?>
+```
+
+### Output
+
+```text id="f3x1zr"
+50
+```
+
+## Example 3: Date Function
+
+```php id="b6m4yu"
+<?php
+echo date("d-m-Y");
+?>
+```
+
+### Output
+
+```text id="c2p7lv"
+07-05-2026
+```
+
+## Example 4: String Uppercase
+
+```php id="r9t5qe"
+<?php
+echo strtoupper("php language");
+?>
+```
+
+### Output
+
+```text id="m1v8dk"
+PHP LANGUAGE
+```
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
