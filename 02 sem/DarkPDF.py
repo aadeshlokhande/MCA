@@ -1,7 +1,7 @@
 import fitz
 from PIL import Image, ImageOps
 
-file_path = "Cyber Security\\Cyber security  2 Units.pdf"
+file_path = "AI\\AI Notes long answer.pdf"
 output_path =  file_path.split(".pdf")[:-1][0] + "_dark.pdf"
 
 def pixmap_to_pil(pix):

@@ -705,3 +705,454 @@ echo strtoupper("php language");
 PHP LANGUAGE
 ```
 =<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Arrays in PHP
+
+Array ek special variable hota hai jo multiple values ko single variable me store karta hai. PHP me arrays data collection handle karne ke liye use hote hain. Arrays ka use student names, marks, products ya multiple records store karne me hota hai. PHP me mainly Indexed Array, Associative Array aur Multidimensional Array use hote hain. Array ke elements index ya key ke through access kiye jate hain.
+
+## Syntax
+
+```php id="d5m8ra"
+$array_name = array(value1, value2, value3);
+```
+
+## Example 1: Indexed Array
+
+```php id="u7k2xc"
+<?php
+$colors = array("Red", "Blue", "Green");
+
+echo $colors[0];
+?>
+```
+
+### Output
+
+```text id="v9p4jd"
+Red
+```
+
+## Example 2: Associative Array
+
+```php id="k1q6zb"
+<?php
+$student = array(
+    "name" => "Adesh",
+    "age" => 22
+);
+
+echo $student["name"];
+?>
+```
+
+### Output
+
+```text id="y3t8nh"
+Adesh
+```
+
+## Example 3: Loop Through Array
+
+```php id="x4n7we"
+<?php
+$nums = array(10, 20, 30);
+
+foreach($nums as $num){
+    echo $num . "<br>";
+}
+?>
+```
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Types of Arrays in PHP
+
+PHP me mainly 3 types ke arrays hote hain: Indexed Array, Associative Array aur Multidimensional Array. Indexed array me numeric indexes use hote hain. Associative array me custom keys use hoti hain. Multidimensional array me arrays ke andar arrays store kiye jate hain. Arrays large amount of related data ko easily manage karne me help karte hain.
+
+## 1. Indexed Array
+
+Numeric indexes automatically assign hote hain.
+
+```php id="w3q8nm"
+<?php
+$fruits = array("Apple", "Mango", "Orange");
+
+echo $fruits[1];
+?>
+```
+
+### Output
+
+```text id="c6v2rt"
+Mango
+```
+
+## 2. Associative Array
+
+Custom keys use hoti hain.
+
+```php id="g5p1xd"
+<?php
+$student = array(
+    "name" => "Adesh",
+    "age" => 22
+);
+
+echo $student["age"];
+?>
+```
+
+### Output
+
+```text id="u9m4ke"
+22
+```
+
+## 3. Multidimensional Array
+
+Array ke andar multiple arrays hote hain.
+
+```php id="n7t6qw"
+<?php
+$marks = array(
+    array("Adesh", 80),
+    array("Rahul", 75)
+);
+
+echo $marks[0][0];
+?>
+```
+
+### Output
+
+```text id="r2x9vf"
+Adesh
+```
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Array Functions in PHP
+
+PHP me arrays ko manage karne ke liye bahut saare built-in array functions available hote hain. Inka use counting, adding, removing, searching aur processing ke liye hota hai. Array functions coding ko easy aur fast bana dete hain. Common functions me `count()`, `array_push()`, `array_pop()` aur `in_array()` include hote hain.
+
+## Example 1: count()
+
+Array me total elements count karta hai.
+
+```php id="s4n8jk"
+<?php
+$colors = array("Red", "Blue", "Green");
+
+echo count($colors);
+?>
+```
+
+### Output
+
+```text id="x7m2qa"
+3
+```
+
+## Example 2: array_push()
+
+Array ke end me new element add karta hai.
+
+```php id="j5t1we"
+<?php
+$nums = array(10, 20);
+
+array_push($nums, 30);
+
+print_r($nums);
+?>
+```
+
+## Example 3: array_pop()
+
+Last element remove karta hai.
+
+```php id="f8k3zd"
+<?php
+$fruits = array("Apple", "Mango", "Orange");
+
+array_pop($fruits);
+
+print_r($fruits);
+?>
+```
+
+## Example 4: in_array()
+
+Check karta hai value array me present hai ya nahi.
+
+```php id="p2v6yr"
+<?php
+$colors = array("Red", "Blue");
+
+if(in_array("Red", $colors)){
+    echo "Found";
+}
+?>
+```
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Sorting Arrays in PHP
+
+Sorting ka use array elements ko ascending ya descending order me arrange karne ke liye hota hai. PHP me different sorting functions available hain jaise `sort()`, `rsort()`, `asort()` aur `ksort()`. `sort()` ascending order me sort karta hai aur `rsort()` descending order me. Associative arrays ke liye `asort()` values ke basis par aur `ksort()` keys ke basis par sorting karta hai.
+
+## Example 1: sort() – Ascending Order
+
+```php id="d4k7mx"
+<?php
+$nums = array(40, 10, 30, 20);
+
+sort($nums);
+
+print_r($nums);
+?>
+```
+
+### Output
+
+```text id="r8t2vy"
+Array ( [0] => 10 [1] => 20 [2] => 30 [3] => 40 )
+```
+
+## Example 2: rsort() – Descending Order
+
+```php id="u6p1qe"
+<?php
+$nums = array(10, 50, 20);
+
+rsort($nums);
+
+print_r($nums);
+?>
+```
+
+## Example 3: asort() – Associative Array Sort by Value
+
+```php id="m9x5zc"
+<?php
+$marks = array("A" => 80, "B" => 60);
+
+asort($marks);
+
+print_r($marks);
+?>
+```
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Filtering Arrays in PHP
+
+Filtering ka use array se specific elements select ya remove karne ke liye hota hai. PHP me `array_filter()` function commonly use hota hai. Ye function condition ke basis par elements filter karta hai. Filtering data cleaning, searching aur validation tasks me useful hoti hai. Custom function ke through filtering rules define kiye ja sakte hain.
+
+## Syntax
+
+```php id="t8n3qw"
+array_filter(array, function);
+```
+
+## Example 1: Filter Even Numbers
+
+```php id="y5m1kc"
+<?php
+$nums = array(1, 2, 3, 4, 5, 6);
+
+$result = array_filter($nums, function($num){
+    return $num % 2 == 0;
+});
+
+print_r($result);
+?>
+```
+
+### Output
+
+```text id="u7v9de"
+Array ( [1] => 2 [3] => 4 [5] => 6 )
+```
+
+## Example 2: Filter String Length
+
+```php id="f2x6ra"
+<?php
+$names = array("Ram", "Adesh", "Aman");
+
+$result = array_filter($names, function($name){
+    return strlen($name) > 3;
+});
+
+print_r($result);
+?>
+```
+
+### Output
+
+```text id="q4k8pt"
+Array ( [1] => Adesh [2] => Aman )
+```
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# String Manipulation in PHP
+
+String manipulation ka use text data ko modify aur process karne ke liye hota hai. PHP me strings handle karne ke liye bahut saare built-in functions available hain. In functions ka use string length check karne, uppercase/lowercase conversion, joining, splitting aur replacing ke liye hota hai. Ye functions form data processing aur text formatting me useful hote hain.
+
+## Example 1: String Length
+
+```php id="q7m2xd"
+<?php
+$text = "Hello PHP";
+
+echo strlen($text);
+?>
+```
+
+### Output
+
+```text id="u5p8wr"
+9
+```
+
+## Example 2: Uppercase Conversion
+
+```php id="k4v1za"
+<?php
+echo strtoupper("php language");
+?>
+```
+
+### Output
+
+```text id="j9x3ne"
+PHP LANGUAGE
+```
+
+## Example 3: Replace Text
+
+```php id="c6t5qb"
+<?php
+$text = "I like Java";
+
+echo str_replace("Java", "PHP", $text);
+?>
+```
+
+### Output
+
+```text id="n2r7yf"
+I like PHP
+```
+
+## Example 4: Join Strings
+
+```php id="m8w4pk"
+<?php
+$fname = "Adesh";
+$lname = "Lokhande";
+
+echo $fname . " " . $lname;
+?>
+```
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Regular Expressions in PHP
+
+Regular Expressions (Regex) ka use patterns match karne ke liye hota hai. PHP me regex mainly validation, searching aur text processing ke liye use hota hai. Iska use email validation, mobile number checking aur password verification me hota hai. PHP me regex ke liye `preg_match()` function commonly use kiya jata hai. Agar pattern match hota hai toh function `1` return karta hai, warna `0`.
+
+## Syntax
+
+```php id="x4m8qd"
+preg_match(pattern, string);
+```
+
+## Example 1: Check Digits
+
+```php id="u9k2zr"
+<?php
+$text = "12345";
+
+if(preg_match("/^[0-9]+$/", $text)){
+    echo "Valid Number";
+}
+?>
+```
+
+### Output
+
+```text id="r5p1wv"
+Valid Number
+```
+
+## Example 2: Email Validation
+
+```php id="h7v3mc"
+<?php
+$email = "test@gmail.com";
+
+if(preg_match("/^[a-z0-9._]+@[a-z]+\.[a-z]{2,3}$/", $email)){
+    echo "Valid Email";
+}
+?>
+```
+
+### Output
+
+```text id="k2n6xy"
+Valid Email
+```
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+
+# Working with Date and Time in PHP
+
+PHP me date aur time handle karne ke liye built-in functions available hain. Inka use current date show karne, time display karne aur custom date formats banane ke liye hota hai. `date()` function sabse commonly use hota hai. Date-time functions attendance systems, booking apps aur reports me useful hote hain. Different format characters use karke customized output generate kiya ja sakta hai.
+
+## Syntax
+
+```php id="v6m2qa"
+date(format);
+```
+
+## Example 1: Current Date
+
+```php id="k8x4zd"
+<?php
+echo date("d-m-Y");
+?>
+```
+
+### Output
+
+```text id="n3p7wc"
+07-05-2026
+```
+
+## Example 2: Current Time
+
+```php id="u5r1mf"
+<?php
+echo date("h:i:s A");
+?>
+```
+
+### Output
+
+```text id="y9t2ke"
+10:30:45 AM
+```
+
+## Example 3: Full Date and Time
+
+```php id="q4w8xn"
+<?php
+echo date("d-m-Y h:i:s A");
+?>
+```
+
+### Example Output
+
+```text id="m7v5rp"
+07-05-2026 10:30:45 AM
+```
+

@@ -1,0 +1,33 @@
+Project Title: Online TG (Teacher Guardian) Form
+Management System
+Project Description
+The Online TG Form System is a web-based application developed
+using PHP and MySQL. The system allows students to submit their
+Teacher Guardian (TG) information online instead of filling and
+submitting forms manually in offline mode.
+Currently, students submit TG forms physically, which requires
+paperwork and manual record management. This project digitizes the
+complete TG form submission process and helps departments
+maintain student records efficiently.
+Objectives of the Project
+- To reduce paperwork in TG form submission.
+- To provide an online platform for students to submit TG
+details.
+- To maintain student records digitally.
+- To help faculty members access student information easily.
+- To improve data management and reduce manual errors.
+
+Expected Output
+- Students can submit TG forms online successfully.
+- Faculty can manage and review forms digitally.
+- Records are stored securely in the database.
+- Manual paperwork is minimized.
+Learning Outcomes
+After completing this project, students will learn:
+- PHP and MySQL integration
+- CRUD Operations
+- Form Handling and Validation
+- Session Management
+- Database Connectivity
+- Authentication System Development
+
