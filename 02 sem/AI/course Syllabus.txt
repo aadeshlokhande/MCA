@@ -1,6 +1,6 @@
 Unit 1: Introduction to AI and Agents
 * Introduction to Artificial Intelligence
-* Features of AI
+* what are the features of AI
 * Agents and Environment
 * Structure of Agents
 * Problem Solving Agents
