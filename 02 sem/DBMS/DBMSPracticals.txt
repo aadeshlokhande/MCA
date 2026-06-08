@@ -1,0 +1,327 @@
+2. Perform the following:
+1. Creating a Database
+2. Viewing all Databases
+3. Creating Tables (With and Without Constraints)
+4. Viewing all Tables in a Database
+5. Inserting, Updating, and Deleting Records in a Table
+6. Savepoint, Commit, and Rollback
+Answer:
+-a) Create a Database
+CREATE DATABASE CollegeDB;
+-b) View All Databases
+SHOW DATABASES;
+-c) Create Tables
+
+- Without Constraints
+CREATE TABLE Student(
+    RollNo INT,
+    Name VARCHAR(50),
+    Age INT
+);
+
+- With Constraints
+CREATE TABLE Student(
+    RollNo INT PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    Age INT CHECK (Age >= 18)
+);
+
+- d) View All Tables
+SHOW TABLES;
+
+-e) Insert, Update, Delete Records
+Insert :
+INSERT INTO Student VALUES (1, 'Adesh', 22);
+
+Update :
+UPDATE Student
+SET Age = 23
+WHERE RollNo = 1;
+
+Delete :
+DELETE FROM Student
+WHERE RollNo = 1;
+
+-f) Savepoint, Commit, and Rollback
+Savepoint :
+SAVEPOINT sp1;
+
+Commit :
+COMMIT;
+
+Rollback :
+ROLLBACK TO sp1;
+
+Result: Database and tables are created successfully, records can be inserted, updated, and deleted, and transactions can be controlled using Savepoint, Commit, and Rollback.
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+3 Perform the following: Data Constraints (Primary Key, Foreign Key, Not Null) and Data Insertion into a Table.
+Answer:
+-Create Parent Table (Department)
+CREATE TABLE Department(
+    DeptID INT PRIMARY KEY,
+    DeptName VARCHAR(50) NOT NULL
+);
+
+-Create Child Table (Student)
+CREATE TABLE Student(
+    RollNo INT PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    DeptID INT,
+    FOREIGN KEY (DeptID) REFERENCES Department(DeptID)
+);
+
+-Insert Data into Department
+INSERT INTO Department
+VALUES (101, 'Computer Science');
+
+-Insert Data into Student
+INSERT INTO Student
+VALUES (1, 'Adesh', 101);
+
+-View Data
+SELECT * FROM Department;
+SELECT * FROM Student;
+
+Result: Tables are created using Primary Key, Foreign Key, and NOT NULL constraints, and records are inserted successfully.
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+4. Perform the following:
+1. Altering a Table
+2. Dropping a Table
+3. Truncating a Table
+4. Renaming a Table
+5. Backing Up and Restoring a Database
+Answer:
+
+-a) Alter a Table (Add New Column)
+ALTER TABLE Student
+ADD Email VARCHAR(50);
+
+-b) Drop a Table
+DROP TABLE Student;
+
+-c) Truncate a Table
+TRUNCATE TABLE Student;
+
+-d) Rename a Table
+RENAME TABLE Student TO Student_Info;
+
+-e) Backup a Database
+mysqldump -u root -p CollegeDB > CollegeDB_backup.sql
+
+-f) Restore a Database
+mysql -u root -p CollegeDB < CollegeDB_backup.sql
+
+Result: Table structure can be altered, dropped, truncated, and renamed. The database can also be backed up and restored successfully.
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+5. Implementation of Different Types of Operators in SQL.
+Answer:
+
+-Create Table
+CREATE TABLE Employee(
+    EmpID INT,
+    Name VARCHAR(50),
+    Salary INT,
+    Dept VARCHAR(20)
+);
+
+-Insert Data
+INSERT INTO Employee VALUES
+(1, 'Adesh', 30000, 'IT'),
+(2, 'Rahul', 25000, 'HR'),
+(3, 'Priya', 40000, 'IT');
+
+-1. Arithmetic Operator
+SELECT Salary + 5000 AS NewSalary
+FROM Employee;
+
+-2. Comparison Operator
+SELECT * FROM Employee
+WHERE Salary > 30000;
+
+-3. Logical Operator
+SELECT * FROM Employee
+WHERE Dept = 'IT' AND Salary > 30000;
+
+-4. BETWEEN Operator
+SELECT * FROM Employee
+WHERE Salary BETWEEN 25000 AND 35000;
+
+-5. IN Operator
+SELECT * FROM Employee
+WHERE Dept IN ('IT', 'HR');
+
+-6. LIKE Operator
+SELECT * FROM Employee
+WHERE Name LIKE 'A%';
+
+-7. NOT Operator
+SELECT * FROM Employee
+WHERE NOT Dept = 'HR';
+
+Result: Different SQL operators such as Arithmetic, Comparison, Logical, BETWEEN, IN, LIKE, and NOT are implemented successfully.
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+6. For a given set of relation schemes, create tables and perform:
+
+1. Simple Queries
+2. Simple Queries with Aggregate Functions
+3. Queries with Aggregate Functions using GROUP BY and HAVING Clause
+Answer:
+
+-Create Table
+CREATE TABLE Employee(
+    EmpID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Department VARCHAR(20),
+    Salary INT
+);
+
+-Insert Data
+INSERT INTO Employee VALUES
+(1, 'Adesh', 'IT', 30000),
+(2, 'Rahul', 'HR', 25000),
+(3, 'Priya', 'IT', 40000),
+(4, 'Neha', 'HR', 35000);
+
+-1. Simple Query
+SELECT * FROM Employee;
+
+-2. Aggregate Function Query
+SELECT AVG(Salary) AS AverageSalary
+FROM Employee;
+
+-3. GROUP BY Query
+SELECT Department, SUM(Salary) AS TotalSalary
+FROM Employee
+GROUP BY Department;
+
+-4. GROUP BY with HAVING Clause
+SELECT Department, AVG(Salary) AS AvgSalary
+FROM Employee
+GROUP BY Department
+HAVING AVG(Salary) > 30000;
+
+Result: Simple queries, aggregate functions, and GROUP BY with HAVING clause are executed successfully on the Employee table.
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+7. Write a PL/SQL program using FOR loop to insert ten rows into a database table.
+Answer:
+-Create Table
+CREATE TABLE Student(
+    RollNo NUMBER,
+    Name VARCHAR2(20)
+);
+
+-PL/SQL Program
+BEGIN
+    FOR i IN 1..10 LOOP
+        INSERT INTO Student
+        VALUES(i, 'Student' || i);
+    END LOOP;
+
+    COMMIT;
+END;
+
+-View Records
+SELECT * FROM Student;
+Result: 10 rows are inserted into the `Student` table using a FOR loop.
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+8. Writing SQL and PL/SQL queries to retrieve information from the database.
+Answer:
+-Create Table
+CREATE TABLE Employee(
+    EmpID NUMBER,
+    Name VARCHAR2(50),
+    Salary NUMBER
+);
+
+-Insert Data
+INSERT INTO Employee VALUES(1, 'Adesh', 30000);
+INSERT INTO Employee VALUES(2, 'Rahul', 25000);
+INSERT INTO Employee VALUES(3, 'Priya', 40000);
+
+-SQL Query to Retrieve Information
+SELECT * FROM Employee;
+
+-PL/SQL Query to Retrieve Information
+DECLARE
+    v_name Employee.Name%TYPE;
+    v_salary Employee.Salary%TYPE;
+BEGIN
+    SELECT Name, Salary
+    INTO v_name, v_salary
+    FROM Employee
+    WHERE EmpID = 1;
+
+    DBMS_OUTPUT.PUT_LINE('Name: ' || v_name);
+    DBMS_OUTPUT.PUT_LINE('Salary: ' || v_salary);
+END;
+
+Result: Information is retrieved successfully from the database using both SQL and PL/SQL queries.
+
+=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=<:>=
+9. For a given set of relation schemes, create tables and perform the following:
+1. Inner Join
+2. Outer Join
+3. Subqueries with IN Clause
+4. Subqueries with EXISTS Clause
+Answer:
+-Create Table
+CREATE TABLE Department(
+    DeptID INT PRIMARY KEY,
+    DeptName VARCHAR(50)
+);
+
+CREATE TABLE Employee(
+    EmpID INT PRIMARY KEY,
+    EmpName VARCHAR(50),
+    DeptID INT,
+    FOREIGN KEY (DeptID) REFERENCES Department(DeptID)
+);
+
+-Insert Data
+INSERT INTO Department VALUES (101, 'IT');
+INSERT INTO Department VALUES (102, 'HR');
+
+INSERT INTO Employee VALUES (1, 'Adesh', 101);
+INSERT INTO Employee VALUES (2, 'Rahul', 102);
+INSERT INTO Employee VALUES (3, 'Priya', 101);
+
+-1. Inner Join
+SELECT E.EmpID, E.EmpName, D.DeptName
+FROM Employee E
+INNER JOIN Department D
+ON E.DeptID = D.DeptID;
+
+-2. Outer Join (Left Outer Join)
+SELECT E.EmpID, E.EmpName, D.DeptName
+FROM Employee E
+LEFT OUTER JOIN Department D
+ON E.DeptID = D.DeptID;
+
+-3. Subquery with IN Clause
+SELECT *
+FROM Employee
+WHERE DeptID IN
+(
+    SELECT DeptID
+    FROM Department
+    WHERE DeptName = 'IT'
+);
+
+-4. Subquery with EXISTS Clause
+SELECT *
+FROM Department D
+WHERE EXISTS
+(
+    SELECT *
+    FROM Employee E
+    WHERE E.DeptID = D.DeptID
+);
+
+Result: Inner Join, Outer Join, and Subqueries using IN and EXISTS clauses are executed successfully.
+
+
