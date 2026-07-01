@@ -1,0 +1,90 @@
+Data Science Using Python
+Question Bank
+UNIT 1 
+
+Explain structured, semi-structured, and unstructured data. 
+Define Data Science and explain its importance. 
+Differentiate between Big Data and Small Data. 
+Describe the types of data used in Data Science. 
+Define the term "Data Scientist" and explain the responsibilities of a Data Scientist. 
+Discuss the roles of data in decision-making systems. 
+Explain the complete process of Data Science with diagram. 
+Compare Big Data and Small Data with suitable examples. 
+Describe different types of data used in Data Science. 
+Discuss the roles and responsibilities of a Data Scientist in detail. 
+Explain the basic terminologies of Data Science. 
+Discuss the importance and applications of Data Science in real-world scenarios. 
+Explain the lifecycle of a Data Science project. 
+Describe the challenges faced in Data Science. 
+Explain various data sources used in Data Science. 
+Discuss the importance of Data Science in business and industry applications.
+
+UNIT 2: Introduction to Python
+Explain the need of Python in Data Science. 
+Discuss the features of Python that make it suitable for Data Science. 
+Explain the concept of virtual environment in Python with advantages. 
+Explain variables in Python and discuss rules for variable naming with examples. 
+Discuss the fundamentals of Python programming language. 
+Explain how to create and execute a Python script. 
+Differentiate between interpreted and compiled programming languages. 
+Explain the role of Python packages and libraries in Data Science. 
+Explain the importance of Python in Data Science applications. 
+Describe the steps to create and activate a virtual environment in Python. 
+Explain the process of writing and executing Python scripts. 
+Differentiate between local and global variables in Python. 
+Explain different data types used in Python with examples. 
+Discuss the advantages and limitations of Python in Data Science. 
+Describe the basic structure of a Python program with suitable example. 
+
+UNIT 3: Data Cleaning Using Python
+Define data cleaning and explain its importance. 
+Explain the steps involved in data cleaning. 
+Explain data inspection and data exploration techniques using Python with suitable example. 
+What are outliers? Explain their impact on data analysis. 
+Differentiate between missing data handling and outlier handling. 
+Define data transformation with suitable example. 
+Discuss the advantages and disadvantages of data cleaning. 
+Explain the overview and importance of data cleaning in Data Science. 
+Describe different methods for handling missing data with examples. 
+Discuss the importance of data transformation in data preprocessing. 
+Explain different data transformation methods with examples. 
+Explain the role of Python in data cleaning process. 
+Explain the preprocessing techniques used in data cleaning. 
+Discuss real-world applications of data cleaning in Data Science. 
+
+UNIT 4: Data Processing with Python
+Explain the importance and need of NumPy in data processing applications. 
+Discuss the powerful features and properties of NumPy. 
+Define array in NumPy with suitable example and Explain different types of arrays in NumPy with examples. 
+Explain different types of arrays in NumPy. 
+Describe one-dimensional and two-dimensional arrays. 
+Explain basic operations performed using NumPy. 
+Discuss arithmetic and statistical operations using NumPy arrays. 
+Explain indexing and slicing in NumPy arrays. 
+Explain the need of Pandas in data processing. 
+Compare NumPy and Pandas with suitable examples. 
+Describe basic array operations using NumPy. 
+Explain indexing, slicing, and reshaping operations in NumPy. 
+Explain the role of Pandas in data processing. 
+Explain the advantages of using NumPy in Data Science. 
+Discuss the features and applications of Pandas library. 
+Explain data manipulation techniques using Pandas. 
+Describe the importance of Python libraries in data processing.
+
+UNIT 5: Data Visualization Using Matplotlib Library
+Define data visualization and Explain the importance of data visualization in Data Science.  
+Explain the role of Matplotlib library in data visualization. 
+Describe the features of Matplotlib. 
+Explain line chart with suitable example. 
+Define bar chart and mention its applications. 
+Explain histogram and scatter plot with their uses and applications. 
+Differentiate between line chart and bar chart. 
+Discuss the advantages and limitations of data visualization techniques in Data Science. 
+Discuss the features and applications of Matplotlib library. 
+Explain different types of plots available in Matplotlib. 
+Discuss the creation of pie chart using Matplotlib. 
+Explain histogram and pie chart with suitable example.. 
+Explain the steps involved in creating plots using Matplotlib. 
+Discuss real-world applications of data visualization. 
+Explain how Matplotlib helps in data analysis and interpretation. 
+Compare different types of Matplotlib plots with examples. 
