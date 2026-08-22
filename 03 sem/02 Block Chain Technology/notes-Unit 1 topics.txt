@@ -1,0 +1,67 @@
+📚 Simplified Syllabus — Unit I
+
+1. Blockchain Basics
+   * Blockchain kya hai?
+   * Decentralized ledger
+   * Blockchain ke uses
+
+2. Public Ledger
+   * Public ledger kya hai?
+   * Transparency
+   * Decentralization
+   * Immutability
+   * Security
+
+3. Bitcoin & Blockchain
+   * Bitcoin blockchain ka use kaise karta hai
+   * Transactions, blocks aur chain
+   * Bitcoin ke benefits
+
+4. Blockchain 2.0
+   * Blockchain 1.0 vs 2.0
+   * Smart Contracts
+   * dApps
+   * Ethereum
+   * Hyperledger
+   * Blockchain 2.0 ke applications
+
+5. Smart Contracts
+   * Definition
+   * Features
+   * Working
+   * Real-life example
+   * Benefits
+
+6. Distributed Consensus
+   * Consensus kya hai?
+   * Transaction verification
+   * Proof of Work (PoW)
+   * Proof of Stake (PoS)
+   * Bitcoin mein consensus
+
+7. Blockchain Chain & Longest Chain
+   * Blockchain chain kya hai?
+   * Multiple chains kaise banti hain
+   * Longest Chain Rule
+
+8. Permissioned Blockchain
+   * Permissioned vs Public Blockchain
+   * Permissioned model
+   * Business use
+
+9. Cryptographic Hash Function
+   * Hash function kya hai?
+   * Deterministic
+   * Fixed Size
+   * Fast Computation
+   * Preimage Resistance
+   * Collision Resistance
+   * Avalanche Effect
+
+10. Hash Pointer & Merkle Tree
+    * Hash Pointer
+    * Blockchain mein hash pointer
+    * Merkle Tree
+    * Merkle Root
+    * Transaction verification
+    * 4 transactions ka Merkle Tree example

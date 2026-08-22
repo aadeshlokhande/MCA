@@ -1,0 +1,93 @@
+Normalized Cloud Computing Syllabus
+
+Unit 1: Cloud Computing Fundamentals
+   1. History and Evolution of Cloud Computing
+   2. Definition and Characteristics of Cloud Computing
+   3. Cloud Deployment Models
+      * Public Cloud
+      * Private Cloud
+      * Hybrid Cloud
+   4. Applications of Cloud Computing
+   5. Challenges of Cloud Computing
+   6. Cloud Service Models
+      * IaaS – Infrastructure as a Service
+      * PaaS – Platform as a Service
+      * SaaS – Software as a Service
+   7. Public Cloud vs. Private Cloud
+
+Unit 2: Cloud Architecture and Desktop Management
+   A. Cloud Architecture
+      1. Introduction to Cloud Architecture
+      2. Benefits and Challenges of Cloud Architecture
+      3. Application Availability
+      4. Application Performance
+      5. Cloud Security
+      6. Disaster Recovery
+      7. Future of Cloud Applications
+
+   B. Desktop and Device Management
+      1. Introduction and Objectives
+      2. Desktop Virtualization
+      3. Client Desktops Across Industries
+      4. Desktop Placement in the Cloud
+      5. Merits of Cloud-Based Desktop Management
+      6. Desktop as a Service (DaaS)
+      7. Desktop Management
+      8. Asset Management
+
+Unit 3: Virtualization
+   1. Introduction to Virtualization
+   2. Virtual Machines (VM)
+   3. Components of a Virtual Machine
+   4. Physical-to-Virtual (P2V) Conversion
+   5. Network Virtualization
+   6. Network Virtualization Techniques
+   7. Block-Level Storage Virtualization
+   8. File-Level Storage Virtualization
+   9. Virtual LAN (VLAN)
+   10. Virtual Storage Area Network (VSAN)
+
+Unit 4: Cloud Application Development and Access
+   A. Cloud Application Development
+   1. Introduction to Cloud Application Development
+   2. Service Creation Environments
+   3. Cloud Development Environments
+   4. Cloud Platforms
+      * Amazon Web Services (AWS)
+      * Microsoft Azure
+      * Google Cloud
+   5. Technologies for Cloud Applications
+   6. Deployment of Web Services in Cloud Computing
+   7. Deploying Web Services Inside and Outside Cloud Architecture
+   8. Advantages and Disadvantages of Cloud-Based Web Services
+
+B. Accessing the Cloud
+   1. Introduction and Objectives
+   2. Cloud Access Platforms
+   3. Web Application Frameworks
+   4. Web Hosting Services
+   5. Proprietary Cloud Hosting Methods
+   6. Web Application APIs in Cloud Computing
+   7. Web Browsers for Cloud Computing
+      * Internet Explorer
+      * Mozilla Firefox
+      * Safari
+      * Google Chrome
+
+Unit 5: Cloud Security
+   1. Introduction to Cloud Security
+   2. Cloud Security Overview
+   3. Cloud Security Challenges
+   4. Secure Cloud Software Requirements
+   5. Cloud Security Risks
+   6. Risk Management
+   7. Privacy and Compliance Risks
+   8. Software-as-a-Service (SaaS) Security
+   9. Security Governance
+   10. Security Monitoring
+   11. Security Architecture Design
+   12. Data Security
+   13. Application Security
+   14. Virtual Machine Security
+   15. Identity Management and Access Control
+   16. Autonomic Security

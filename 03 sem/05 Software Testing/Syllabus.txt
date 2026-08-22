@@ -1,0 +1,70 @@
+Normalized Software Testing Syllabus
+Unit I: Functional Testing
+    A. Mathematical Context
+        1. Mathematical Context of Software Testing
+        2. Perspective on Testing
+    B. Functional Testing
+        1. Introduction to Functional Testing
+        2. Boundary Value Testing
+        3. Equivalence Class Testing
+        4. Decision Table-Based Testing
+        5. Retrospective on Functional Testing
+
+Unit II: Structural Testing
+    A. Path Testing
+        1. Introduction to Path Testing
+        2. DD-Paths (Decision-to-Decision Paths)
+        3. Test Coverage Metrics
+        4. Basis Path Testing
+    B. Dataflow Testing
+        1. Introduction to Dataflow Testing
+        2. Define/Use Testing
+        3. Slice-Based Testing
+    C. Evaluation of Structural Testing
+        1. Retrospective on Structural Testing
+        2. Gaps and Redundancies
+        3. Metrics for Method Evaluation
+
+Unit III: Structural Testing – Advanced Concepts
+    A. Path Testing
+        1. DD-Paths
+        2. Test Coverage Metrics
+        3. Basis Path Testing
+    B. Dataflow Testing
+        1. Define/Use Testing
+        2. Slice-Based Testing
+    C. Structural Testing Evaluation
+        1. Gaps and Redundancies
+        2. Metrics for Method Evaluation
+        3. Retrospective on Structural Testing
+
+Unit IV: Thread and System Testing
+    A. Thread Testing
+        1. Introduction to Threads
+        2. Basic Concepts for Requirements Specification
+        3. Finding Threads
+        4. Structural Strategies for Thread Testing
+        5. Functional Strategies for Thread Testing
+        6. SATM Test Threads
+    B. System Testing
+        1. Introduction to System Testing
+        2. System Testing Guidelines
+
+Unit V: Object-Oriented Testing
+    A. Object-Oriented Testing
+        1. Introduction to Object-Oriented Testing
+        2. Issues in Object-Oriented Testing
+        3. Class Testing
+        4. Object-Oriented Integration Testing
+    B. GUI and System Testing
+        1. GUI Testing
+        2. Object-Oriented System Testing
+
+Quick Unit Overview
+| Unit    | Main Focus                           |
+| ------- | ------------------------------------ |
+|   I     | Functional Testing                   |
+|   II    | Structural Testing                   |
+|   III   | Structural Testing – Advanced/Review |
+|   IV    | Thread & System Testing              |
+|   V     | Object-Oriented Testing              |

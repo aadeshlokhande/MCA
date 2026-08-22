@@ -1,0 +1,135 @@
+Normalized Data Science with R Syllabus
+
+Unit I: Introduction to Data Science and R
+   A. Introduction to Data Science
+      1. Definition and Scope of Data Science
+      2. Importance of Data Science
+      3. Applications of Data Science
+         * Finance
+         * Healthcare
+         * Social Media
+         * Other Fields
+      4. Data Science Lifecycle
+         * Data Collection
+         * Data Cleaning
+         * Data Exploration
+         * Data Modeling
+         * Data Interpretation
+      5. Roles in Data Science
+         * Data Scientist
+         * Data Engineer
+         * Data Analyst
+   B. Introduction to R
+      1. What is R?
+      2. Why R?
+      3. Advantages of R over Other Programming Languages
+      4. Introduction to RStudio
+      5. R Command Prompt
+      6. R Script Files
+      7. Comments in R
+      8. Installing R Packages
+      9. Special Values in R
+         * NA
+         * Inf
+         * -Inf
+
+Unit II: R Data Types, Operators and Control Statements
+   A. R Data Types
+      1. Vectors
+      2. Lists
+      3. Matrices4. Arrays
+      5. Factors
+      6. Data Frames
+   B. R Variables
+      1. Variable Assignment
+      2. Data Types of Variables
+      3. Finding Variables using ls()
+      4. Deleting Variables
+   C. R Operators
+      1. Arithmetic Operators
+      2. Relational Operators
+      3. Logical Operators
+      4. Assignment Operators
+      5. Miscellaneous Operators
+   D. Decision Making
+      1. if Statement
+      2. if-else Statement
+      3. if-else if Statement
+      4. switch Statement
+   E. Loops and Loop Control
+      1. repeat Loop
+      2. while Loop
+      3. for Loop
+      4. break Statement
+      5. next Statement
+
+Unit III: Functions and String Manipulation in R
+   A. R Functions
+      1. Introduction to Functions
+      2. Function Definition
+      3. Built-in Functions
+         * mean()
+         * paste()
+         * sum()
+         * min()
+         * max()
+         * seq()
+      4. User-Defined Functions
+      5. Calling a Function
+      6. Calling Functions Without Arguments
+      7. Calling Functions with Arguments
+   B. Stringsin R
+      1. Introduction to Strings
+      2. Manipulating Text Data
+      3. substr()
+      4. strsplit()
+      5. paste()
+      6. grep()
+      7. toupper()
+      8. tolower()
+
+Unit IV: Lists, Matrices and Arrays
+   A. Lists
+      1. Introduction to Lists
+      2. Size of a List
+      3. Merging Lists4. Converting Lists to Vectors
+   B. Matrices
+      1. Introduction to Matrices
+      2. Accessing Matrix Eements
+      3. Matrix Computations
+         * Addition
+         * Subtraction
+         * Multiplication
+         * Division
+   C. Arrays
+      1. Introduction to Arrays
+      2. Naming Rows and Columns
+      3. Accessing Array Elements
+      4. Manipulating Array Elements
+
+Unit V: Data Frames
+   A. Creating and Accessing Data Frames
+      1. Introduction to Data Frames
+      2. Creating a Data Frame
+      3. Accessing Data Frames4. Understanding Data in Data Frames
+      5. Extracting Data from Data Frames
+
+   B. Modifying Data Frames
+      1. Expanding Data Frames
+      2 Adding Columns
+      3. Adding Rows
+
+   C. Joining and Merging Data Frames
+      1. Joining Rows using rbind()
+      2. Joining Columns using cbind()
+      3. Merging Data Frames using merge()
+
+Quick Unit Overview
+
+| Unit    | Main Focus                                    |
+| ------- | --------------------------------------------- |
+|   I     | Data Science Fundamentals & Introduction to R |
+|   II    | R Data Types, Operators & Control Statements  |
+|   III   | Functions & String Manipulation               |
+|   IV    | Lists, Matrices & Arrays                      |
+|   V     | Data Frames & Data Manipulation               |

@@ -1,0 +1,284 @@
+# Unit - 1
+## **1. Blockchain Basics**
+**Blockchain kya hai?**
+Blockchain ek digital technology hai jisme data ko blocks ke form mein store kiya jata hai.
+Har block previous block se connected hota hai, isliye ek chain banti hai.
+Data ko network ke multiple computers par store kiya jata hai.
+Ek baar data add hone ke baad usme change karna difficult hota hai.
+
+**Decentralized Ledger**
+Decentralized ledger ka matlab hai ki data kisi ek central server ke paas nahi hota.
+Network ke multiple computers ke paas ledger ki copy hoti hai.
+Har transaction ko network ke participants verify karte hain.
+Isse single authority par dependency kam hoti hai.
+
+**Blockchain ke Uses**
+Blockchain ka use cryptocurrency jaise Bitcoin aur Ethereum mein hota hai.
+Iska use secure transactions aur digital payments ke liye bhi kiya ja sakta hai.
+Supply chain mein products ko track karne ke liye blockchain use hota hai.
+Healthcare, voting aur digital identity jaise areas mein bhi iska use ho sakta hai.
+
+## **2. Public Ledger**
+**Public Ledger kya hai?**
+Public ledger ek aisa digital record hai jise network ke participants dekh aur verify kar sakte hain.
+Blockchain mein transactions ka record ledger mein store hota hai.
+Ye ledger kisi ek person ya organization ke control mein nahi hota.
+Isse transactions ko track aur verify karna easy hota hai.
+
+**Transparency**
+Transparency ka matlab hai ki transactions ka record network participants ke liye visible hota hai.
+Users transaction details ko verify kar sakte hain.
+Isse hidden changes ya fraud ki possibility kam hoti hai.
+
+**Decentralization**
+Decentralization ka matlab hai ki ledger ka control kisi ek central authority ke paas nahi hota.
+Multiple computers network par ledger ki copy maintain karte hain.
+Isse ek single point of failure nahi hota.
+
+**Immutability**
+Immutability ka matlab hai ki blockchain mein record kiya gaya data easily change ya delete nahi kiya ja sakta.
+Ek transaction block mein add hone ke baad usse modify karna difficult hota hai.
+Isse records ki reliability aur trust improve hota hai.
+
+**Security**
+Public ledger mein transactions ko cryptography aur network verification se protect kiya jata hai.
+Multiple computers transaction ko verify karte hain.
+Isse unauthorized changes aur fraudulent transactions ko prevent karne mein help milti hai.
+
+## **3. Bitcoin & Blockchain**
+**Bitcoin blockchain ka use kaise karta hai**
+Bitcoin apne transactions ko record aur verify karne ke liye blockchain ka use karta hai.
+Bitcoin network mein kisi central bank ki zarurat nahi hoti.
+Har transaction blockchain par record hoti hai aur network participants usse verify karte hain.
+Blockchain Bitcoin ke transactions ko secure aur transparent banata hai.
+
+**Transactions, Blocks aur Chain**
+Transaction ka matlab Bitcoin ko ek person se doosre person ko transfer karna hai.
+Multiple verified transactions ko ek block mein collect kiya jata hai.
+Ye blocks previous blocks se connected hote hain aur ek chain banate hain.
+Isi connected structure ko **blockchain** kaha jata hai.
+
+**Bitcoin ke Benefits**
+Bitcoin ke through users directly ek-doosre ko digital money send kar sakte hain.
+Isme traditional bank ya central authority ki direct requirement nahi hoti.
+Transactions globally ki ja sakti hain aur blockchain par verify hoti hain.
+Bitcoin limited supply ki wajah se digital asset ke roop mein bhi use hota hai.
+
+
+## **4. Blockchain 2.0**
+**Blockchain 1.0 vs 2.0**
+Blockchain 1.0 mainly **cryptocurrency aur digital payments** par focused tha.
+Blockchain 2.0 ne blockchain ko programmable banaya, jisse applications aur smart contracts create kiye ja sake.
+Bitcoin Blockchain 1.0 ka example hai, jabki Ethereum Blockchain 2.0 ka popular example hai.
+Isliye Blockchain 2.0 ka scope cryptocurrency se kaafi broader hai.
+
+**Smart Contracts**
+Smart contract ek self-executing program hota hai jo blockchain par run karta hai.
+Isme conditions pehle se define hoti hain aur condition fulfill hone par action automatically execute hota hai.
+Example: payment receive hone par ownership automatically transfer ho jana.
+
+**dApps**
+dApps ka full form **Decentralized Applications** hai.
+Ye applications blockchain network par operate karti hain aur usually kisi single central authority par depend nahi karti.
+Ethereum jaise platforms par dApps develop ki ja sakti hain.
+
+**Ethereum**
+Ethereum ek blockchain platform hai jo cryptocurrency ke saath smart contracts support karta hai.
+Iska native cryptocurrency **Ether (ETH)** hai.
+Developers Ethereum par smart contracts aur dApps create kar sakte hain.
+Ye Blockchain 2.0 ka important example hai.
+
+**Hyperledger**
+Hyperledger enterprise blockchain applications develop karne ke liye open-source blockchain projects ka ecosystem hai.
+Ye mainly businesses aur organizations ke use cases ke liye designed hai.
+Iska focus secure, permissioned aur business-oriented blockchain solutions par hota hai.
+
+**Blockchain 2.0 ke Applications**
+Blockchain 2.0 ka use **finance, supply chain, healthcare aur digital identity** jaise areas mein hota hai.
+Smart contracts ke through agreements aur transactions automatically execute kiye ja sakte hain.
+dApps ke through decentralized services create ki ja sakti hain.
+Isse businesses mein transparency, automation aur trust improve kiya ja sakta hai.
+
+
+## **5. Smart Contracts**
+**Definition**
+Smart contract ek computer program hota hai jo blockchain par stored aur execute hota hai.
+Isme agreement ki conditions pehle se code mein define hoti hain.
+Conditions fulfill hone par contract automatically action perform karta hai.
+Isme traditional middleman ki zarurat kam ho sakti hai.
+
+**Features**
+Smart contracts **automatic, transparent aur tamper-resistant** hote hain.
+Ye blockchain network par execute hote hain aur predefined rules follow karte hain.
+Contract ka execution network participants verify kar sakte hain.
+
+**Working**
+Sabse pehle contract ki conditions code mein define ki jati hain.
+Contract blockchain par deploy kiya jata hai.
+Jab required conditions fulfill hoti hain, contract automatically execute hota hai.
+Execution ka result blockchain par record ho jata hai.
+
+**Real-life Example**
+Maan lo ek online seller aur buyer ke beech payment agreement hai.
+Smart contract mein condition ho sakti hai: **"Payment receive hone ke baad product ownership transfer karo."**
+Payment confirm hote hi contract automatically ownership transfer kar sakta hai.
+
+**Benefits**
+Smart contracts manual processes ko automate karte hain aur processing time reduce kar sakte hain.
+Inme predefined rules hone ke karan human intervention kam hota hai.
+Blockchain ki wajah se records transparent aur difficult to alter hote hain.
+Isse transactions mein efficiency aur trust improve ho sakta hai.
+
+## **6. Distributed Consensus**
+**Consensus kya hai?**
+Consensus ka matlab hai network ke participants ka kisi transaction ya data ki validity par agree karna.
+Blockchain mein central authority nahi hoti, isliye consensus important hota hai.
+Ye ensure karta hai ki network mein correct aur valid data add ho.
+Isse fake ya invalid transactions ko reject karne mein help milti hai.
+
+**Transaction Verification**
+Jab koi transaction hoti hai, network ke computers us transaction ko verify karte hain.
+Wo check karte hain ki transaction valid hai aur sender ke paas required balance hai.
+Valid transaction ko blockchain mein add karne ke liye process kiya jata hai.
+Invalid transaction ko network reject kar deta hai.
+
+**Proof of Work (PoW)**
+Proof of Work ek consensus mechanism hai jisme miners complex mathematical problem solve karte hain.
+Jo miner problem successfully solve karta hai, woh new block add karne ka opportunity paata hai.
+Is process mein significant computing power aur electricity use hoti hai.
+**Bitcoin PoW** consensus mechanism use karta hai.
+
+**Proof of Stake (PoS)**
+Proof of Stake mein participants apne cryptocurrency tokens ko stake karke transaction validation mein participate karte hain.
+Network selected validators ke through new blocks validate karta hai.
+PoW ke comparison mein PoS ko generally less computational energy ki zarurat hoti hai.
+Ethereum ab Proof of Stake use karta hai.
+
+**Bitcoin mein Consensus**
+Bitcoin transactions ko validate karne ke liye **Proof of Work (PoW)** use karta hai.
+Miners transactions ko collect karke blocks banate hain aur mathematical puzzle solve karte hain.
+Valid block blockchain mein add hota hai aur network usse accept karta hai.
+Is process se Bitcoin network bina central authority ke consensus achieve karta hai.
+
+## **7. Blockchain Chain & Longest Chain**
+**Blockchain chain kya hai?**
+Blockchain chain interconnected blocks ka sequence hota hai.
+Har new block previous block se cryptographically linked hota hai.
+Is chain mein transactions ka chronological record maintain hota hai.
+Isliye blockchain ko ek continuously growing chain of blocks kaha jata hai.
+
+**Multiple chains kaise banti hain**
+Kabhi-kabhi network ke different participants same time par different blocks create kar dete hain.
+Isse blockchain temporarily do ya more branches mein divide ho sakti hai, jise **fork** kaha jata hai.
+Network consensus ke through eventually ek branch ko continue karta hai.
+Dusri branch usually discarded ya orphaned ho jati hai.
+
+**Longest Chain Rule**
+Longest Chain Rule ke according network generally us chain ko valid chain maanta hai jisme sabse zyada cumulative Proof of Work hota hai.
+Agar multiple valid chains temporarily exist karti hain, nodes stronger chain ko follow karte hain.
+Isse network mein ek consistent blockchain maintain karne mein help milti hai.
+Bitcoin mein ye rule consensus process ka important part hai.
+
+## **8. Permissioned Blockchain**
+**Permissioned vs Public Blockchain**
+Public blockchain mein koi bhi person network join karke transactions participate kar sakta hai.
+Permissioned blockchain mein network access sirf authorized users ko diya jata hai.
+Public blockchain generally open aur decentralized hoti hai, jabki permissioned blockchain controlled access provide karti hai.
+Example: Bitcoin public blockchain hai, jabki Hyperledger Fabric permissioned blockchain ka example hai.
+
+**Permissioned Model**
+Permissioned model mein users ko blockchain access karne ke liye permission ya authorization ki zarurat hoti hai.
+Organization decide karti hai ki kaun data read, write ya validate kar sakta hai.
+Isme identities ko manage aur participants ko control kiya ja sakta hai.
+Ye model businesses ke liye useful hota hai jahan privacy important hoti hai.
+
+**Business Use**
+Permissioned blockchain ka use banks, supply chains, healthcare aur insurance jaise industries mein ho sakta hai.
+Companies iska use transactions aur records ko securely share karne ke liye kar sakti hain.
+Authorized organizations ek common ledger maintain kar sakti hain.
+Isse transparency, data sharing aur business process efficiency improve ho sakti hai.
+
+## **9. Cryptographic Hash Function**
+**Hash Function kya hai?**
+Hash function ek mathematical function hai jo input data ko ek fixed-length output mein convert karta hai.
+Is output ko **hash** ya **hash value** kaha jata hai.
+Same input dene par same hash milta hai.
+Blockchain mein hashes data ko secure aur blocks ko link karne ke liye use hote hain.
+
+**Deterministic**
+Deterministic ka matlab hai ki same input ke liye hamesha same hash output milega.
+Example: `"Hello"` ko hash karne par har baar same hash generate hoga.
+Input mein ek small change hone par output completely different ho sakta hai.
+
+**Fixed Size**
+Hash function input chahe chhota ho ya bahut bada, output fixed size ka hota hai.
+Example: SHA-256 hamesha **256-bit hash** produce karta hai.
+Isse blockchain mein hash values ko efficiently store aur compare karna possible hota hai.
+
+**Fast Computation**
+Hash function ko input data se hash generate karne mein relatively kam time lagta hai.
+Computers large amount of data ka hash quickly calculate kar sakte hain.
+Blockchain mein transaction aur block verification ke liye fast hashing important hai.
+
+**Preimage Resistance**
+Preimage resistance ka matlab hai ki hash value se original input ko find karna computationally very difficult hota hai.
+Agar kisi ko sirf hash pata hai, to original data easily reverse nahi kiya ja sakta.
+Ye property blockchain data ki security improve karti hai.
+
+**Collision Resistance**
+Collision tab hota hai jab do different inputs ka same hash generate ho.
+Collision resistance ka matlab hai ki aise two inputs find karna extremely difficult hona.
+Isse hash-based security aur blockchain records ki reliability maintain hoti hai.
+
+**Avalanche Effect**
+Avalanche effect ka matlab hai input mein bahut small change karne par hash mein bahut large change ho jana.
+Example: `"Hello"` aur `"hello"` ke hashes completely different honge.
+Isse data mein even small modification easily detectable ho sakta hai.
+
+## **10. Hash Pointer & Merkle Tree**
+**Hash Pointer**
+Hash pointer ek reference hota hai jo kisi data/location ke saath us data ka cryptographic hash store karta hai.
+Isse data ki location ke saath uski integrity bhi verify ki ja sakti hai.
+Agar original data change ho jaye, to hash bhi change ho jayega.
+Isliye hash pointer tampering detect karne mein useful hai.
+
+**Blockchain mein Hash Pointer**
+Blockchain mein har block previous block ke hash ko reference karta hai.
+Isse blocks ek doosre se securely connected rehte hain.
+Agar kisi old block ka data change kiya jaye, to uska hash change ho jayega.
+Is change ki wajah se next blocks ke references mismatch ho jayenge.
+
+**Merkle Tree**
+Merkle Tree ek tree-like structure hai jisme multiple transaction hashes ko efficiently organize kiya jata hai.
+Neeche transaction hashes hote hain aur unhe pair karke naye hashes generate kiye jate hain.
+Ye process continue hota hai jab tak ek single hash remaining nahi rehta.
+Ye single hash **Merkle Root** hota hai.
+
+**Merkle Root**
+Merkle Root Merkle Tree ka top-level single hash hota hai.
+Ye block ke multiple transactions ko ek single hash se represent karta hai.
+Agar kisi transaction mein change ho, to uska hash aur eventually Merkle Root change ho jayega.
+Isliye Merkle Root transaction integrity verify karne mein useful hai.
+
+**Transaction Verification**
+Merkle Tree se kisi specific transaction ko poori list check kiye bina verify kiya ja sakta hai.
+Transaction ke hash ke saath required sibling hashes ko use karke Merkle Root calculate kiya jata hai.
+Agar calculated root block ke stored Merkle Root se match karta hai, transaction valid maana ja sakta hai.
+
+**4 Transactions ka Merkle Tree Example**
+Maan lo 4 transactions hain: **T1, T2, T3, T4**.
+Pehle unke hashes banenge: H1, H2, H3, H4.
+Phir **H1+H2 → H12** aur **H3+H4 → H34** generate honge.
+Finally **H12+H34 → Merkle Root** generate hoga.
+
+```text
+              Merkle Root
+              /          \
+           H12            H34
+          /   \          /   \
+        H1    H2        H3    H4
+        |      |        |      |
+        T1     T2       T3     T4
+```
+
+**Question: Agar T2 mein ek character change ho, to Merkle Root par kya effect padega?**

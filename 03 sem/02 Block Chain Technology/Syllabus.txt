@@ -1,0 +1,118 @@
+Normalized Blockchain & Cryptocurrency Syllabus
+
+Unit I: Blockchain Fundamentals and Cryptography
+    A. Blockchain Fundamentals
+        1. Public Ledgers
+        2. Blockchain as a Public Ledger
+        3. Bitcoin and Blockchain
+        4. Blockchain 2.0
+        5. Smart Contracts
+        6. Block in a Blockchain
+        7. Blockchain Transactions
+        8. Distributed Consensus
+        9. Blockchain Chain and Longest Chain
+        10. Evolution from Cryptocurrency to Blockchain 2.0
+        11. Permissioned Blockchain Model
+
+    B. Cryptographic Foundations
+        1. Cryptographic Hash Functions
+        2. Properties of Hash Functions
+        3. Hash Pointers
+        4. Merkle Trees
+
+Unit II: Bitcoin and Distributed Consensus
+    A. Bitcoin Fundamentals
+        1. Introduction to Cryptocurrency
+        2. Creation of Coins
+        3. Bitcoin Payments
+        4. Double-Spending Problem
+        5. FORTH as a Precursor to Bitcoin Scripting
+        6. Bitcoin Scripts
+
+    B. Bitcoin Network and Transactions
+        1. Bitcoin Peer-to-Peer (P2P) Network
+        2. Transactions in the Bitcoin Network
+        3. Block Mining
+        4. Block Propagation
+        5. Block Relay
+
+    C. Distributed Consensu
+        1. Introduction to Consensus
+        2. Distributed Consensus in Open Environments
+        3. Consensus in the Bitcoin Network
+
+Unit III: Bitcoin Consensus and Mining
+    A. Consensus Mechanisms
+        1. Bitcoin Consensus
+        2. Proof of Work (PoW)
+        3. Hashcash Proof of Work
+        4. Bitcoin Proof of Work
+        5. Attacks on Proof of Work
+        6. Monopoly Problem in PoW
+        7. Proof of Stake (PoS)
+        8. Proof of Burn (PoB)
+        9. Proof of Elapsed Time (PoET)
+
+    B. Bitcoin Mining
+        1. Bitcoin Miner
+        2. Mining Difficulty
+        3. Mining Pools
+
+    C. Permissioned Blockchains
+        1. Permissioned Blockchain Model
+        2. Use Cases of Permissioned Blockchains
+        3. Design Issues in Permissioned Blockchains
+
+Unit IV: Consensus and Byzantine Fault Tolerance
+    A. Consensus Algorithms
+        1. RAFT Consensus
+        2. Byzantine Generals Problem
+        3. Byzantine Fault-Tolerant (BFT) Systems
+        4. Agreement Protocols
+        5. Lamport–Shostak–Pease BFT Algorithm
+
+    B. Practical Byzantine Fault Tolerance
+        1. BFT in Asynchronous Systems
+        2. Practical Byzantine Fault Tolerance (PBFT)
+
+Unit V: Hyperledger Fabric and Ethereum
+    A. Hyperledger Fabric
+        1. Introduction to Hyperledger Fabric
+        2. Hyperledger Fabric Architecture
+        3. Hyperledger Fabric v1.1
+        4. Chaincode
+
+    B. Ethereum
+        1. Introduction to Ethereum
+        2. Ethereum Network
+        3. Ethereum Virtual Machine (EVM)
+        4. Ethereum Transactions
+        5. Transaction Fees
+        6. Ether
+        7. Gas
+        8. Mist Browser
+        9. Solidity
+        10. Smart Contracts
+        11. Truffle Framework
+
+    C. Decentralized Applications and Cryptocurrency
+        1. Design and Issues of Cryptocurrency
+        2. Cryptocurrency Mining
+        3. Decentralized Applications (DApps)
+        4. Decentralized Autonomous Organizations (DAO)
+
+Quick Unit Overview
+
+| Unit    | Main Focus                             |
+| ------- | -------------------------------------- |
+| **I**   | Blockchain Fundamentals & Cryptography |
+| **II**  | Bitcoin & Distributed Consensus        |
+| **III** | Consensus Mechanisms & Mining          |
+| **IV**  | RAFT, BFT & PBFT                       |
+| **V**   | Hyperledger Fabric, Ethereum & DApps   |
+
+
+
+
+
+

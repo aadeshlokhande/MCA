@@ -1,0 +1,35 @@
+Complete Introduction to R Programming in Hindi 
+Why you Should Learn R Language? 
+How to Download & Install R and R Studio on Windows? 
+How to Write the First Program in R 
+How to Run/Create the First Program in R Studio?
+Variables in R Programming
+Data Types in R Programming
+Converting Data Types in R 
+Operators in R Programming 
+If-Else Statement in R Programming
+Switch Statement in R Programming
+Next & Break Statement in R Programming
+For Loop in R Programming
+Repeat Loop in R Programming
+While Loop in R Programming
+How to Take Input from Users in R Programming
+How to Write Functions in R Programming
+Built-In Function in R Programming
+Vectors in R Programming
+Lists in R Programming
+How to Create Vector Functions in R Programming
+Array In R Programming
+How to Create s Matrix in R Programming
+How to Create a Data Frame in R 
+Complete Factors in R Programming
+How to Import Data of CSV Files in R
+Manipulate Data in R with dplyr Package | What is, Variables, Using dplyr Package
+How to Import R Data from Excel Files 
+How to Import R Data in MySQL Database 
+How to Make Pie Chart in R?
+How to Make Bar Charts in R?
+How to Make Histogram in R?
+How to Make Line Graph in R?
+How to Make Scatter plot in R?
+How to Make Boxplot in R?

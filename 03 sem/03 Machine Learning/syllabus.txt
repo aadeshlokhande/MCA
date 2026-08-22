@@ -1,0 +1,82 @@
+# Normalized Machine Learning Syllabus
+
+Unit I: Introduction to Machine Learning
+   1. Introduction to Machine Learning
+   2. Types of Machine Learning
+      * Supervised Learning
+      * Unsupervised Learning
+      * Reinforcement Learning
+   3. Issues and Challenges in Machine Learning
+   4. Applications of Machine Learning
+   5. Steps in Developing a Machine Learning Application
+
+Unit II: Introduction to Neural Networks
+   A. Fundamentals of Neural Networks
+      1. Introduction to Neural Networks
+      2. Fundamental Concepts
+      3. Evolution of Neural Networks
+      4. Biological Neuron
+      5. Artificial Neural Networks (ANN)
+
+   B. Neural Network Architecture
+      1. Neural Network Architecture
+      2. Components of Neural Networks
+      3. Activation Functions
+      4. McCulloch–Pitts Neuron Model
+
+Unit III: Optimization Techniques
+   A. Derivative-Based Optimization
+      1. Introduction to Optimization Techniques
+      2. Steepest Descent Method
+      3. Newton's Method
+
+   B. Derivative-Free Optimization
+      1. Random Search
+      2. Downhill Simplex Method
+
+Unit IV: Learning with Regression and Trees
+   A. Regression
+      1. Introduction to Regression
+      2. Linear Regression
+      3. Logistic Regression
+
+   B. Decision Trees
+      1. Introduction to Decision Trees
+      2. Decision Tree Construction
+      3. Gini Index
+      4. Classification and Regression Trees (CART)
+
+Unit V: Classification, Clustering and Dimensionality Reduction
+   A. Classification
+      1. Rule-Based Classification
+      2. Classification using Bayesian Belief Networks
+      3. Hidden Markov Models (HMM)
+
+   B. Support Vector Machines
+      1. Introduction to Support Vector Machines (SVM)
+      2. Maximum Margin Linear Separators
+
+   C. Clustering
+      1. Introduction to Clustering
+      2. Expectation-Maximization (EM) Algorithm
+      3. Supervised Learning After Clustering
+      4. Radial Basis Functions (RBF)
+
+   D. Dimensionality Reduction
+      1. Introduction to Dimensionality Reduction
+      2. Dimensionality Reduction Techniques
+      3. Principal Component Analysis (PCA)
+      4. Independent Component Analysis (ICA)
+      5. Singular Value Decomposition (SVD)
+
+Quick Unit Overview
+
+| Unit    | Main Focus                                            |
+| ------- | ----------------------------------------------------- |
+| **I**   | Machine Learning Fundamentals                         |
+| **II**  | Neural Networks                                       |
+| **III** | Optimization Techniques                               |
+| **IV**  | Regression & Decision Trees                           |
+| **V**   | Classification, Clustering & Dimensionality Reduction |
+
+**Is syllabus mein exam ke perspective se sabse important areas Regression, Decision Trees, SVM, Neural Networks, Optimization, PCA aur Clustering hain.**
