@@ -1,0 +1,19 @@
+# Core Web Framework
+django>=5.0.0,<7.0.0
+asgiref>=3.8.0
+sqlparse>=0.5.0
+
+# Scientific & Machine Learning
+numpy>=1.26.0
+joblib>=1.3.0
+
+# Optional Scikit-learn (System utilizes high-performance vectorized ML engine with optional scikit-learn binding)
+# scikit-learn>=1.4.0
+# pandas>=2.2.0
+
+# Clinical PDF Reporting & Imaging
+reportlab>=4.1.0
+pillow>=10.0.0
+
+# Configuration & Security
+python-dotenv>=1.0.0

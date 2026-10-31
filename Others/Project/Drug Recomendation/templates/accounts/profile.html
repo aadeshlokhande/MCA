@@ -1,0 +1,401 @@
+{% extends 'base.html' %}
+
+{% block title %}Patient Medical Profile | AI-Based Drug Recommendation System{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <h3 class="fw-bold mb-1" style="color: var(--text-primary); letter-spacing: -0.02em;">Patient Medical Profile</h3>
+    <p class="text-muted small mb-0">Maintain verified clinical background, allergies, and ongoing medications</p>
+  </div>
+  <a href="{% url 'symptoms:symptom_checker' %}" class="btn btn-glass-primary">
+    <i class="bi bi-heart-pulse me-1"></i> New Assessment
+  </a>
+</div>
+
+<div class="row g-4">
+  <!-- Left Column: Personal Demographics -->
+  <div class="col-lg-5">
+    <div class="glass-panel p-4 mb-4">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold" style="width: 54px; height: 54px; background: linear-gradient(135deg, #3984E8, #54B7C5); font-size: 1.3rem;">
+          {{ user.first_name|default:user.username|slice:":1"|upper }}
+        </div>
+        <div>
+          <h5 class="fw-bold mb-0 text-dark">{{ user.get_full_name|default:user.username }}</h5>
+          <span class="badge glass-badge-primary">Patient ID: #{{ profile.id }}</span>
+        </div>
+      </div>
+
+      <form method="post">
+        {% csrf_token %}
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <label class="form-label small fw-semibold text-secondary">First Name</label>
+            {{ form.first_name }}
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label small fw-semibold text-secondary">Last Name</label>
+            {{ form.last_name }}
+          </div>
+
+          <div class="col-sm-6">
+            <label class="form-label small fw-semibold text-secondary">Age (Years)</label>
+            {{ form.age }}
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label small fw-semibold text-secondary">Biological Gender</label>
+            {{ form.gender }}
+          </div>
+
+          <div class="col-sm-6">
+            <label class="form-label small fw-semibold text-secondary">Blood Group</label>
+            {{ form.blood_group }}
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label small fw-semibold text-secondary">Phone Number</label>
+            {{ form.phone_number }}
+          </div>
+
+          <div class="col-12">
+            <label class="clinical-toggle-card" for="id_is_pregnant">
+              <div class="d-flex align-items-center gap-3">
+                <div class="clinical-toggle-icon">
+                  <i class="bi bi-person-heart"></i>
+                </div>
+                <div>
+                  <div class="fw-bold text-dark" style="font-size: 0.93rem;">
+                    Patient is Currently Pregnant
+                  </div>
+                  <div class="text-muted small" style="font-size: 0.8rem; line-height: 1.35;">
+                    Enables specialized clinical screening against FDA pregnancy contraindications & teratogenic risks.
+                  </div>
+                </div>
+              </div>
+              <div class="form-check form-switch m-0 p-0 ps-2">
+                {{ form.is_pregnant }}
+              </div>
+            </label>
+            {% if form.is_pregnant.errors %}
+              <div class="text-danger small mt-1">{{ form.is_pregnant.errors.0 }}</div>
+            {% endif %}
+          </div>
+
+          <div class="col-12">
+            <label class="form-label small fw-semibold text-secondary">Emergency Contact Name</label>
+            {{ form.emergency_contact_name }}
+          </div>
+          <div class="col-12">
+            <label class="form-label small fw-semibold text-secondary">Emergency Contact Phone</label>
+            {{ form.emergency_contact_phone }}
+          </div>
+
+          <div class="col-12">
+            <label class="form-label small fw-semibold text-secondary">General Clinical Notes</label>
+            {{ form.notes }}
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-glass-primary w-100 justify-content-center mt-4">
+          <i class="bi bi-save me-1"></i> Update Medical Profile
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Right Column: Clinical History & Safety Data -->
+  <div class="col-lg-7">
+    <!-- 1. Known Allergies -->
+    <div class="glass-panel p-4 mb-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-shield-slash-fill text-danger fs-5"></i>
+          <h5 class="fw-bold mb-0 text-dark">Documented Allergies</h5>
+        </div>
+        <button class="btn btn-sm btn-glass-primary py-1 px-3" data-bs-toggle="modal" data-bs-target="#addAllergyModal">
+          <i class="bi bi-plus-lg me-1"></i> Add Allergy
+        </button>
+      </div>
+
+      {% if allergies %}
+        <div class="table-responsive">
+          <table class="glass-table">
+            <thead>
+              <tr>
+                <th>Allergy / Substance</th>
+                <th>Severity</th>
+                <th>Symptoms / Reaction</th>
+                <th class="text-end">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for a in allergies %}
+                <tr>
+                  <td><strong>{{ a.allergy.name }}</strong></td>
+                  <td>
+                    <span class="badge {% if a.reaction_severity == 'SEVERE' or a.reaction_severity == 'ANAPHYLAXIS' %}glass-badge-danger{% else %}glass-badge-warning{% endif %}">
+                      {{ a.get_reaction_severity_display }}
+                    </span>
+                  </td>
+                  <td class="small text-muted">{{ a.reaction_description|default:"Not specified" }}</td>
+                  <td class="text-end">
+                    <form method="post" action="{% url 'accounts:delete_allergy' a.id %}" class="d-inline" onsubmit="return confirm('Remove this allergy record?');">
+                      {% csrf_token %}
+                      <button type="submit" class="btn-action-icon btn-action-icon-danger" title="Remove Allergy Record"><i class="bi bi-trash3-fill"></i></button>
+                    </form>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% else %}
+        <div class="text-center py-4 text-muted small glass-card">
+          <i class="bi bi-shield-slash fs-3 text-secondary d-block mb-2"></i>
+          No allergies recorded yet. Documenting allergies prevents prescribing contraindicated medicines.
+          <div class="mt-3">
+            <button class="btn btn-sm btn-glass-primary py-1 px-3" data-bs-toggle="modal" data-bs-target="#addAllergyModal">
+              <i class="bi bi-plus-lg me-1"></i> Add First Allergy
+            </button>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- 2. Existing Current Medications -->
+    <div class="glass-panel p-4 mb-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-capsule text-primary fs-5"></i>
+          <h5 class="fw-bold mb-0 text-dark">Current Medications</h5>
+        </div>
+        <button class="btn btn-sm btn-glass-primary py-1 px-3" data-bs-toggle="modal" data-bs-target="#addMedicationModal">
+          <i class="bi bi-plus-lg me-1"></i> Add Medication
+        </button>
+      </div>
+
+      {% if medications %}
+        <div class="table-responsive">
+          <table class="glass-table">
+            <thead>
+              <tr>
+                <th>Medicine Name</th>
+                <th>Dosage / Frequency</th>
+                <th>Status</th>
+                <th class="text-end">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for m in medications %}
+                <tr>
+                  <td>
+                    <strong>{{ m.medicine_name }}</strong>
+                    {% if m.medicine_reference %}
+                      <div class="small text-muted">{{ m.medicine_reference.generic_name }}</div>
+                    {% endif %}
+                  </td>
+                  <td class="small">{{ m.dosage }} &middot; {{ m.frequency }}</td>
+                  <td>
+                    <span class="badge {% if m.is_active %}glass-badge-success{% else %}glass-badge-secondary{% endif %}">
+                      {{ m.is_active|yesno:"Active,Discontinued" }}
+                    </span>
+                  </td>
+                  <td class="text-end">
+                    <form method="post" action="{% url 'accounts:delete_medication' m.id %}" class="d-inline" onsubmit="return confirm('Remove this medication?');">
+                      {% csrf_token %}
+                      <button type="submit" class="btn-action-icon btn-action-icon-danger" title="Remove Medication"><i class="bi bi-trash3-fill"></i></button>
+                    </form>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% else %}
+        <div class="text-center py-4 text-muted small glass-card">
+          <i class="bi bi-capsule fs-3 text-secondary d-block mb-2"></i>
+          No ongoing medications recorded. Adding current drugs protects against dangerous drug interactions.
+          <div class="mt-3">
+            <button class="btn btn-sm btn-glass-primary py-1 px-3" data-bs-toggle="modal" data-bs-target="#addMedicationModal">
+              <i class="bi bi-plus-lg me-1"></i> Add Current Medication
+            </button>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- 3. Medical History & Conditions -->
+    <div class="glass-panel p-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-file-earmark-medical text-warning fs-5"></i>
+          <h5 class="fw-bold mb-0 text-dark">Medical Condition History</h5>
+        </div>
+        <button class="btn btn-sm btn-glass-primary py-1 px-3" data-bs-toggle="modal" data-bs-target="#addHistoryModal">
+          <i class="bi bi-plus-lg me-1"></i> Add Condition
+        </button>
+      </div>
+
+      {% if history %}
+        <div class="table-responsive">
+          <table class="glass-table">
+            <thead>
+              <tr>
+                <th>Condition</th>
+                <th>Status</th>
+                <th>Diagnosed</th>
+                <th class="text-end">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for h in history %}
+                <tr>
+                  <td>
+                    <strong>{{ h.condition_name }}</strong>
+                    {% if h.notes %}<div class="small text-muted">{{ h.notes }}</div>{% endif %}
+                  </td>
+                  <td><span class="badge glass-badge-primary">{{ h.get_status_display }}</span></td>
+                  <td class="small">{{ h.diagnosed_date|default:"N/A" }}</td>
+                  <td class="text-end">
+                    <form method="post" action="{% url 'accounts:delete_medical_history' h.id %}" class="d-inline" onsubmit="return confirm('Remove this condition?');">
+                      {% csrf_token %}
+                      <button type="submit" class="btn-action-icon btn-action-icon-danger" title="Remove Condition"><i class="bi bi-trash3-fill"></i></button>
+                    </form>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% else %}
+        <div class="text-center py-4 text-muted small glass-card">
+          <i class="bi bi-file-earmark-medical fs-3 text-secondary d-block mb-2"></i>
+          No prior conditions documented. Adding chronic conditions (Asthma, Hypertension, etc.) ensures contraindication filtering.
+          <div class="mt-3">
+            <button class="btn btn-sm btn-glass-primary py-1 px-3" data-bs-toggle="modal" data-bs-target="#addHistoryModal">
+              <i class="bi bi-plus-lg me-1"></i> Add Past Condition
+            </button>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<!-- Modal 1: Add Allergy -->
+<div class="modal fade" id="addAllergyModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content glass-panel border-0 p-3">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold text-dark"><i class="bi bi-shield-slash-fill text-danger me-2"></i> Record Patient Allergy</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <form method="post" action="{% url 'accounts:add_allergy' %}">
+        {% csrf_token %}
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label small fw-semibold text-secondary">Allergy Category</label>
+            {{ allergy_form.allergy }}
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold text-secondary">Reaction Severity</label>
+            {{ allergy_form.reaction_severity }}
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold text-secondary">Reaction Details</label>
+            {{ allergy_form.reaction_description }}
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold text-secondary">Diagnosed Date</label>
+            {{ allergy_form.diagnosed_date }}
+          </div>
+        </div>
+        <div class="modal-footer border-0 pt-0">
+          <button type="button" class="btn btn-glass-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-glass-primary">Save Allergy Record</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2: Add Medication -->
+<div class="modal fade" id="addMedicationModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content glass-panel border-0 p-3">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold text-dark"><i class="bi bi-capsule text-primary me-2"></i> Record Ongoing Medication</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <form method="post" action="{% url 'accounts:add_medication' %}">
+        {% csrf_token %}
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label small fw-semibold text-secondary">Medicine Name *</label>
+            {{ medication_form.medicine_name }}
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold text-secondary">Match with Reference Database</label>
+            {{ medication_form.medicine_reference }}
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-6">
+              <label class="form-label small fw-semibold text-secondary">Dosage</label>
+              {{ medication_form.dosage }}
+            </div>
+            <div class="col-6">
+              <label class="form-label small fw-semibold text-secondary">Frequency</label>
+              {{ medication_form.frequency }}
+            </div>
+          </div>
+          <div class="form-check form-switch mb-3">
+            {{ medication_form.is_active }}
+            <label class="form-check-label ms-2 small fw-semibold text-secondary" for="id_is_active">Currently Taking This Medicine</label>
+          </div>
+        </div>
+        <div class="modal-footer border-0 pt-0">
+          <button type="button" class="btn btn-glass-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-glass-primary">Save Medication Record</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3: Add Medical History -->
+<div class="modal fade" id="addHistoryModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content glass-panel border-0 p-3">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold text-dark"><i class="bi bi-file-earmark-medical text-warning me-2"></i> Record Medical Condition</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <form method="post" action="{% url 'accounts:add_medical_history' %}">
+        {% csrf_token %}
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label small fw-semibold text-secondary">Condition Name *</label>
+            {{ history_form.condition_name }}
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold text-secondary">Match with Known Disease</label>
+            {{ history_form.disease_reference }}
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold text-secondary">Condition Status</label>
+            {{ history_form.status }}
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold text-secondary">Clinical Notes</label>
+            {{ history_form.notes }}
+          </div>
+        </div>
+        <div class="modal-footer border-0 pt-0">
+          <button type="button" class="btn btn-glass-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-glass-primary">Save Condition</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

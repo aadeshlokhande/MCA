@@ -1,0 +1,247 @@
+{% extends 'base.html' %}
+
+{% block title %}Patient Dashboard | AI-Based Drug Recommendation System{% endblock %}
+
+{% block content %}
+<!-- Welcome & Quick Action Header -->
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+  <div>
+    <h3 class="fw-bold mb-1" style="color: var(--text-primary); letter-spacing: -0.02em;">
+      Hello, {{ user.first_name|default:user.username }}
+    </h3>
+    <p class="text-muted small mb-0">Welcome to your health portal. Track symptoms, explore AI differential predictions, and review medication safety.</p>
+  </div>
+  <a href="{% url 'symptoms:symptom_checker' %}" class="btn btn-glass-primary shadow">
+    <i class="bi bi-heart-pulse me-1"></i> Start Symptom Check
+  </a>
+</div>
+
+<!-- 4 Clean Statistics Widgets -->
+<div class="row g-3 mb-4">
+  <div class="col-sm-6 col-xl-3">
+    <div class="stat-widget">
+      <div class="stat-icon stat-icon-blue">
+        <i class="bi bi-activity"></i>
+      </div>
+      <div>
+        <div class="fs-4 fw-bold text-dark">{{ total_assessments }}</div>
+        <div class="text-muted small">Total Assessments</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-xl-3">
+    <div class="stat-widget">
+      <div class="stat-icon stat-icon-green">
+        <i class="bi bi-capsule"></i>
+      </div>
+      <div>
+        <div class="fs-4 fw-bold text-dark">{{ medications|length }}</div>
+        <div class="text-muted small">Active Medications</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-xl-3">
+    <div class="stat-widget">
+      <div class="stat-icon stat-icon-orange">
+        <i class="bi bi-shield-slash"></i>
+      </div>
+      <div>
+        <div class="fs-4 fw-bold text-dark">{{ allergies|length }}</div>
+        <div class="text-muted small">Recorded Allergies</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-xl-3">
+    <div class="stat-widget">
+      <div class="stat-icon stat-icon-red">
+        <i class="bi bi-heart"></i>
+      </div>
+      <div>
+        <div class="fs-4 fw-bold text-dark">{{ history|length }}</div>
+        <div class="text-muted small">Medical Conditions</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row g-4">
+  <!-- Left Column: Recent Symptom Assessments -->
+  <div class="col-lg-8">
+    <div class="glass-panel p-4 mb-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="fw-bold text-dark mb-0"><i class="bi bi-clock-history text-primary me-2"></i> Recent Symptom Assessments</h5>
+        <a href="{% url 'symptoms:assessment_history' %}" class="btn btn-sm btn-glass-secondary py-1 px-3" style="font-size: 0.8rem;">
+          View All History
+        </a>
+      </div>
+
+      {% if recent_assessments %}
+        <div class="table-responsive">
+          <table class="glass-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Reported Symptoms</th>
+                <th>Top Prediction</th>
+                <th>Review Status</th>
+                <th class="text-end">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for a in recent_assessments %}
+                <tr>
+                  <td><span class="badge glass-badge-primary">#{{ a.id }}</span></td>
+                  <td class="small text-muted">{{ a.created_at|date:"M d, Y" }}</td>
+                  <td>
+                    <div class="d-flex flex-wrap gap-1">
+                      {% for s in a.selected_symptoms.all|slice:":2" %}
+                        <span class="badge bg-light text-dark small" style="font-size: 0.72rem;">{{ s.display_name }}</span>
+                      {% endfor %}
+                      {% if a.selected_symptoms.count > 2 %}
+                        <span class="badge bg-light text-muted small" style="font-size: 0.72rem;">+{{ a.selected_symptoms.count|add:"-2" }}</span>
+                      {% endif %}
+                    </div>
+                  </td>
+                  <td>
+                    {% with p=a.predictions.first %}
+                      {% if p %}
+                        <span class="fw-bold text-dark small">{{ p.predicted_disease.name }}</span>
+                        <span class="text-primary small">({{ p.confidence_score|floatformat:0 }}%)</span>
+                      {% else %}
+                        <span class="text-muted small">-</span>
+                      {% endif %}
+                    {% endwith %}
+                  </td>
+                  <td>
+                    <span class="badge {% if a.doctor_review %}glass-badge-success{% else %}glass-badge-warning{% endif %}">
+                      {{ a.get_status_display }}
+                    </span>
+                  </td>
+                  <td class="text-end">
+                    <a href="{% url 'symptoms:assessment_detail' a.id %}" class="btn btn-sm btn-glass-primary py-1 px-3 d-inline-flex align-items-center" style="font-size: 0.78rem;">
+                      <i class="bi bi-eye-fill me-1"></i> View
+                    </a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% else %}
+        <div class="text-center py-4 text-muted small glass-card">
+          <i class="bi bi-clipboard2-pulse me-1"></i> You haven't submitted any symptom assessments yet.
+          <div class="mt-2">
+            <a href="{% url 'symptoms:symptom_checker' %}" class="btn btn-sm btn-glass-primary">Run First Symptom Check</a>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Right Column: Medical Summary Card -->
+  <div class="col-lg-4">
+    <!-- Profile & Safety Summary -->
+    <div class="glass-panel p-4 mb-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="fw-bold text-dark mb-0">Safety & Profile Summary</h5>
+        <a href="{% url 'accounts:profile' %}" class="btn-action-chip">
+          <i class="bi bi-pencil-square me-1"></i> Edit Profile
+        </a>
+      </div>
+
+      <div class="glass-card mb-3 p-3">
+        <div class="d-flex justify-content-between small text-muted mb-1">
+          <span>Age: <strong>{{ profile.age|default:"N/A" }} yrs</strong></span>
+          <span>Gender: <strong>{{ profile.get_gender_display }}</strong></span>
+        </div>
+        <div class="d-flex justify-content-between small text-muted">
+          <span>Blood Group: <strong>{{ profile.blood_group|default:"N/A" }}</strong></span>
+          <span>Pregnant: <strong>{{ profile.is_pregnant|yesno:"Yes,No" }}</strong></span>
+        </div>
+      </div>
+
+      <!-- Allergy Pills -->
+      <div class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <div class="fw-bold small text-secondary"><i class="bi bi-shield-slash-fill text-danger me-1"></i> Known Allergies ({{ allergies|length }})</div>
+          {% if allergies %}
+            <a href="{% url 'accounts:profile' %}" class="btn-action-chip py-1 px-2" style="font-size: 0.72rem;">
+              <i class="bi bi-plus-lg"></i> Add
+            </a>
+          {% endif %}
+        </div>
+        {% if allergies %}
+          <div class="d-flex flex-wrap gap-1">
+            {% for al in allergies %}
+              <span class="badge glass-badge-danger">{{ al.allergy.name }}</span>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="glass-card p-3 text-center">
+            <span class="small text-muted d-block mb-2">No documented allergies recorded.</span>
+            <a href="{% url 'accounts:profile' %}" class="btn-action-chip">
+              <i class="bi bi-plus-circle me-1"></i> Add Allergies for Safety
+            </a>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Current Medications Pills -->
+      <div class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <div class="fw-bold small text-secondary"><i class="bi bi-capsule text-primary me-1"></i> Ongoing Medications ({{ medications|length }})</div>
+          {% if medications %}
+            <a href="{% url 'accounts:profile' %}" class="btn-action-chip py-1 px-2" style="font-size: 0.72rem;">
+              <i class="bi bi-plus-lg"></i> Add
+            </a>
+          {% endif %}
+        </div>
+        {% if medications %}
+          <div class="d-flex flex-wrap gap-1">
+            {% for med in medications %}
+              <span class="badge glass-badge-primary">{{ med.medicine_name }}</span>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="glass-card p-3 text-center">
+            <span class="small text-muted d-block mb-2">No active medications documented.</span>
+            <a href="{% url 'accounts:profile' %}" class="btn-action-chip">
+              <i class="bi bi-plus-circle me-1"></i> Add Current Medications
+            </a>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Medical Conditions -->
+      <div>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <div class="fw-bold small text-secondary"><i class="bi bi-file-earmark-medical text-warning me-1"></i> Medical History ({{ history|length }})</div>
+          {% if history %}
+            <a href="{% url 'accounts:profile' %}" class="btn-action-chip py-1 px-2" style="font-size: 0.72rem;">
+              <i class="bi bi-plus-lg"></i> Add
+            </a>
+          {% endif %}
+        </div>
+        {% if history %}
+          <div class="d-flex flex-wrap gap-1">
+            {% for cond in history %}
+              <span class="badge glass-badge-warning">{{ cond.condition_name }}</span>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="glass-card p-3 text-center">
+            <span class="small text-muted d-block mb-2">No prior clinical conditions recorded.</span>
+            <a href="{% url 'accounts:profile' %}" class="btn-action-chip">
+              <i class="bi bi-plus-circle me-1"></i> Add Medical Condition
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

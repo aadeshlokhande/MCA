@@ -1,0 +1,170 @@
+AI-Based Drug Recommendation System
+Academic Clinical Decision-Support & Medication Safety Screening Web Application
+
+The AI-Based Drug Recommendation System has been fully designed, developed, integrated, and verified. The application is built using Python 3.12, Django 6.1, NumPy, Joblib, and ReportLab, styled with an Apple Liquid Glass (Light Theme) aesthetic.
+
+Clinical Disclaimer: This system is an academic clinical decision-support research prototype. Machine learning predictions are differential statistical approximations and must never replace qualified clinical diagnosis, laboratory testing, or in-person physician evaluation, nor does the system autonomously prescribe medications.
+
+1. System Architecture & Modular Design
+Drug Recomendation/
+├── accounts/                  # Role-Based Authentication & Permissions (Patient, Doctor, Admin)
+│   ├── models.py              # Custom User, PatientProfile, DoctorProfile
+│   ├── views.py               # Registration, Login, Logout, Role Redirect, Profile & Allergy/Med CRUD
+│   ├── forms.py               # Registration, Profile, and Medical Record Forms
+│   ├── decorators.py          # Strict Role-Based Access Control (@patient_required, @doctor_required, etc.)
+│   └── urls.py
+├── medical/                   # Curated Medical Reference Data
+│   ├── models.py              # Symptom, Disease, Medicine, DrugInteraction, Allergy, PatientAllergy, etc.
+│   └── admin.py               # Django Admin configuration with search & filters
+├── symptoms/                  # Interactive Symptom Checker & NLP Normalization
+│   ├── nlp.py                 # Clinical tokenizer, n-gram synonym matcher, negation extractor
+│   ├── models.py              # SymptomAssessment model with emergency flags
+│   ├── forms.py               # Multi-symptom selection form
+│   ├── views.py               # Symptom checker, Confirmation screen, NLP API, Assessment detail
+│   └── urls.py
+├── ml_engine/                 # Machine Learning Pipeline & Inference Service
+│   ├── algorithms.py          # Vectorized Decision Tree (CART), Random Forest, and Naive Bayes
+│   ├── data.py                # Probabilistic clinical symptom matrix generator & data validation
+│   ├── predictor.py           # Joblib model loader, out-of-distribution handling, calibrated confidence
+│   ├── models.py              # MLModelRecord, DatasetRecord, PredictionResult
+│   └── management/commands/   # train_models, seed_medical_data commands
+├── recommendations/           # Medicine Information & Safety Screening Engine
+│   ├── engine.py              # 7-layer safety engine (allergies, interactions, contraindications, age, etc.)
+│   ├── models.py              # RecommendationRecord, SafetyIssue, DoctorReview
+│   └── admin.py
+├── dashboard/                 # Role-Specific Dashboards & Context
+│   ├── views.py               # Patient dashboard, Doctor triage queue, Clinical review, Admin metrics
+│   ├── models.py              # Notification model
+│   ├── context_processors.py  # Global unread notifications badge
+│   └── urls.py
+├── reports/                   # Clinical PDF Summary Generation
+│   ├── pdf_generator.py       # ReportLab PDF generator (demographics, predictions, safety, doctor sign-off)
+│   ├── views.py               # Download PDF HTTP response handler
+│   └── urls.py
+├── audit/                     # Security & Compliance Audit Logging
+│   └── models.py              # Immutable audit logging for logins, predictions, reviews, and denied access
+├── static/                    # Apple Liquid Glass Design System
+│   ├── css/liquid-glass.css   # Translucent glass panels, blur backdrops, soft shadows, badges, cards
+│   └── js/app.js              # Real-time symptom search, NLP parser AJAX, emergency detection
+├── templates/                 # Reusable Liquid Glass Light Theme Templates
+│   ├── base.html              # Shell layout with desktop sidebar, navbar, notifications dropdown, footer
+│   ├── accounts/              # login.html, register_patient.html, register_doctor.html, profile.html
+│   ├── symptoms/              # symptom_checker.html, assessment_detail.html, assessment_history.html
+│   └── dashboard/             # patient_dashboard.html, doctor_dashboard.html, doctor_review.html, admin_dashboard.html
+├── ml_models/                 # Serialized Joblib models (active_model.joblib)
+├── requirements.txt           # Project dependencies
+├── .env.example               # Environment variables template
+├── .gitignore                 # Standard Python/Django gitignore
+└── README.md                  # Comprehensive clinical and technical documentation
+2. Key Modules & Functional Workflows
+Module 1: Authentication and Authorization
+Custom User Model (accounts.User) with three roles: PATIENT, DOCTOR, and ADMIN.
+Role Redirection (role_redirect): Users are automatically redirected to their dedicated workspace upon sign-in.
+Patient Record Isolation: Strict permission checks prevent any patient from accessing another patient's assessments or records.
+Module 2: Patient Profile and Medical History
+Stores patient demographics (Age, Gender, Blood Group, Pregnancy status, Emergency contacts).
+Interactive modals and forms to manage Documented Allergies, Ongoing Medications, and Past Medical Conditions.
+Module 3: Symptom Checker & NLP Engine
+Searchable catalog of 66 clinical symptoms across 9 anatomical and systemic categories.
+Real-time client-side search filter and interactive glass chips.
+Clinical NLP Parser: Tokenizes free-text complaints, matches synonyms, detects negations (e.g., "no cough", "denies chest pain"), and flags emergency red-flag triggers (e.g., severe chest pain, dyspnea).
+Mandatory Confirmation Screen: Allows patients to review reported symptoms before launching the ML inference pipeline.
+Module 4: Machine Learning Disease Prediction Pipeline
+Vectorized training and comparison of three distinct classifiers on held-out test splits without data leakage:
+Decision Tree (CART with Gini Impurity)
+Random Forest (Ensemble with Feature Subsampling & Bagging)
+Multinomial Naive Bayes (Laplace-smoothed Log-Likelihood)
+Computes Accuracy, Weighted Precision, Recall, F1-Score, and Confusion Matrix.
+Serializes the active pipeline using Joblib (ml_models/active_model.joblib).
+Live inference engine (ml_engine.predictor) provides calibrated differential probabilities for primary and secondary conditions.
+Module 5 & 6: Medicine Information & Drug Safety Screening Engine
+Curated reference catalog of essential medicines citing the WHO Model List of Essential Medicines and FDA monographs.
+Multi-layered algorithmic safety screening checks:
+Allergy Cross-Reactivity Check: Evaluates active ingredients and chemical classes against patient allergies.
+Drug-Drug Interaction Check: Compares candidate medicines against active medications.
+Medical History Contraindications Check: Evaluates chronic conditions against drug contraindications (e.g., NSAIDs in peptic ulcer disease).
+Age Restrictions: Enforces pediatric and geriatric minimum/maximum approved age thresholds.
+Pregnancy Safety: Enforces FDA Pregnancy Categories (C, D, X) for pregnant patients.
+Duplicate Active Ingredients: Prevents accidental cumulative toxicity.
+Safety Suppression: Automatically marks high-risk candidate recommendations as SUPPRESSED (is_suppressed=True), presents prominent red alert warnings, and prohibits self-medication guidance.
+Module 7: Patient Dashboard
+Displays 4 real-time health metric widgets (Total Assessments, Active Medications, Logged Allergies, Chronic Conditions).
+Recent symptom assessments table with direct links to full results and PDF reports.
+Profile and allergy/medication summary cards.
+Module 8: Doctor Dashboard & Clinical Triage Queue
+Physician workspace with triage filters (All, Pending Review, Reviewed).
+Clinical Review Workspace:
+Complete view of patient history, allergies, reported symptoms, ML differential diagnoses, and safety alerts.
+Form to record independent clinical diagnostic impressions, endorse/modify medicines, formulate direct patient instructions, and provide follow-up advice.
+Authenticated electronic sign-off with license number and timestamp.
+Module 9: Medical History & Clinical PDF Reports
+Downloadable clinical-grade PDF reports generated dynamically with ReportLab.
+Formatted tables with patient demographics, symptom duration, differential probabilities, screened medicine statuses, and physician sign-off blocks.
+Module 10: Admin Panel & ML Analytics Dashboard
+Django Admin console (/admin/) for reference data curation.
+Custom analytics dashboard with Chart.js comparative performance bar chart, confusion matrix visualizer, dataset provenance metrics, and immutable security audit logs.
+Module 11 & 12: Notifications, Safety Guidance & Audit Logging
+In-app notification center with unread counters and mark-as-read AJAX triggers.
+Immutable audit log capturing logins, logouts, registrations, ML runs, safety screenings, doctor reviews, and unauthorized access attempts.
+3. Apple Liquid Glass UI Design
+
+The entire user interface consistently applies the Apple Liquid Glass Light Theme:
+
+Palette: Primary background #F5F8FC, secondary background #EEF3F8, accent blue #3984E8, teal accent #54B7C5, dark slate text #172B45, and muted text #6B7C93.
+Surfaces: Translucent frosted panels with backdrop-filter: blur(16px), soft layered shadows (0 8px 24px rgba(31, 38, 135, 0.06)), and delicate semi-transparent white borders (1px solid rgba(255, 255, 255, 0.85)).
+Interactive Elements: Pill-shaped gradient action buttons, interactive symptom chips that turn blue on selection (and red for red-flag symptoms), responsive desktop sidebar, and mobile offcanvas navigation.
+4. Pre-Configured Demonstration Accounts
+
+The database is pre-seeded with medical reference data and three demonstration accounts:
+
+Role	Username	Password	Purpose & Capabilities
+Patient	patient_john	Patient@12345	Symptom Checker, Medical Profile, Past Assessments, Download PDF
+Doctor	doctor_smith	Doctor@12345	Triage Queue, Clinical Review Workspace, Approving / Modifying Recommendations
+Administrator	admin	Admin@12345	Model Analytics Dashboard, Django Admin (/admin/), Security Audit Logs
+
+(Quick-fill buttons are integrated directly into the login page for one-click testing).
+
+5. Automated Test Suite Results
+
+The project includes an extensive automated test suite covering all modules:
+
+Authentication & role-based permissions
+Patient record isolation
+Medical profile, allergy, and medication CRUD
+Clinical NLP symptom parsing, synonym matching, and negation detection
+Emergency red-flag symptom triggers
+ML algorithms (Decision Tree, Random Forest, Naive Bayes) and Joblib persistence
+Multi-layer drug safety screening and recommendation suppression
+Doctor review workflow and patient notification dispatch
+ReportLab PDF report generation and download HTTP responses
+
+Test Suite Execution:
+
+bash
+./venv/bin/python manage.py test
+
+Result:
+
+text
+Found 32 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+................................
+----------------------------------------------------------------------
+Ran 32 tests in 32.300s
+OK
+Destroying test database for alias 'default'...
+
+All 32 automated tests passed with 100% success.
+
+6. How to Run the Application
+bash
+# 1. Activate the virtual environment
+source venv/bin/activate
+# 2. (Optional) Re-seed data or train ML models if needed:
+# python manage.py seed_medical_data
+# python manage.py train_models
+# 3. Start the Django development server
+python manage.py runserver
+
+Open your browser at http://127.0.0.1:8000/ to explore the application.

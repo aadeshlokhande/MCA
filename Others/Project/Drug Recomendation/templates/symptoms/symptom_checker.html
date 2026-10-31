@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+
+{% block title %}Interactive Symptom Checker | AI-Based Drug Recommendation System{% endblock %}
+
+{% block content %}
+{% if preview_mode %}
+  <!-- PRE-ANALYSIS CONFIRMATION SCREEN (Requirement from Module 3) -->
+  <div class="row justify-content-center py-3">
+    <div class="col-lg-8">
+      <div class="glass-panel p-4 p-sm-5 shadow-lg">
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <div class="d-inline-flex p-3 rounded-circle text-white" style="background: linear-gradient(135deg, #3984E8, #54B7C5);">
+            <i class="bi bi-clipboard2-check fs-2"></i>
+          </div>
+          <div>
+            <h3 class="fw-bold mb-0 text-dark" style="letter-spacing: -0.02em;">Confirm Submitted Symptoms</h3>
+            <p class="text-muted small mb-0">Please verify your reported symptoms before initiating machine learning evaluation</p>
+          </div>
+        </div>
+
+        {% if emergency_symptoms %}
+          <div class="emergency-alert-banner mb-4">
+            <div class="d-flex align-items-start gap-3">
+              <i class="bi bi-exclamation-octagon-fill fs-2 text-danger"></i>
+              <div>
+                <h5 class="fw-bold text-danger mb-1">Emergency Red-Flag Symptoms Identified</h5>
+                <p class="mb-2 text-dark small">
+                  You reported: <strong>{% for es in emergency_symptoms %}{{ es.display_name }}{% if not forloop.last %}, {% endif %}{% endfor %}</strong>.
+                </p>
+                <div class="small fw-semibold text-danger">
+                  <i class="bi bi-telephone-outbound me-1"></i> If you are experiencing sudden severe pain, chest tightness, stroke-like symptoms, or severe breathing difficulties, call emergency medical services immediately. Do not delay emergency care while using this decision-support prototype.
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        <div class="glass-card mb-4">
+          <h6 class="fw-bold text-secondary text-uppercase mb-3" style="font-size: 0.78rem; letter-spacing: 0.08em;">Selected Symptoms ({{ selected_symptoms|length }})</h6>
+          <div class="d-flex flex-wrap gap-2">
+            {% for sym in selected_symptoms %}
+              <span class="badge {% if sym.is_emergency %}glass-badge-danger{% else %}glass-badge-primary{% endif %} py-2 px-3" style="font-size: 0.88rem;">
+                {% if sym.is_emergency %}<i class="bi bi-exclamation-triangle-fill me-1"></i>{% endif %}
+                {{ sym.display_name }}
+              </span>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="row g-3 mb-4">
+          <div class="col-sm-6">
+            <div class="glass-card p-3">
+              <div class="text-muted small">Symptom Duration</div>
+              <div class="fs-5 fw-bold text-dark">{{ duration_days }} days</div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="glass-card p-3">
+              <div class="text-muted small">Reported Severity</div>
+              <div class="fs-5 fw-bold text-dark">{{ severity|title }}</div>
+            </div>
+          </div>
+          {% if raw_text %}
+            <div class="col-12">
+              <div class="glass-card p-3">
+                <div class="text-muted small mb-1">Patient Additional Description</div>
+                <div class="fst-italic text-dark small">"{{ raw_text }}"</div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+        <form method="post">
+          {% csrf_token %}
+          <input type="hidden" name="action" value="confirm">
+          <input type="hidden" name="duration_days" value="{{ duration_days }}">
+          <input type="hidden" name="severity" value="{{ severity }}">
+          <input type="hidden" name="raw_symptom_text" value="{{ raw_text }}">
+          {% for s in selected_symptoms %}
+            <input type="hidden" name="selected_symptoms" value="{{ s.id }}">
+          {% endfor %}
+
+          <div class="d-flex flex-column flex-sm-row gap-3">
+            <button type="submit" class="btn btn-glass-primary flex-grow-1 justify-content-center py-3 fs-6">
+              <i class="bi bi-cpu me-2"></i> Confirm & Run AI Decision Support
+            </button>
+            <a href="{% url 'symptoms:symptom_checker' %}" class="btn btn-glass-secondary justify-content-center py-3">
+              <i class="bi bi-pencil-square me-1"></i> Edit Symptoms
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% else %}
+  <!-- SYMPTOM INPUT STEP -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h3 class="fw-bold mb-1" style="color: var(--text-primary); letter-spacing: -0.02em;">Interactive Symptom Checker</h3>
+      <p class="text-muted small mb-0">Select your active symptoms or describe your condition for differential analysis</p>
+    </div>
+    <a href="{% url 'symptoms:assessment_history' %}" class="btn btn-glass-secondary">
+      <i class="bi bi-clock-history me-1"></i> Past Assessments
+    </a>
+  </div>
+
+  <!-- Live Emergency Banner (Hidden by default, shown dynamically via JS if emergency symptoms clicked) -->
+  <div id="liveEmergencyBanner" class="emergency-alert-banner mb-4 d-none">
+    <div class="d-flex align-items-start gap-3">
+      <i class="bi bi-exclamation-octagon-fill fs-3 text-danger"></i>
+      <div>
+        <h5 class="fw-bold text-danger mb-1">Emergency Red-Flag Symptom Alert</h5>
+        <p class="mb-0 text-dark small">
+          You selected a critical red-flag symptom. If you are experiencing sudden severe pain, chest tightness, stroke-like symptoms, or severe breathing difficulties, please call emergency services (e.g. 911 / 112) immediately.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <form method="post" id="symptomCheckerForm">
+    {% csrf_token %}
+    <input type="hidden" name="action" value="preview">
+
+    <div class="row g-4">
+      <!-- Left Column: Search & Symptom Catalog -->
+      <div class="col-lg-8">
+        <div class="glass-panel p-4 mb-4">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+            <div>
+              <h5 class="fw-bold mb-1 text-dark">Step 1: Select Symptoms</h5>
+              <div class="text-muted small">Choose symptoms from the catalog below. You can select multiple symptoms.</div>
+            </div>
+            <!-- Search bar -->
+            <div style="min-width: 260px;">
+              <div class="input-group">
+                <span class="input-group-text glass-input border-end-0 bg-white"><i class="bi bi-search text-muted"></i></span>
+                <input type="text" id="symptomSearchInput" class="form-control glass-input border-start-0" placeholder="Filter symptoms...">
+              </div>
+            </div>
+          </div>
+
+          <!-- Category Tabs -->
+          <ul class="nav nav-pills gap-2 mb-3" id="pills-tab" role="tablist">
+            {% for cat_name, symptoms in categories.items %}
+              <li class="nav-item" role="presentation">
+                <button class="nav-link glass-category-tab {% if forloop.first %}active{% endif %}" id="pills-{{ forloop.counter }}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{ forloop.counter }}" type="button" role="tab">
+                  {{ cat_name }} <span class="badge rounded-pill bg-light text-dark ms-1" style="font-size: 0.72rem;">{{ symptoms|length }}</span>
+                </button>
+              </li>
+            {% endfor %}
+          </ul>
+
+          <!-- Tab Contents -->
+          <div class="tab-content pt-2" id="pills-tabContent">
+            {% for cat_name, symptoms in categories.items %}
+              <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="pills-{{ forloop.counter }}" role="tabpanel">
+                <div class="d-flex flex-wrap">
+                  {% for sym in symptoms %}
+                    <div class="symptom-tag-container" data-name="{{ sym.name }}" data-display="{{ sym.display_name }}">
+                      <!-- Hidden checkbox bound to form -->
+                      <input type="checkbox" name="selected_symptoms" value="{{ sym.id }}" id="sym_cb_{{ sym.id }}" class="d-none">
+                      <!-- Interactive Pill -->
+                      <span class="symptom-tag {% if sym.is_emergency %}emergency{% endif %}" data-for="sym_cb_{{ sym.id }}" title="{{ sym.description }}">
+                        {% if sym.is_emergency %}<i class="bi bi-exclamation-triangle-fill text-danger me-1"></i>{% endif %}
+                        {{ sym.display_name }}
+                      </span>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Optional NLP Natural Language Input -->
+        <div class="glass-panel p-4">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="fw-bold mb-0 text-dark"><i class="bi bi-chat-left-heart text-primary me-2"></i> Optional: Describe in Your Own Words</h5>
+            <button type="button" id="btnNlpParse" class="btn btn-sm btn-glass-secondary">
+              <i class="bi bi-magic me-1"></i> Extract Symptoms from Text
+            </button>
+          </div>
+          <p class="text-muted small mb-3">Our clinical NLP tokenizer extracts medical terms and negation phrases (e.g. "I have fever but no cough").</p>
+          {{ form.raw_symptom_text }}
+
+          <div id="nlpFeedback" class="alert glass-panel border-0 mt-3 p-3 text-primary d-none small"></div>
+        </div>
+      </div>
+
+      <!-- Right Column: Metadata & Submit Action -->
+      <div class="col-lg-4">
+        <div class="glass-panel p-4 sticky-top" style="top: 85px;">
+          <h5 class="fw-bold mb-3 text-dark">Step 2: Additional Details</h5>
+
+          <div class="mb-3">
+            <label class="form-label small fw-semibold text-secondary">Symptom Duration (Days) *</label>
+            {{ form.duration_days }}
+            <div class="form-text small">How many days have you experienced these symptoms?</div>
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label small fw-semibold text-secondary">General Symptom Severity *</label>
+            {{ form.severity }}
+          </div>
+
+          <div class="glass-card mb-4 p-3 bg-light" style="font-size: 0.8rem; color: var(--text-secondary);">
+            <div class="d-flex align-items-center gap-2 mb-1">
+              <i class="bi bi-shield-check text-primary"></i>
+              <strong>Academic Support Workflow:</strong>
+            </div>
+            1. Select symptoms<br>
+            2. Review confirmation screen<br>
+            3. ML predicts differential conditions<br>
+            4. Safety engine screens medications<br>
+            5. Forwarded to physician for review
+          </div>
+
+          <button type="submit" class="btn btn-glass-primary w-100 justify-content-center py-3 fs-6">
+            Review & Confirm <i class="bi bi-arrow-right ms-1"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+{% endif %}
+{% endblock %}

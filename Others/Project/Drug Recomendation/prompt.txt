@@ -1,0 +1,245 @@
+```# Project: AI-Based Drug Recommendation System
+
+Act as a senior Python Django developer, Machine Learning engineer, database architect, and UI/UX designer. Build a complete, functional, secure, and responsive web application named **AI-Based Drug Recommendation System**.
+
+## 1. Project Objective
+
+Develop an AI-assisted healthcare decision-support system that analyzes patient-reported symptoms and relevant medical history to identify possible conditions and present safety-screened medicine information for review by a qualified healthcare professional.
+
+This system is an academic project and must not replace professional medical diagnosis or prescribe medicines autonomously.
+
+## 2. Technology Stack
+
+- Backend: Python, Django
+- Frontend: HTML5, CSS3, JavaScript, Bootstrap 5
+- Machine Learning: scikit-learn, Pandas, NumPy
+- NLP: spaCy or a suitable lightweight NLP approach
+- Database: SQLite for development; PostgreSQL-compatible architecture
+- Charts: Chart.js
+- Reports: PDF export
+- Authentication: Django Authentication
+- Testing: Django Test Framework and pytest where appropriate
+
+Use a modular, maintainable architecture with reusable components and proper separation of responsibilities.
+
+## 3. Required Modules
+
+### Module 1: Authentication and Authorization
+- Patient, Doctor, and Admin roles
+- Registration, login, logout, and password reset
+- Role-based permissions
+- Secure password storage and session management
+- Patients must only access their own medical records.
+
+### Module 2: Patient Dashboard
+- Overview of previous symptom assessments
+- Medical history and allergy summary
+- Previous reports and doctor-reviewed recommendations
+- Clear navigation and useful dashboard statistics
+
+### Module 3: Patient Profile and Medical History
+Collect relevant information such as:
+- Age and basic patient details
+- Reported symptoms and their duration
+- Known allergies
+- Existing medications
+- Relevant medical conditions
+- Previous assessment records
+
+Collect only necessary information and protect sensitive medical data.
+
+### Module 4: Symptom Checker
+- Allow patients to select symptoms from a searchable list.
+- Support optional natural-language symptom descriptions.
+- Normalize symptom names using NLP and controlled vocabulary.
+- Validate missing, invalid, or contradictory inputs.
+- Show a confirmation screen before running the analysis.
+
+Do not treat symptom matching as a confirmed medical diagnosis.
+
+### Module 5: Machine Learning Disease Prediction
+- Load and validate an appropriate medical dataset.
+- Perform preprocessing, encoding, feature selection where justified, and train/test splitting.
+- Implement and compare Decision Tree, Random Forest, and Naive Bayes models.
+- Evaluate models using precision, recall, F1-score, confusion matrix, and suitable validation methods.
+- Prevent data leakage during training and evaluation.
+- Save the selected model and preprocessing pipeline.
+- Display possible conditions with appropriately calibrated confidence information when supported by evaluation.
+- Handle unknown symptoms and out-of-distribution inputs safely.
+
+Never fabricate accuracy scores or claim clinical validation without evidence.
+
+### Module 6: Medicine Information and Recommendation Engine
+- Map predicted conditions to candidate medicine information using a curated, traceable dataset.
+- Display medicine name, approved indication information, known precautions, and source information when available.
+- Distinguish general educational information from clinician-approved recommendations.
+- Do not generate prescriptions or independently determine personalized dosage.
+- Do not recommend prescription-only medicines for self-medication.
+- If reliable supporting data is unavailable, clearly state that no verified recommendation can be generated.
+
+### Module 7: Drug Safety and Interaction Checks
+Check available information for:
+- Known patient allergies
+- Potential interactions with existing medicines
+- Relevant contraindications
+- Age-related restrictions
+- Pregnancy-related precautions when relevant and appropriately documented
+- Duplicate active ingredients
+- Missing or conflicting medical information
+
+Use a verified, maintained drug reference dataset. Do not assume that an unlisted interaction means a medicine is safe.
+
+If a serious interaction, allergy concern, or unresolved safety issue is detected, suppress the affected recommendation and display an appropriate warning requiring professional review. Never bypass safety checks merely to produce a result.
+
+### Module 8: Doctor Dashboard
+- View assigned or authorized patient assessments
+- Review reported symptoms and relevant history
+- Examine model predictions and their limitations
+- Review medicine information and safety warnings
+- Record professional decisions and notes
+- Approve, reject, or modify a candidate recommendation through an auditable workflow
+
+The system must clearly distinguish AI output from a doctor's independent decision.
+
+### Module 9: Medical History and Reports
+- Save assessment history securely.
+- Display previous assessments and their timestamps.
+- Generate downloadable PDF summaries.
+- Include symptoms, possible conditions, safety warnings, and review status.
+- Avoid presenting unreviewed AI output as a confirmed diagnosis or prescription.
+
+### Module 10: Admin Panel
+- Manage patient and doctor accounts
+- Manage disease, symptom, and medicine reference data
+- Import and validate authorized datasets
+- Track model versions and training metrics
+- Review audit logs and system errors
+- Manage reference-data updates and system settings
+
+Do not allow ordinary users to modify trusted medical reference data.
+
+### Module 11: Notifications and Safety Guidance
+- Display assessment completion messages.
+- Show clear warnings when professional consultation is required.
+- Provide emergency guidance for potentially urgent symptoms.
+- Avoid false reassurance and do not delay emergency care while performing predictions.
+
+### Module 12: Audit and Monitoring
+- Record important access and recommendation-review events.
+- Track model version, dataset version, and assessment timestamp.
+- Protect audit logs from unauthorized modification.
+- Do not expose passwords, authentication tokens, or unnecessary medical information in logs.
+
+## 4. User Interface and Experience
+
+Build a professional healthcare dashboard with:
+- Clean, modern medical-themed design
+- Responsive layouts for mobile, tablet, and desktop
+- Sidebar navigation on larger screens
+- Mobile-friendly navigation
+- Accessible forms, readable typography, and consistent spacing
+- Searchable tables, filters, loading states, empty states, and error messages
+- Charts for model evaluation and administrative analytics
+- Clear warning styles for important medical safety messages
+
+Every button, form, navigation item, filter, and dashboard action must work correctly. Use consistent icons and verify that all icons render properly.
+
+## 5. Database Design
+
+Create suitable Django models and relationships for:
+- Custom User / User Profile
+- Patient Profile
+- Doctor Profile
+- Symptom
+- Disease / Condition
+- Medicine
+- Drug Interaction
+- Allergy
+- Medical Condition History
+- Existing Medication
+- Symptom Assessment
+- Prediction Result
+- Recommendation Record
+- Doctor Review
+- Dataset Version
+- ML Model Version
+- Audit Log
+
+Use appropriate foreign keys, database constraints, indexes, validation, and migrations. Avoid duplicating patient data unnecessarily.
+
+## 6. Security Requirements
+
+- Use Django's built-in security mechanisms.
+- Apply CSRF protection and secure session settings.
+- Validate and sanitize user inputs.
+- Enforce authorization on every protected backend endpoint.
+- Store secrets in environment variables.
+- Never commit passwords, API keys, or production secrets.
+- Use HTTPS in production.
+- Minimize medical data collection and restrict access to sensitive records.
+- Add secure error handling, rate limiting where appropriate, and audit logging.
+- Do not claim regulatory compliance without an actual compliance assessment.
+
+## 7. Machine Learning and Dataset Requirements
+
+Use a legitimate dataset with documented provenance and permitted usage.
+
+Separate model training from normal user requests. Do not retrain the model on every page load.
+
+Include scripts or management commands for dataset validation, preprocessing, training, evaluation, and model loading.
+
+Provide a small synthetic demonstration dataset only when clearly labeled as synthetic. Never represent synthetic records as real clinical evidence.
+
+If a verified medicine dataset or reliable interaction database is unavailable, implement the data interface and clearly mark the relevant feature as unavailable rather than inventing medical facts.
+
+## 8. Testing and Quality Assurance
+
+Implement tests for:
+- Authentication and role permissions
+- Patient record isolation
+- Form validation
+- Database models and relationships
+- Symptom preprocessing
+- ML prediction pipeline
+- Drug-safety rule execution
+- Recommendation suppression when safety data is incomplete
+- PDF report generation
+- Invalid inputs and error handling
+- Responsive UI and functional navigation
+
+Fix errors discovered during testing. Do not mark incomplete features as completed.
+
+## 9. Development Workflow
+
+Follow this sequence:
+
+1. Inspect the existing workspace before creating files.
+2. Define the architecture and database schema.
+3. Set up the Django project and applications.
+4. Implement models, migrations, authentication, and permissions.
+5. Build the frontend and patient/doctor/admin dashboards.
+6. Implement the ML pipeline and dataset validation.
+7. Implement the recommendation engine and safety checks.
+8. Integrate history, reporting, and audit logs.
+9. Run migrations, tests, and application checks.
+10. Fix errors and verify every major user workflow.
+11. Create a README with installation instructions, environment configuration, dataset requirements, training commands, and startup instructions.
+
+## 10. Final Deliverables
+
+Provide:
+- Complete runnable source code
+- Organized Django applications
+- Database models and migrations
+- ML training and inference pipeline
+- Clearly documented dataset requirements
+- Functional patient, doctor, and admin dashboards
+- Automated tests
+- requirements.txt
+- .env.example without real secrets
+- README.md
+- Sample synthetic data for demonstration, where useful
+
+Do not stop after generating a static UI or project skeleton. Implement the core workflows end to end, run available checks, and clearly document any external medical data or services that must be configured separately.
+
+**Important:** This is a clinical decision-support prototype. Predictions are not diagnoses, and medicine information must not be treated as an individualized prescription. Clinical safety, transparent limitations, and qualified professional review take priority over generating a recommendation.```

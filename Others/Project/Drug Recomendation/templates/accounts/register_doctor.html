@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}Doctor Registration | AI-Based Drug Recommendation System{% endblock %}
+
+{% block auth_content %}
+<div class="row justify-content-center py-4">
+  <div class="col-md-8 col-lg-7 col-xl-6">
+    <div class="glass-panel p-4 p-sm-5 shadow-lg">
+      <div class="text-center mb-4">
+        <div class="d-inline-flex p-3 rounded-circle text-white mb-3" style="background: linear-gradient(135deg, #3984E8, #54B7C5); box-shadow: 0 8px 24px rgba(57,132,232,0.3);">
+          <i class="bi bi-hospital fs-2"></i>
+        </div>
+        <h3 class="fw-bold" style="color: var(--text-primary); letter-spacing: -0.02em;">Healthcare Professional Registration</h3>
+        <p class="text-muted small">Sign up to review AI differential assessments and approve screened medicine recommendations</p>
+      </div>
+
+      <form method="post" novalidate>
+        {% csrf_token %}
+
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <label class="form-label fw-semibold small text-secondary">First Name *</label>
+            {{ form.first_name }}
+            {% if form.first_name.errors %}<div class="text-danger small">{{ form.first_name.errors.0 }}</div>{% endif %}
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label fw-semibold small text-secondary">Last Name *</label>
+            {{ form.last_name }}
+            {% if form.last_name.errors %}<div class="text-danger small">{{ form.last_name.errors.0 }}</div>{% endif %}
+          </div>
+
+          <div class="col-sm-6">
+            <label class="form-label fw-semibold small text-secondary">Username *</label>
+            {{ form.username }}
+            {% if form.username.errors %}<div class="text-danger small">{{ form.username.errors.0 }}</div>{% endif %}
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label fw-semibold small text-secondary">Medical Email Address *</label>
+            {{ form.email }}
+            {% if form.email.errors %}<div class="text-danger small">{{ form.email.errors.0 }}</div>{% endif %}
+          </div>
+
+          <div class="col-sm-6">
+            <label class="form-label fw-semibold small text-secondary">Medical License Number *</label>
+            {{ form.license_number }}
+            {% if form.license_number.errors %}<div class="text-danger small">{{ form.license_number.errors.0 }}</div>{% endif %}
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label fw-semibold small text-secondary">Clinical Specialization *</label>
+            {{ form.specialization }}
+          </div>
+
+          <div class="col-sm-8">
+            <label class="form-label fw-semibold small text-secondary">Hospital / Clinic Affiliation</label>
+            {{ form.hospital_affiliation }}
+          </div>
+          <div class="col-sm-4">
+            <label class="form-label fw-semibold small text-secondary">Years in Practice</label>
+            {{ form.years_of_experience }}
+          </div>
+
+          <div class="col-sm-6">
+            <label class="form-label fw-semibold small text-secondary">Password *</label>
+            {{ form.password1 }}
+            {% if form.password1.errors %}<div class="text-danger small">{{ form.password1.errors.0 }}</div>{% endif %}
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label fw-semibold small text-secondary">Confirm Password *</label>
+            {{ form.password2 }}
+            {% if form.password2.errors %}<div class="text-danger small">{{ form.password2.errors.0 }}</div>{% endif %}
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <button type="submit" class="btn btn-glass-primary w-100 justify-content-center py-2">
+            <i class="bi bi-person-badge me-1"></i> Register Clinician Account
+          </button>
+        </div>
+
+        <div class="text-center pt-3 border-top mt-4">
+          <span class="small text-muted d-block mb-2">Already registered with an account?</span>
+          <a href="{% url 'accounts:login' %}" class="btn-action-chip">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Sign In to Portal
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign In | AI-Based Drug Recommendation System{% endblock %}
+
+{% block auth_content %}
+<div class="row justify-content-center align-items-center py-5">
+  <div class="col-md-6 col-lg-5 col-xl-4">
+    <div class="glass-panel p-4 p-sm-5 shadow-lg">
+      <div class="text-center mb-4">
+        <div class="d-inline-flex p-3 rounded-circle text-white mb-3" style="background: linear-gradient(135deg, #3984E8, #54B7C5); box-shadow: 0 8px 24px rgba(57,132,232,0.3);">
+          <i class="bi bi-shield-lock fs-2"></i>
+        </div>
+        <h3 class="fw-bold" style="color: var(--text-primary); letter-spacing: -0.02em;">Welcome Back</h3>
+        <p class="text-muted small">Sign in to your clinical decision-support portal</p>
+      </div>
+
+      <form method="post" novalidate>
+        {% csrf_token %}
+        <div class="mb-3">
+          <label class="form-label fw-semibold small text-secondary">Username or Email</label>
+          {{ form.username }}
+          {% if form.username.errors %}
+            <div class="text-danger small mt-1">{{ form.username.errors.0 }}</div>
+          {% endif %}
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label fw-semibold small text-secondary">Password</label>
+          {{ form.password }}
+          {% if form.password.errors %}
+            <div class="text-danger small mt-1">{{ form.password.errors.0 }}</div>
+          {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-glass-primary w-100 justify-content-center py-2 mb-3">
+          <i class="bi bi-box-arrow-in-right me-1"></i> Sign In to Portal
+        </button>
+
+        <div class="text-center pt-3 border-top mt-3">
+          <span class="small text-muted d-block mb-2">Don't have an account yet?</span>
+          <div class="d-flex flex-wrap justify-content-center gap-2">
+            <a href="{% url 'accounts:register_patient' %}" class="btn-action-chip">
+              <i class="bi bi-person-plus me-1"></i> Patient Registration
+            </a>
+            <a href="{% url 'accounts:register_doctor' %}" class="btn-action-chip">
+              <i class="bi bi-hospital me-1"></i> Doctor Registration
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Quick Demo Accounts Helper Pill -->
+    <div class="glass-card mt-4 p-3 border-0" style="background: rgba(255, 255, 255, 0.65);">
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <i class="bi bi-key-fill text-warning"></i>
+        <strong class="small text-secondary">Preconfigured Demo Credentials</strong>
+      </div>
+      <div class="small text-muted mb-2">Click any account pill to autofill credentials:</div>
+      <div class="d-flex flex-column gap-2">
+        <button type="button" class="btn btn-sm btn-glass-secondary d-flex align-items-center justify-content-between py-2 px-3 text-start" onclick="fillLogin('patient_john', 'Patient@12345')">
+          <span><i class="bi bi-person-fill text-primary me-2"></i><strong>Patient:</strong> <code>patient_john</code></span>
+          <span class="badge bg-light text-muted small">Autofill &rarr;</span>
+        </button>
+        <button type="button" class="btn btn-sm btn-glass-secondary d-flex align-items-center justify-content-between py-2 px-3 text-start" onclick="fillLogin('doctor_smith', 'Doctor@12345')">
+          <span><i class="bi bi-heart-pulse-fill text-teal me-2" style="color: var(--accent-secondary);"></i><strong>Doctor:</strong> <code>doctor_smith</code></span>
+          <span class="badge bg-light text-muted small">Autofill &rarr;</span>
+        </button>
+        <button type="button" class="btn btn-sm btn-glass-secondary d-flex align-items-center justify-content-between py-2 px-3 text-start" onclick="fillLogin('admin', 'Admin@12345')">
+          <span><i class="bi bi-shield-lock-fill text-warning me-2"></i><strong>Admin:</strong> <code>admin</code></span>
+          <span class="badge bg-light text-muted small">Autofill &rarr;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function fillLogin(u, p) {
+    document.querySelector('input[name="username"]').value = u;
+    document.querySelector('input[name="password"]').value = p;
+  }
+</script>
+{% endblock %}

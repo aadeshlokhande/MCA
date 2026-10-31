@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}Assessment History | AI-Based Drug Recommendation System{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <h3 class="fw-bold mb-1" style="color: var(--text-primary); letter-spacing: -0.02em;">Past Symptom Assessments</h3>
+    <p class="text-muted small mb-0">Complete historical record of completed clinical decision-support evaluations</p>
+  </div>
+  <a href="{% url 'symptoms:symptom_checker' %}" class="btn btn-glass-primary">
+    <i class="bi bi-heart-pulse me-1"></i> New Assessment
+  </a>
+</div>
+
+<div class="glass-panel p-4">
+  {% if assessments %}
+    <div class="table-responsive">
+      <table class="glass-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Date & Time</th>
+            <th>Reported Symptoms</th>
+            <th>Top Predicted Condition</th>
+            <th>Review Status</th>
+            <th class="text-end">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for a in assessments %}
+            <tr>
+              <td><span class="badge glass-badge-primary">#{{ a.id }}</span></td>
+              <td class="small">{{ a.created_at|date:"M d, Y H:i" }}</td>
+              <td>
+                <div class="d-flex flex-wrap gap-1">
+                  {% for s in a.selected_symptoms.all|slice:":3" %}
+                    <span class="badge bg-light text-dark small" style="font-size: 0.72rem;">{{ s.display_name }}</span>
+                  {% endfor %}
+                  {% if a.selected_symptoms.count > 3 %}
+                    <span class="badge bg-light text-muted small" style="font-size: 0.72rem;">+{{ a.selected_symptoms.count|add:"-3" }} more</span>
+                  {% endif %}
+                </div>
+              </td>
+              <td>
+                {% with top_pred=a.predictions.first %}
+                  {% if top_pred %}
+                    <span class="fw-bold text-dark">{{ top_pred.predicted_disease.name }}</span>
+                    <span class="text-primary small">({{ top_pred.confidence_score|floatformat:0 }}%)</span>
+                  {% else %}
+                    <span class="text-muted small">None</span>
+                  {% endif %}
+                {% endwith %}
+              </td>
+              <td>
+                <span class="badge {% if a.doctor_review %}glass-badge-success{% else %}glass-badge-warning{% endif %}">
+                  {{ a.get_status_display }}
+                </span>
+                {% if a.has_emergency_symptoms %}
+                  <span class="badge glass-badge-danger ms-1">Red-Flag</span>
+                {% endif %}
+              </td>
+              <td class="text-end">
+                <div class="d-inline-flex align-items-center gap-2">
+                  <a href="{% url 'symptoms:assessment_detail' a.id %}" class="btn btn-sm btn-glass-primary py-1 px-3 d-inline-flex align-items-center" style="font-size: 0.8rem;">
+                    <i class="bi bi-eye-fill me-1"></i> View Results
+                  </a>
+                  <a href="{% url 'reports:download_assessment_pdf' a.id %}" class="btn-action-icon" title="Download PDF Clinical Report">
+                    <i class="bi bi-file-earmark-pdf-fill text-danger"></i>
+                  </a>
+                </div>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <div class="text-center py-5">
+      <div class="d-inline-flex p-3 rounded-circle text-primary mb-3" style="background: rgba(57,132,232,0.1);">
+        <i class="bi bi-journal-medical fs-2"></i>
+      </div>
+      <h5 class="fw-bold text-dark mb-1">No Past Assessments Found</h5>
+      <p class="text-muted small mb-4">Start your first symptom assessment to analyze health conditions and receive safety screening.</p>
+      <a href="{% url 'symptoms:symptom_checker' %}" class="btn btn-glass-primary">
+        <i class="bi bi-heart-pulse me-1"></i> Start First Symptom Check
+      </a>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

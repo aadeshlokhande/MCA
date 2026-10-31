@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+
+{% block title %}Clinical Review Assessment #{{ assessment.id }} | AI-Based Drug Recommendation System{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <div class="d-flex align-items-center gap-3 mb-2">
+      <a href="{% url 'dashboard:doctor_dashboard' %}" class="btn-glass-back">
+        <i class="bi bi-arrow-left"></i> Back to Triage Queue
+      </a>
+      <span class="badge glass-badge-primary">Assessment #{{ assessment.id }}</span>
+    </div>
+    <h3 class="fw-bold mb-0 text-dark" style="letter-spacing: -0.02em;">Physician Clinical Review & Decision Workspace</h3>
+  </div>
+  <a href="{% url 'reports:download_assessment_pdf' assessment.id %}" class="btn btn-glass-secondary">
+    <i class="bi bi-file-earmark-pdf text-danger me-1"></i> Preview PDF Report
+  </a>
+</div>
+
+<!-- Patient Summary Banner -->
+<div class="glass-panel p-4 mb-4">
+  <div class="row g-3 align-items-center">
+    <div class="col-md-3 border-end">
+      <div class="fw-bold fs-5 text-dark">{{ patient.user.get_full_name|default:patient.user.username }}</div>
+      <div class="text-muted small">Age: {{ patient.age|default:"N/A" }} yrs &middot; {{ patient.get_gender_display }} &middot; Blood: {{ patient.blood_group|default:"N/A" }}</div>
+      {% if patient.is_pregnant %}<span class="badge glass-badge-danger mt-1">Pregnant Patient</span>{% endif %}
+    </div>
+
+    <div class="col-md-3 border-end">
+      <div class="fw-bold small text-secondary mb-1"><i class="bi bi-shield-slash-fill text-danger me-1"></i> Known Allergies:</div>
+      {% if patient.allergies.all %}
+        {% for al in patient.allergies.all %}
+          <span class="badge glass-badge-danger me-1">{{ al.allergy.name }}</span>
+        {% endfor %}
+      {% else %}
+        <small class="text-muted fst-italic">None documented</small>
+      {% endif %}
+    </div>
+
+    <div class="col-md-3 border-end">
+      <div class="fw-bold small text-secondary mb-1"><i class="bi bi-capsule text-primary me-1"></i> Current Medications:</div>
+      {% if patient.current_medications.all %}
+        {% for m in patient.current_medications.all %}
+          <span class="badge glass-badge-primary me-1">{{ m.medicine_name }}</span>
+        {% endfor %}
+      {% else %}
+        <small class="text-muted fst-italic">None documented</small>
+      {% endif %}
+    </div>
+
+    <div class="col-md-3">
+      <div class="fw-bold small text-secondary mb-1"><i class="bi bi-file-earmark-medical text-warning me-1"></i> Medical History:</div>
+      {% if patient.medical_history.all %}
+        {% for h in patient.medical_history.all %}
+          <span class="badge glass-badge-warning me-1">{{ h.condition_name }}</span>
+        {% endfor %}
+      {% else %}
+        <small class="text-muted fst-italic">None documented</small>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="row g-4">
+  <!-- Left Column: Reported Symptoms & AI Decision Support Data -->
+  <div class="col-lg-6">
+    <!-- Symptoms Card -->
+    <div class="glass-panel p-4 mb-4">
+      <h5 class="fw-bold text-dark mb-3">1. Patient-Reported Symptoms</h5>
+      <div class="d-flex flex-wrap gap-2 mb-3">
+        {% for s in assessment.selected_symptoms.all %}
+          <span class="badge {% if s.is_emergency %}glass-badge-danger{% else %}glass-badge-primary{% endif %} py-2 px-3">
+            {% if s.is_emergency %}<i class="bi bi-exclamation-triangle-fill me-1"></i>{% endif %}
+            {{ s.display_name }}
+          </span>
+        {% endfor %}
+      </div>
+      <div class="row g-2 small text-muted pt-2 border-top">
+        <div class="col-6"><strong>Duration:</strong> {{ assessment.duration_days }} days</div>
+        <div class="col-6"><strong>Patient Severity:</strong> {{ assessment.get_severity_display }}</div>
+        {% if assessment.raw_symptom_text %}
+          <div class="col-12 mt-1 fst-italic">"{{ assessment.raw_symptom_text }}"</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- AI Differential Diagnosis Predictions -->
+    <div class="glass-panel p-4 mb-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="fw-bold text-dark mb-0">2. AI Differential Condition Predictions</h5>
+        <span class="badge glass-badge-primary">Probabilistic Model</span>
+      </div>
+
+      {% for pred in predictions %}
+        <div class="glass-card mb-3 p-3">
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <div>
+              <span class="badge {% if pred.is_primary %}bg-primary text-white{% else %}bg-light text-dark{% endif %} me-1">#{{ pred.rank }}</span>
+              <strong class="text-dark">{{ pred.predicted_disease.name }}</strong>
+              {% if pred.predicted_disease.code %}<small class="text-muted">({{ pred.predicted_disease.code }})</small>{% endif %}
+            </div>
+            <span class="fw-bold text-primary">{{ pred.confidence_score|floatformat:1 }}% Conf.</span>
+          </div>
+
+          <div class="progress mb-2" style="height: 5px;">
+            <div class="progress-bar" style="width: {{ pred.confidence_score }}%; background: var(--accent-primary);"></div>
+          </div>
+          <p class="small text-muted mb-1">{{ pred.predicted_disease.description }}</p>
+          <div class="small text-muted"><strong>General Guidance:</strong> {{ pred.predicted_disease.general_advice }}</div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Candidate Medicines & Safety Screening Alerts -->
+    <div class="glass-panel p-4 mb-4">
+      <h5 class="fw-bold text-dark mb-3">3. Screened Candidate Medicines & Safety Warnings</h5>
+
+      {% for rec in recommendations %}
+        <div class="glass-card mb-3 p-3 {% if rec.is_suppressed %}border-danger bg-danger-subtle{% endif %}">
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <div>
+              <strong class="text-dark">{{ rec.medicine.name }}</strong>
+              <div class="small text-muted">{{ rec.medicine.generic_name }} ({{ rec.medicine.dosage_form }})</div>
+            </div>
+            {% if rec.is_suppressed %}
+              <span class="badge glass-badge-danger">SUPPRESSED BY SAFETY ENGINE</span>
+            {% else %}
+              <span class="badge glass-badge-success">Safety Cleared (Candidate)</span>
+            {% endif %}
+          </div>
+
+          <div class="small text-muted mb-2">
+            <strong>Approved Indication:</strong> {{ rec.medicine.approved_indications }}
+          </div>
+
+          {% if rec.safety_issues.all %}
+            <div class="p-2 rounded mt-2" style="background: rgba(224,82,82,0.1); border-left: 3px solid var(--status-danger);">
+              <div class="fw-bold small text-danger mb-1"><i class="bi bi-exclamation-triangle-fill me-1"></i> Detected Safety Hazards:</div>
+              {% for iss in rec.safety_issues.all %}
+                <div class="small text-dark mb-1">
+                  <strong>[{{ iss.get_issue_type_display }}]:</strong> {{ iss.description }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Right Column: Doctor Review Submission Form -->
+  <div class="col-lg-6">
+    <div class="glass-panel p-4 sticky-top" style="top: 85px;">
+      <h5 class="fw-bold text-dark mb-2">
+        <i class="bi bi-journal-check text-success me-2"></i> 4. Physician Clinical Decision & Notes
+      </h5>
+      <p class="text-muted small mb-3">
+        Record your independent clinical impression and sign off on verified guidance for this patient.
+      </p>
+
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+          <label class="form-label small fw-semibold text-secondary">Clinical Review Status *</label>
+          <select name="status" class="form-select glass-input">
+            <option value="APPROVED" {% if existing_review.status == 'APPROVED' %}selected{% endif %}>Approved (Endorse Candidate Recommendations)</option>
+            <option value="MODIFIED" {% if existing_review.status == 'MODIFIED' %}selected{% endif %}>Modified (Adjusted with Clinical Notes)</option>
+            <option value="REJECTED" {% if existing_review.status == 'REJECTED' %}selected{% endif %}>Rejected (AI Recommendations Inappropriate)</option>
+            <option value="REFERRED" {% if existing_review.status == 'REFERRED' %}selected{% endif %}>Referred for In-Person / Specialist Evaluation</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label small fw-semibold text-secondary">Independent Clinical Diagnostic Notes *</label>
+          <textarea name="clinical_diagnosis_notes" class="form-control glass-input" rows="3" required placeholder="Enter your clinical diagnostic impression and evaluation...">{{ existing_review.clinical_diagnosis_notes|default:"" }}</textarea>
+        </div>
+
+        <!-- Checkbox list of candidate medicines to endorse -->
+        <div class="mb-3">
+          <label class="form-label small fw-semibold text-secondary">Doctor-Endorsed Medicines</label>
+          <div class="d-flex flex-column gap-2 mb-2">
+            {% for rec in recommendations %}
+              <label class="glass-card p-3 d-flex align-items-center justify-content-between mb-0" for="doc_app_{{ rec.medicine.id }}" style="cursor: pointer; transition: all 0.2s;">
+                <div class="d-flex align-items-center gap-3">
+                  <input class="form-check-input mt-0 fs-5" type="checkbox" name="approved_medicines" value="{{ rec.medicine.id }}" id="doc_app_{{ rec.medicine.id }}"
+                    {% if existing_review and rec.medicine in existing_review.approved_medicines.all %}checked{% elif not rec.is_suppressed %}checked{% endif %}>
+                  <div>
+                    <div class="fw-bold {% if rec.is_suppressed %}text-danger{% else %}text-dark{% endif %}" style="font-size: 0.9rem;">
+                      {{ rec.medicine.name }}
+                      <span class="badge bg-light text-secondary ms-1 small" style="font-size: 0.7rem;">{{ rec.medicine.category }}</span>
+                    </div>
+                    <div class="small text-muted">{{ rec.medicine.generic_name }} ({{ rec.medicine.dosage_form }})</div>
+                  </div>
+                </div>
+                {% if rec.is_suppressed %}
+                  <span class="badge glass-badge-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i> Safety Hazard</span>
+                {% else %}
+                  <span class="badge glass-badge-success"><i class="bi bi-check-circle-fill me-1"></i> Screened Cleared</span>
+                {% endif %}
+              </label>
+            {% endfor %}
+          </div>
+          <div class="form-text small">Select medicines endorsed for this patient. Suppressed medicines require strict clinical justification.</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label small fw-semibold text-secondary">Clinical Modifications / Substitutions (Optional)</label>
+          <textarea name="clinical_modifications" class="form-control glass-input" rows="2" placeholder="Note any required dose adjustments, dietary modifications, or substitutions...">{{ existing_review.clinical_modifications|default:"" }}</textarea>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label small fw-semibold text-secondary">Direct Patient Instructions *</label>
+          <textarea name="patient_instructions" class="form-control glass-input" rows="3" required placeholder="Formulate clear non-prescription guidance, self-care steps, and lifestyle instructions for the patient...">{{ existing_review.patient_instructions|default:"" }}</textarea>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label small fw-semibold text-secondary">Follow-Up & Warning Guidance</label>
+          <textarea name="follow_up_advice" class="form-control glass-input" rows="2" placeholder="When to return for in-person evaluation, monitoring instructions, or emergency symptoms...">{{ existing_review.follow_up_advice|default:"" }}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-glass-primary w-100 justify-content-center py-3 fs-6">
+          <i class="bi bi-shield-check me-2"></i> Submit & Authenticate Clinical Review
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

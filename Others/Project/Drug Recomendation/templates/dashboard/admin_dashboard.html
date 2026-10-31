@@ -1,0 +1,241 @@
+{% extends 'base.html' %}
+
+{% block title %}ML Model Analytics & Admin Dashboard | AI-Based Drug Recommendation System{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+  <div>
+    <h3 class="fw-bold mb-1" style="color: var(--text-primary); letter-spacing: -0.02em;">
+      Machine Learning Evaluation & Admin Dashboard
+    </h3>
+    <p class="text-muted small mb-0">
+      Track model performance, dataset validation, audit logs, and clinical governance metrics
+    </p>
+  </div>
+  <a href="/admin/" class="btn btn-glass-primary">
+    <i class="bi bi-gear-wide-connected me-1"></i> Open Django Admin Console
+  </a>
+</div>
+
+<!-- Active Model Performance Highlight -->
+{% if active_model %}
+  <div class="glass-panel p-4 mb-4 border-2 border-primary">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+      <div>
+        <span class="badge glass-badge-primary mb-1">Active Production Model</span>
+        <h4 class="fw-bold text-dark mb-1">{{ active_model.name }} <span class="badge bg-success text-white" style="font-size: 0.72rem;">v{{ active_model.version }}</span></h4>
+        <div class="text-muted small">
+          Trained on {{ active_model.training_samples_count }} clinical samples across {{ active_model.features_count }} symptom features.
+        </div>
+      </div>
+
+      <div class="d-flex gap-4">
+        <div class="text-center">
+          <div class="fs-4 fw-bold text-primary">{{ active_model.accuracy|floatformat:4 }}</div>
+          <div class="text-muted small" style="font-size: 0.75rem;">Accuracy ({{ active_model.accuracy|floatformat:1 }}%)</div>
+        </div>
+        <div class="text-center">
+          <div class="fs-4 fw-bold text-success">{{ active_model.precision_score|floatformat:4 }}</div>
+          <div class="text-muted small" style="font-size: 0.75rem;">Precision</div>
+        </div>
+        <div class="text-center">
+          <div class="fs-4 fw-bold text-warning">{{ active_model.recall_score|floatformat:4 }}</div>
+          <div class="text-muted small" style="font-size: 0.75rem;">Recall</div>
+        </div>
+        <div class="text-center">
+          <div class="fs-4 fw-bold text-primary">{{ active_model.f1_score|floatformat:4 }}</div>
+          <div class="text-muted small" style="font-size: 0.75rem;">F1-Score</div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<!-- ML Models Comparison Chart & Table -->
+<div class="row g-4 mb-4">
+  <!-- Chart.js Graph -->
+  <div class="col-lg-6">
+    <div class="glass-panel p-4 h-100">
+      <h5 class="fw-bold text-dark mb-3"><i class="bi bi-bar-chart-fill text-primary me-2"></i> Algorithm Performance Comparison</h5>
+      <p class="text-muted small mb-4">Comparative evaluation metrics (Accuracy, Precision, Recall, F1) computed on held-out test splits:</p>
+      <div style="height: 280px; position: relative;">
+        <canvas id="modelComparisonChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table of Evaluated Models -->
+  <div class="col-lg-6">
+    <div class="glass-panel p-4 h-100">
+      <h5 class="fw-bold text-dark mb-3"><i class="bi bi-table text-primary me-2"></i> Model Benchmark Registry</h5>
+      <div class="table-responsive">
+        <table class="glass-table">
+          <thead>
+            <tr>
+              <th>Algorithm</th>
+              <th>Accuracy</th>
+              <th>Precision</th>
+              <th>Recall</th>
+              <th>F1-Score</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for m in models_records %}
+              <tr>
+                <td>
+                  <strong>{{ m.name }}</strong>
+                  <div class="text-muted small">{{ m.trained_at|date:"M d, Y" }}</div>
+                </td>
+                <td>{{ m.accuracy|floatformat:3 }}</td>
+                <td>{{ m.precision_score|floatformat:3 }}</td>
+                <td>{{ m.recall_score|floatformat:3 }}</td>
+                <td><strong>{{ m.f1_score|floatformat:3 }}</strong></td>
+                <td>
+                  {% if m.is_active %}
+                    <span class="badge glass-badge-success">Active</span>
+                  {% else %}
+                    <span class="badge bg-light text-muted">Archived</span>
+                  {% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Dataset & Security Audit Logs -->
+<div class="row g-4">
+  <!-- Dataset Provenance -->
+  <div class="col-lg-4">
+    <div class="glass-panel p-4 mb-4">
+      <h5 class="fw-bold text-dark mb-3"><i class="bi bi-database-check text-primary me-2"></i> Verified Datasets</h5>
+      {% for d in dataset_records %}
+        <div class="glass-card mb-3 p-3">
+          <strong class="text-dark">{{ d.name }}</strong>
+          <div class="small text-muted mb-2">Provenance: {{ d.source }}</div>
+          <div class="d-flex justify-content-between small text-secondary">
+            <span>Records: <strong>{{ d.num_records }}</strong></span>
+            <span>Symptoms: <strong>{{ d.num_symptoms }}</strong></span>
+            <span>Diseases: <strong>{{ d.num_diseases }}</strong></span>
+          </div>
+          <div class="mt-2 text-end">
+            <span class="badge glass-badge-success">Validated Schema</span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Security & Audit Event Logs -->
+  <div class="col-lg-8">
+    <div class="glass-panel p-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="fw-bold text-dark mb-0"><i class="bi bi-shield-lock text-primary me-2"></i> System Audit & Security Trail</h5>
+        <span class="small text-muted">Auditable Events</span>
+      </div>
+
+      <div class="table-responsive" style="max-height: 420px; overflow-y: auto;">
+        <table class="glass-table">
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Action</th>
+              <th>User</th>
+              <th>IP Address</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for log in recent_logs %}
+              <tr>
+                <td class="small text-muted" style="white-space: nowrap;">{{ log.timestamp|date:"M d, H:i:s" }}</td>
+                <td>
+                  <span class="badge {% if log.action == 'ACCESS_DENIED' %}glass-badge-danger{% elif log.action == 'LOGIN' %}glass-badge-success{% else %}glass-badge-primary{% endif %}" style="font-size: 0.7rem;">
+                    {{ log.get_action_display }}
+                  </span>
+                </td>
+                <td class="small fw-semibold text-dark">{{ log.user.username|default:"Anonymous" }}</td>
+                <td class="small text-muted"><code>{{ log.ip_address|default:"127.0.0.1" }}</code></td>
+                <td class="small text-muted">{{ log.details|truncatewords:10 }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const chartData = JSON.parse('{{ chart_payload_json|safe }}');
+    const ctx = document.getElementById('modelComparisonChart');
+
+    if (ctx && chartData.labels.length > 0) {
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: chartData.labels,
+          datasets: [
+            {
+              label: 'Accuracy (%)',
+              data: chartData.accuracy,
+              backgroundColor: 'rgba(57, 132, 232, 0.75)',
+              borderRadius: 6,
+            },
+            {
+              label: 'Precision (%)',
+              data: chartData.precision,
+              backgroundColor: 'rgba(34, 160, 107, 0.75)',
+              borderRadius: 6,
+            },
+            {
+              label: 'Recall (%)',
+              data: chartData.recall,
+              backgroundColor: 'rgba(233, 162, 59, 0.75)',
+              borderRadius: 6,
+            },
+            {
+              label: 'F1-Score (%)',
+              data: chartData.f1,
+              backgroundColor: 'rgba(84, 183, 197, 0.75)',
+              borderRadius: 6,
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                boxWidth: 12,
+                font: { family: '-apple-system, sans-serif', size: 11 }
+              }
+            }
+          },
+          scales: {
+            y: {
+              min: 50,
+              max: 100,
+              ticks: { stepSize: 10, font: { size: 10 } },
+              grid: { color: 'rgba(215, 227, 240, 0.5)' }
+            },
+            x: {
+              ticks: { font: { size: 10 } },
+              grid: { display: false }
+            }
+          }
+        }
+      });
+    }
+  });
+</script>
+{% endblock %}

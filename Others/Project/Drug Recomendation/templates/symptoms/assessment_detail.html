@@ -1,0 +1,267 @@
+{% extends 'base.html' %}
+
+{% block title %}Assessment #{{ assessment.id }} Results | AI-Based Drug Recommendation System{% endblock %}
+
+{% block content %}
+<!-- Header Bar -->
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+  <div>
+    <div class="d-flex align-items-center flex-wrap gap-2 mb-2">
+      <a href="{% if is_doctor %}{% url 'dashboard:doctor_dashboard' %}{% else %}{% url 'dashboard:patient_dashboard' %}{% endif %}" class="btn-glass-back">
+        <i class="bi bi-arrow-left"></i> Dashboard
+      </a>
+      <span class="badge glass-badge-primary">Assessment #{{ assessment.id }}</span>
+      <span class="badge {% if assessment.doctor_review %}glass-badge-success{% else %}glass-badge-warning{% endif %}">
+        {{ assessment.get_status_display }}
+      </span>
+      {% if assessment.has_emergency_symptoms %}
+        <span class="badge glass-badge-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i> Red-Flag Detected</span>
+      {% endif %}
+    </div>
+    <h3 class="fw-bold mb-0 text-dark" style="letter-spacing: -0.02em;">Clinical Decision-Support Evaluation</h3>
+    <small class="text-muted">Conducted on {{ assessment.created_at|date:"F d, Y H:i" }} UTC for Patient: <strong>{{ assessment.patient.user.get_full_name|default:assessment.patient.user.username }}</strong></small>
+  </div>
+
+  <div class="d-flex gap-2">
+    <a href="{% url 'reports:download_assessment_pdf' assessment.id %}" class="btn btn-glass-secondary">
+      <i class="bi bi-file-earmark-pdf text-danger me-1"></i> Download PDF Report
+    </a>
+    {% if is_doctor %}
+      <a href="{% url 'dashboard:doctor_review_assessment' assessment.id %}" class="btn btn-glass-primary">
+        <i class="bi bi-clipboard2-check me-1"></i> {% if doctor_review %}Modify Clinical Review{% else %}Review Assessment{% endif %}
+      </a>
+    {% else %}
+      <a href="{% url 'symptoms:symptom_checker' %}" class="btn btn-glass-primary">
+        <i class="bi bi-plus-lg me-1"></i> New Assessment
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+{% if assessment.has_emergency_symptoms %}
+  <div class="emergency-alert-banner mb-4">
+    <div class="d-flex align-items-start gap-3">
+      <i class="bi bi-exclamation-octagon-fill fs-2 text-danger"></i>
+      <div>
+        <h5 class="fw-bold text-danger mb-1">Urgent Clinical Escalation Notice</h5>
+        <p class="mb-1 text-dark small">
+          This patient presented with potential emergency red-flag symptoms: <strong>{{ assessment.emergency_notes }}</strong>.
+        </p>
+        <div class="small fw-semibold text-danger">
+          Do not delay emergency or immediate physician evaluation. Machine learning decision support does not evaluate emergent cardiovascular or hemodynamic emergencies.
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<div class="row g-4">
+  <!-- Left Column: Symptoms & ML Differential Diagnosis -->
+  <div class="col-lg-5">
+    <!-- Reported Symptoms Card -->
+    <div class="glass-panel p-4 mb-4">
+      <h5 class="fw-bold text-dark mb-3"><i class="bi bi-clipboard-pulse text-primary me-2"></i> 1. Reported Symptoms</h5>
+      
+      <div class="d-flex flex-wrap gap-2 mb-3">
+        {% for sym in assessment.selected_symptoms.all %}
+          <span class="badge {% if sym.is_emergency %}glass-badge-danger{% else %}glass-badge-primary{% endif %} py-2 px-3" style="font-size: 0.85rem;">
+            {% if sym.is_emergency %}<i class="bi bi-exclamation-triangle-fill me-1"></i>{% endif %}
+            {{ sym.display_name }}
+          </span>
+        {% endfor %}
+      </div>
+
+      <div class="row g-2 text-muted small pt-2 border-top">
+        <div class="col-6"><strong>Duration:</strong> {{ assessment.duration_days }} days</div>
+        <div class="col-6"><strong>Severity:</strong> {{ assessment.get_severity_display }}</div>
+        {% if assessment.raw_symptom_text %}
+          <div class="col-12 mt-2 fst-italic">"{{ assessment.raw_symptom_text }}"</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Machine Learning Predictions Card -->
+    <div class="glass-panel p-4 mb-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="fw-bold text-dark mb-0"><i class="bi bi-cpu text-primary me-2"></i> 2. AI Differential Conditions</h5>
+        <span class="badge glass-badge-primary" style="font-size: 0.72rem;">Model Evaluated</span>
+      </div>
+
+      <div class="text-muted small mb-3">
+        Statistical differential predictions computed by the Machine Learning inference engine:
+      </div>
+
+      {% if predictions %}
+        {% for pred in predictions %}
+          <div class="glass-card mb-3 p-3 {% if pred.is_primary %}border-primary{% endif %}">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <div>
+                <span class="badge {% if pred.is_primary %}bg-primary text-white{% else %}bg-light text-muted{% endif %} me-1">Rank #{{ pred.rank }}</span>
+                <strong class="fs-6 text-dark">{{ pred.predicted_disease.name }}</strong>
+                {% if pred.predicted_disease.code %}
+                  <small class="text-muted">({{ pred.predicted_disease.code }})</small>
+                {% endif %}
+              </div>
+              <span class="fw-bold fs-6 text-primary">{{ pred.confidence_score|floatformat:1 }}%</span>
+            </div>
+
+            <!-- Confidence Progress Bar -->
+            <div class="progress mb-2" style="height: 6px; background: rgba(57,132,232,0.15);">
+              <div class="progress-bar" role="progressbar" style="width: {{ pred.confidence_score }}%; background: var(--accent-primary);" aria-valuenow="{{ pred.confidence_score }}" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+            <p class="small text-muted mb-2">{{ pred.predicted_disease.description|truncatewords:20 }}</p>
+
+            <div class="d-flex justify-content-between align-items-center small">
+              <span class="badge {% if pred.predicted_disease.urgency_level == 'HIGH' or pred.predicted_disease.urgency_level == 'EMERGENCY' %}glass-badge-danger{% else %}glass-badge-warning{% endif %}">
+                Urgency: {{ pred.predicted_disease.get_urgency_level_display }}
+              </span>
+              <span class="text-muted">Specialist: {{ pred.predicted_disease.specialist_type }}</span>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="text-muted small text-center py-3">No differential predictions generated.</div>
+      {% endif %}
+
+      <div class="clinical-disclaimer-box mt-3">
+        <i class="bi bi-info-circle me-1"></i>
+        Predictions are mathematical probability distributions, NOT clinical diagnoses. An independent licensed healthcare provider must verify patient condition.
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Column: Screened Medicine Information & Doctor Review -->
+  <div class="col-lg-7">
+    <!-- Doctor Review Notice/Summary -->
+    <div class="glass-panel p-4 mb-4 border-2 {% if doctor_review %}border-success{% else %}border-warning{% endif %}">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="fw-bold text-dark mb-0">
+          <i class="bi bi-person-badge text-success me-2"></i> 3. Healthcare Professional Review
+        </h5>
+        <span class="badge {% if doctor_review %}glass-badge-success{% else %}glass-badge-warning{% endif %}">
+          {% if doctor_review %}{{ doctor_review.get_status_display }}{% else %}Awaiting Clinical Review{% endif %}
+        </span>
+      </div>
+
+      {% if doctor_review %}
+        <div class="glass-card p-3 mb-3 bg-white">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <strong class="text-dark">Reviewed by: Dr. {{ doctor_review.doctor.user.get_full_name }}</strong>
+            <span class="text-muted small">&bull; {{ doctor_review.doctor.specialization }} (License #{{ doctor_review.doctor.license_number }})</span>
+          </div>
+
+          <div class="mb-2">
+            <span class="fw-bold small text-secondary">Clinical Diagnostic Notes:</span>
+            <div class="text-dark small">{{ doctor_review.clinical_diagnosis_notes }}</div>
+          </div>
+
+          <div class="mb-2">
+            <span class="fw-bold small text-secondary">Patient Direct Instructions:</span>
+            <div class="text-dark small">{{ doctor_review.patient_instructions }}</div>
+          </div>
+
+          {% if doctor_review.clinical_modifications %}
+            <div class="mb-2">
+              <span class="fw-bold small text-secondary">Modifications to AI Candidate Recommendations:</span>
+              <div class="text-dark small">{{ doctor_review.clinical_modifications }}</div>
+            </div>
+          {% endif %}
+
+          {% if doctor_review.follow_up_advice %}
+            <div class="mb-2">
+              <span class="fw-bold small text-secondary">Follow-Up Guidance:</span>
+              <div class="text-dark small">{{ doctor_review.follow_up_advice }}</div>
+            </div>
+          {% endif %}
+
+          <div class="text-end text-muted small mt-2">
+            <i class="bi bi-clock me-1"></i> Authenticated: {{ doctor_review.reviewed_at|date:"M d, Y H:i" }} UTC
+          </div>
+        </div>
+      {% else %}
+        <div class="alert glass-card border-0 mb-0 p-3" style="background: rgba(233,162,59,0.12); color: #8A5300;">
+          <div class="d-flex align-items-start gap-2">
+            <i class="bi bi-hourglass-split fs-4 text-warning"></i>
+            <div>
+              <strong>Pending Review by Qualified Physician</strong>
+              <div class="small mt-1">This assessment has been placed in the triage queue for professional evaluation. Candidate medicine information below is purely educational until approved by an authorized doctor.</div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Screened Medicine Information -->
+    <div class="glass-panel p-4 mb-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="fw-bold text-dark mb-0"><i class="bi bi-shield-check text-primary me-2"></i> 4. Safety-Screened Medicine Information</h5>
+        <span class="badge glass-badge-primary" style="font-size: 0.72rem;">Traceable Dataset</span>
+      </div>
+
+      <p class="text-muted small mb-3">
+        Candidate medicine records mapped from predicted conditions and evaluated by multi-layered drug safety rules:
+      </p>
+
+      {% if recommendations %}
+        {% for rec in recommendations %}
+          <div class="glass-card mb-3 p-3 {% if rec.is_suppressed %}border-danger bg-danger-subtle{% endif %}">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-start gap-2 mb-2">
+              <div>
+                <h6 class="fw-bold text-dark mb-0">
+                  {{ rec.medicine.name }}
+                  <span class="badge {% if rec.medicine.is_prescription_only %}bg-secondary{% else %}bg-info text-dark{% endif %} ms-1" style="font-size: 0.68rem;">
+                    {{ rec.medicine.is_prescription_only|yesno:"Prescription Only (Rx),Over-The-Counter (OTC)" }}
+                  </span>
+                </h6>
+                <div class="small text-muted">{{ rec.medicine.generic_name }} &middot; Active: {{ rec.medicine.active_ingredient }} &middot; {{ rec.medicine.category }}</div>
+              </div>
+
+              <!-- Recommendation Status Badge -->
+              {% if rec.is_suppressed %}
+                <span class="badge glass-badge-danger">
+                  <i class="bi bi-x-octagon-fill me-1"></i> RECOMMENDATION SUPPRESSED
+                </span>
+              {% else %}
+                <span class="badge glass-badge-success">
+                  <i class="bi bi-shield-check me-1"></i> Safety Screened (Candidate)
+                </span>
+              {% endif %}
+            </div>
+
+            <!-- Approved Indication & Source -->
+            <div class="small text-muted mb-2">
+              <strong>Approved Indication:</strong> {{ rec.medicine.approved_indications }}<br>
+              <strong>Dosage Form:</strong> {{ rec.medicine.dosage_form }} &middot; <strong>FDA Pregnancy:</strong> Cat {{ rec.medicine.pregnancy_category }} &middot; <strong>Source:</strong> <em>{{ rec.medicine.source_reference }}</em>
+            </div>
+
+            <!-- Safety Issues & Hazard Alerts -->
+            {% if rec.safety_issues.all %}
+              <div class="p-2 rounded mt-2" style="background: rgba(224,82,82,0.08); border-left: 3px solid var(--status-danger);">
+                <div class="fw-bold small text-danger mb-1"><i class="bi bi-exclamation-triangle-fill me-1"></i> Identified Safety Concerns:</div>
+                {% for issue in rec.safety_issues.all %}
+                  <div class="small text-dark mb-1">
+                    <strong>[{{ issue.get_issue_type_display }}]</strong> {{ issue.description }}
+                    <div class="text-danger fst-italic">{{ issue.clinical_action_needed }}</div>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if rec.is_suppressed %}
+              <div class="alert alert-danger p-2 small mt-2 mb-0">
+                <i class="bi bi-shield-slash-fill me-1"></i>
+                <strong>CLINICAL SAFETY SUPPRESSION:</strong> This medicine was suppressed from patient guidance due to active risk factors. A doctor must evaluate alternative pharmacological agents.
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="text-center py-4 text-muted small glass-card">
+          <i class="bi bi-info-circle me-1"></i> No verified candidate medicines found for the predicted conditions. The system does not invent unsupported medicine recommendations.
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

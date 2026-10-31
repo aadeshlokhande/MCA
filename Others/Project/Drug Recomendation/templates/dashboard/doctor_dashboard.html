@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% block title %}Doctor Clinical Triage Queue | AI-Based Drug Recommendation System{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+  <div>
+    <h3 class="fw-bold mb-1" style="color: var(--text-primary); letter-spacing: -0.02em;">
+      Doctor Triage & Review Workspace
+    </h3>
+    <p class="text-muted small mb-0">
+      Logged in as: <strong>Dr. {{ user.get_full_name }}</strong> ({{ doctor_profile.specialization }} &middot; License #{{ doctor_profile.license_number }})
+    </p>
+  </div>
+  <div class="d-flex gap-2">
+    <a href="{% url 'dashboard:admin_dashboard' %}" class="btn btn-glass-secondary">
+      <i class="bi bi-graph-up me-1"></i> Model Analytics
+    </a>
+  </div>
+</div>
+
+<!-- Triage Metric Cards -->
+<div class="row g-3 mb-4">
+  <div class="col-sm-4">
+    <div class="stat-widget">
+      <div class="stat-icon stat-icon-orange">
+        <i class="bi bi-hourglass-split"></i>
+      </div>
+      <div>
+        <div class="fs-4 fw-bold text-dark">{{ pending_count }}</div>
+        <div class="text-muted small">Pending Physician Review</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="stat-widget">
+      <div class="stat-icon stat-icon-green">
+        <i class="bi bi-check2-all"></i>
+      </div>
+      <div>
+        <div class="fs-4 fw-bold text-dark">{{ reviewed_count }}</div>
+        <div class="text-muted small">Clinically Reviewed Cases</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="stat-widget">
+      <div class="stat-icon stat-icon-blue">
+        <i class="bi bi-folder2-open"></i>
+      </div>
+      <div>
+        <div class="fs-4 fw-bold text-dark">{{ total_count }}</div>
+        <div class="text-muted small">Total Patient Submissions</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Assessment Triage Table -->
+<div class="glass-panel p-4">
+  <!-- Filter Segmented Control -->
+  <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+    <h5 class="fw-bold text-dark mb-0">Patient Assessment Triage Queue</h5>
+    <div class="glass-segmented-control">
+      <a href="?status=ALL" class="segment-btn {% if status_filter == 'ALL' %}active{% endif %}">
+        <i class="bi bi-grid-fill me-1"></i> All ({{ total_count }})
+      </a>
+      <a href="?status=PENDING" class="segment-btn {% if status_filter == 'PENDING' %}active{% endif %}">
+        <i class="bi bi-hourglass-split me-1"></i> Pending ({{ pending_count }})
+      </a>
+      <a href="?status=REVIEWED" class="segment-btn {% if status_filter == 'REVIEWED' %}active{% endif %}">
+        <i class="bi bi-check2-circle me-1"></i> Reviewed ({{ reviewed_count }})
+      </a>
+    </div>
+  </div>
+
+  {% if assessments %}
+    <div class="table-responsive">
+      <table class="glass-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Patient Name</th>
+            <th>Demographics</th>
+            <th>Reported Symptoms</th>
+            <th>AI Differential (Confidence)</th>
+            <th>Safety Hazards</th>
+            <th>Status</th>
+            <th class="text-end">Clinical Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for a in assessments %}
+            <tr>
+              <td><span class="badge glass-badge-primary">#{{ a.id }}</span></td>
+              <td>
+                <strong class="text-dark">{{ a.patient.user.get_full_name|default:a.patient.user.username }}</strong>
+                <div class="small text-muted">{{ a.created_at|date:"M d, Y H:i" }}</div>
+              </td>
+              <td class="small">
+                {{ a.patient.age|default:"N/A" }} yrs &middot; {{ a.patient.get_gender_display }}
+                {% if a.patient.is_pregnant %}<br><span class="badge glass-badge-danger" style="font-size: 0.65rem;">Pregnant</span>{% endif %}
+              </td>
+              <td>
+                <div class="d-flex flex-wrap gap-1">
+                  {% for s in a.selected_symptoms.all|slice:":3" %}
+                    <span class="badge {% if s.is_emergency %}glass-badge-danger{% else %}bg-light text-dark{% endif %}" style="font-size: 0.72rem;">
+                      {{ s.display_name }}
+                    </span>
+                  {% endfor %}
+                  {% if a.selected_symptoms.count > 3 %}
+                    <span class="badge bg-light text-muted" style="font-size: 0.72rem;">+{{ a.selected_symptoms.count|add:"-3" }}</span>
+                  {% endif %}
+                </div>
+              </td>
+              <td>
+                {% with top_pred=a.predictions.first %}
+                  {% if top_pred %}
+                    <div class="fw-bold text-dark small">{{ top_pred.predicted_disease.name }}</div>
+                    <span class="badge glass-badge-primary" style="font-size: 0.7rem;">{{ top_pred.confidence_score|floatformat:1 }}% Conf.</span>
+                  {% else %}
+                    <span class="text-muted small">None</span>
+                  {% endif %}
+                {% endwith %}
+              </td>
+              <td>
+                {% with suppressed_count=a.recommendations.filter.count %}
+                  {% if a.has_emergency_symptoms %}
+                    <span class="badge glass-badge-danger" style="font-size: 0.72rem;">Emergency Red-Flag</span>
+                  {% else %}
+                    <span class="badge glass-badge-success" style="font-size: 0.72rem;">Screened Clean</span>
+                  {% endif %}
+                {% endwith %}
+              </td>
+              <td>
+                <span class="badge {% if a.doctor_review %}glass-badge-success{% else %}glass-badge-warning{% endif %}">
+                  {{ a.doctor_review|yesno:"Reviewed,Pending Review" }}
+                </span>
+              </td>
+              <td class="text-end">
+                <a href="{% url 'dashboard:doctor_review_assessment' a.id %}" class="btn btn-sm btn-glass-primary py-1 px-3 d-inline-flex align-items-center" style="font-size: 0.8rem;">
+                  <i class="bi bi-clipboard2-check me-1"></i> Review Case
+                </a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <div class="text-center py-5 text-muted small glass-card">
+      <i class="bi bi-inbox fs-2 text-primary d-block mb-2"></i>
+      No patient assessments found matching filter.
+    </div>
+  {% endif %}
+</div>
+{% endblock %}
