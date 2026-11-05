@@ -1,0 +1,61 @@
+
+Unit I – Introduction to Machine Learning
+List the types of machine learning and define each in one line.
+Discuss why machine learning is needed.
+Differentiate between supervised and unsupervised learning.
+Explain the main challenges (issues) in machine learning.
+A hospital has a few labeled X-ray images and thousands of unlabeled ones. Justify which type of learning should be used.
+Explain how a machine learns from data, with the steps involved.
+Clarify reinforcement learning with an example, its types, algorithms and applications.
+Summarize how a machine learns from data, with the steps involved.
+Describe how a machine learns from data, with the steps involved.
+
+Unit II – Introduction to Neural Network
+Differentiate between Artificial Neural Networks (ANN) and Biological Neural Networks (BNN).
+Explain forward propagation and backpropagation in a neural network.
+Define a neural network. List its key components and layers.
+Describe the types of neural networks: feedforward, single-layer perceptron, multilayer perceptron, CNN, RNN and LSTM.
+Apply sigmoid function to compute output for given values: x = 5, a₀ = −1.5, a₁ = 0.6.
+Explain the common activation functions used in neural networks.
+Clarify why ReLU is preferred over sigmoid for hidden layers.
+Interpret the McCulloch–Pitts model of a neuron.
+Calculate sigmoid function to compute output for given values: x = 5, a₀ = −1.5, a₁ = 0.6.
+Classify the steps of the Artificial Neural Network training algorithm.
+
+Unit III – Introduction to Optimization Techniques
+Differentiate between Newton's method and gradient descent.
+Define gradient descent. List its steps and variants.
+Explain Newton's method for optimisation.
+Justify when derivative-free methods such as random search should be used instead of gradient methods.
+Compare Newton's method, gradient descent, quasi-Newton methods and genetic algorithms.
+Describe the Downhill Simplex (Nelder–Mead) method.
+Discuss the role of optimisation in machine learning and distinguish first-order from second-order optimisation algorithms.
+Evaluate the strengths and limitations of the Nelder–Mead method.
+Explain localized (adaptive) random search with the 1/5 success rule and its variants.
+Describe pure random search, its convergence and the curse of dimensionality.
+
+Unit IV – Learning with Regression and Trees
+State linear regression. State its types and cost function.
+State the advantages and disadvantages of decision trees.
+Explain logistic regression.
+Explain the CART algorithm.
+A decision tree has 100% training accuracy but poor test accuracy. Justify the problem and suggest remedies.
+Explain the metrics used to evaluate a linear regression model.
+Differentiate between linear regression and logistic regression.
+Explain the assumptions of linear regression.
+Analyse why linear regression is unsuitable for classification and explain how logistic regression overcomes the problems.
+Illustrate the two methods of estimating parameters in linear regression, with their advantages and disadvantages.
+Compute slope and intercept using linear regression.
+
+Unit V – Learning with Classification and Clustering
+Discuss rule-based classification with the rule format, coverage, and accuracy.
+A spam classifier gives TP = 40, FP = 10, FN = 20 and TN = 30. Calculate accuracy, precision, recall, and F1 score.
+Express Bayesian Belief Networks.
+Define a confusion matrix. Explain TP, TN, FP, and FN using spam email detection, and write the formulas for accuracy, precision, recall, and F1 score.
+Solve using K-Means clustering (k = 2) for the data {2, 3, 4, 10, 11, 12, 20, 25, 30}, with initial means m₁ = 4 and m₂ = 12.
+Analyze the hard-margin Support Vector Machine: hyperplane, margin, support vectors and the optimisation problem.
+A bank builds a fraud-detection model on highly imbalanced data. Evaluate which performance metrics should be used and why.
+Express the Forward algorithm and the Viterbi algorithm of a Hidden Markov Model. (Repeated in the question bank.)
+Explain the soft-margin SVM and the kernel trick.
+Describe the two-stage training of a Radial Basis Function network. (Repeated in the question bank.)
+Solve by K-Means clustering algorithm to given dataset and compute clusters. K = {2, 3, 4, 10, 11, 12, 20, 25, 30}, consider 2 clusters (k = 2).
